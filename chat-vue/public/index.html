@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+      *{
+        box-sizing: border-box;
+        display: block;
+        padding: 0;
+        margin: 0;
+        font-size: 10pt;
+        font-family: 'Open Sans';
+        outline: none;
+        border: none;
+      }
+      style, title{
+        display: none;
+      }
+
+      body{
+        background-color: rgb(51, 56, 71);
+      }
+
+      button{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
