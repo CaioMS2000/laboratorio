@@ -2,18 +2,34 @@ import React from 'react';
 import './Editor.css';
 import ReactDOM from 'react-dom';
 
+function getSelectionText() {
+    var text = "";
+    var activeEl = document.activeElement;
+    var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+
+    if (((activeElTagName === "textarea") || ((activeElTagName === "input") && (/^(?:text|search|password|tel|url)$/i.test(activeEl.type))))&& (typeof activeEl.selectionStart == "number")) {
+        text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
+    } else if (window.getSelection) {
+        text = window.getSelection().toString();
+    }
+
+    activeEl.value.replace(text, '<span class = "highlighted">'+text+'</span>')
+    console.log(text)
+    return text;
+}
+
 const Header = (props) => {
     return (
         <div className="top">
             <div className="options">
                 <ul>
-                    <li className="itens">N</li>
-                    <li className="itens">I</li>
-                    <li className="itens">S</li>
-                    <li className="itens">C</li>
-                    <li className="itens">R</li>
-                    <li className="itens">T</li>
-                    <li className="itens">L</li>
+                    <li className="itens"><button class = "bold" onClick = {() => getSelectionText()}>N</button></li>
+                    <li className="itens"><button class = "italic" >I</button></li>
+                    <li className="itens"><button class = "underlined" >S</button></li>
+                    <li className="itens"><button class = "color" >C</button></li>
+                    <li className="itens"><button class = "realce" >R</button></li>
+                    <li className="itens"><button class = "font-sz" >T</button></li>
+                    <li className="itens"><button class = "link" >L</button></li>
                 </ul>
             </div>
         </div>
