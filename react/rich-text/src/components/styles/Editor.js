@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {TypeBold} from "@styled-icons/bootstrap/TypeBold"
 
 export const Container = styled.div`
     top:5vh;
@@ -31,4 +32,9 @@ export const Iframe = styled.iframe`
     height: 100%;
     width: 100%;
     background-color: rgb(133, 138, 60);
+`
+
+export const basicTypeBold = styled(TypeBold)`
+    color: #000;
+    font-size: 30pt;
 `
