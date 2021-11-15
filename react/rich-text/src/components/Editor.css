@@ -1,6 +1,6 @@
 .container{
     top: 5vh;
-    border: 2px solid rgba(0, 128, 0, 0.658);
+    border: 2px solid rgba(0, 0, 0, 0.658);
     width: 90vw;
     height: 90vh;
     margin: auto;
@@ -28,4 +28,22 @@ iframe{
     height: 100%;
     width: 100%;
     background-color: rgb(133, 138, 60);
+}
+
+.color-selector{
+    display: inline-block;
+}
+
+.menu-iten{
+    cursor: pointer;
+    margin: 0.5vh 1vw;
+}
+
+div.menu-iten{
+    display: inline-block;
+}
+
+svg{
+    width: 3vw;
+    height: 3vh;
 }

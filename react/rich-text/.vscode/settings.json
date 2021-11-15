@@ -2,5 +2,34 @@
     "emmet.triggerExpansionOnTab": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "colorize.languages": ["typescript", "javascript", "css", "scss"],
+    "selector": "javascript",
+    "colors": "css",
+    "colorInfo.languages": [
+        {
+            "selector": "css",
+            "colors": "css"
+        },
+        {
+            "selector": "sass",
+            "colors": "css"
+        },
+        {
+            "selector": "scss",
+            "colors": "css"
+        },
+        {
+            "selector": "less",
+            "colors": "css"
+        },
+        {
+            "selector": "html",
+            "colors": "css"
+        },
+        {
+            "selector": "javascript",
+            "colors": "css"
+        }
+    ]
 }
