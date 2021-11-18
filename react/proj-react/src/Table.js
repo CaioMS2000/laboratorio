@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {} from 'react'
 
 const TableHeader = () => {
     return (
@@ -12,6 +12,7 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
+
     const rows = props.characterData.map((row, index) => {
       return (
         <tr key={index}>
@@ -24,7 +25,11 @@ const TableBody = (props) => {
       )
     })
   
-    return <tbody>{rows}</tbody>
+    return (
+      <tbody>
+        {rows}
+      </tbody>
+    )
   }
 
   const Table = (props) => {

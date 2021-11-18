@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from './Form'
+import Count from './Count'
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
       <div className="App">
         <Table characterData={characters} removeCharacter={this.removeCharacter} />
         <Form handleSubmit={this.handleSubmit} />
+        <Count/>
       </div>
     )
   }
