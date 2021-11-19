@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const WH = 50;
+const WH = 60;
 const mTop = (100 - WH) / 2;
 
 export const Container = styled.div`
@@ -16,8 +16,12 @@ export const Title = styled.div`
     background-color: rgba(250, 234, 127, 0);
     width: 100%;
     height: 30%;
-    font-size: 50pt;
+    font-size: 80pt;
     border-radius: 21px 21px 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(82, 82, 82, 1);
 `;
 
 export const Body = styled.div`
@@ -36,9 +40,15 @@ export const Input = styled.input`
     background-color: rgba(30, 30, 30, 1);
     width: 90%;
     height: 50%;
-    font-size: 35pt;
+    font-size: 50pt;
     text-align: center;
-    margin-top: 8vh;
+    margin: 8vh 0 1vh 0;
     border-radius: 51px;  
-    border: 5px solid rgba(0, 0, 0, 0);  
+    border: 5px solid rgba(0, 0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+`;
+
+export const Button = styled.button`
+    background-color: transparent;
+    cursor: pointer;
 `;

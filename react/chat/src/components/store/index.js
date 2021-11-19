@@ -2,8 +2,10 @@ import {createStore} from 'redux';
 
 const initialState = {
     logedIn: false,
-    nickname: ''
+    nickname: '',
+    messages: []
 }
+
 function reducer(state = initialState, action){
     return {...state};
 }
