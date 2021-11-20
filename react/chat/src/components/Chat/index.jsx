@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {connect} from 'react-redux';
 import { IconContext } from "react-icons";
 
 import * as S from './styles';
-import {useMessage} from './context/Message'
-import MessageProvider from './context/Message'
+import {useMessage} from './context/Message';
 
 function sendMessage(msg){
     return{
@@ -15,18 +14,21 @@ function sendMessage(msg){
 
 const Chat = ({dispatch}) => {
     const { message, setMessage } = useMessage();
+    const input = useRef();
 
     return (
         <S.Container>
             <IconContext.Provider value={{ color: '#9c9c9c', size: '50px' }}>
-                <MessageProvider>
-                    {message}
-                    <S.Messages/>
-                    <S.TypeSend>
-                        <S.Input onChange = {e => {setMessage(e.target.value)}}/>
-                        <S.Button onClick = {() => dispatch(sendMessage())}>Send</S.Button>
-                    </S.TypeSend>
-                </MessageProvider>
+                <S.Messages/>
+                <S.TypeSend>
+                    <S.Input onChange = {e => {setMessage(e.target.value)}} ref = {input}/>
+                    <S.Button
+                        onClick = {() => {
+                            dispatch(sendMessage(message));
+                            input.current.value = ''
+                        }}
+                    >Send</S.Button>
+                </S.TypeSend>
             </IconContext.Provider>
         </S.Container>
     )

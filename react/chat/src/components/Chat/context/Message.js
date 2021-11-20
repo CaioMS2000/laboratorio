@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from "react";
 
 const MessageContext = createContext();
 
-export default function MessageProvider({ children }) {
+export function MessageProvider({ children }) {
   const [message, setMessage] = useState('');
 
   return (
@@ -19,7 +19,7 @@ export default function MessageProvider({ children }) {
 
 export function useMessage() {
   const context = useContext(MessageContext);
-  if (!context) throw new Error("useCount must be used within a MessageProvider");
+  if (!context) throw new Error("useMessage must be used within a MessageProvider");
   const { message, setMessage } = context;
   return { message, setMessage };
 };

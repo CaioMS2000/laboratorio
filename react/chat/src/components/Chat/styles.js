@@ -20,10 +20,10 @@ export const Messages = styled.div`
 
 export const TypeSend = styled.div`
     background-color: rgba(66, 245, 120, 1);
-    width: 99%;
-    height: 5.7%;
-    padding: 10px 4px;
+    width: 100%;
+    height: 8%;
     border-radius: 0 0 10px 10px;
+    padding-top: 3px;
 `;
 
 export const Input = styled.input`
@@ -34,8 +34,8 @@ export const Input = styled.input`
     };
     background-color: rgba(30, 30, 30, 1);
     width: 80%;
-    height: 80%;
-    font-size: 16pt;
+    height: 50%;
+    font-size: 14pt;
     text-align: left;
     border-radius: 10px;  
     border: 5px solid rgba(0, 0, 0, 0);
@@ -46,13 +46,16 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-    background-color: #000;
+    background-color: rgba(10, 10, 10, 1);
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-size: 15pt;
     font-weight: 800;
-    color: #fff;
+    color: rgba(100, 100, 100, 1);
     width: 10%;
     height: 80%;
     border-radius: 10px;
+    &:hover{
+        color: rgba(300, 300, 300, 1);
+    }
 `;
