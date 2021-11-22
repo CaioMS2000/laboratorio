@@ -1,24 +1,27 @@
-import {Provider} from 'react-redux';
-import {GlobalStyles} from '../styles/Global'
-import * as S from './styles'
+import {useSelector} from 'react-redux';
+import {GlobalStyles} from '../styles/Global';
 
+import * as S from './styles';
 import Login from '../Login';
-import store from '../store';
 import Chat from '../Chat';
 import {MessageProvider} from '../Chat/context/Message';
 
-const logado = true;
-
 function App() {
+  const logedIn = useSelector(state => state.logon.logedIn)
+  const nickname = useSelector(state => state.logon.nickname)
+
   return (
-      <S.AppWrapper>
-      <Provider store = {store}>
-        <GlobalStyles/>
-        <MessageProvider>
-          {logado?<Chat></Chat>:<Login></Login>}
+    <>
+    <S.UserName className = "UserName">
+      {nickname}
+    </S.UserName>
+      <S.AppWrapper className = "AppWrapper">
+        <GlobalStyles className = "GlobalStyles"/>
+        <MessageProvider className = "MessageProvider">
+          {logedIn?<Chat className = "Chat"></Chat>:<Login className = "Login"></Login>}
         </MessageProvider>
-        </Provider>
-    </S.AppWrapper>
+      </S.AppWrapper>
+    </>
   );
 }
 

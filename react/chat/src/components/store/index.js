@@ -1,15 +1,12 @@
-import {createStore} from 'redux';
+import {combineReducers, createStore} from 'redux';
 
-const initialState = {
-    logedIn: false,
-    nickname: '',
-    messages: []
+import send from './reducers/chat';
+import logon from './reducers/login';
+
+const rootReducer = {
+    logon, send
 }
 
-function reducer(state = initialState, action){
-    return {...state};
-}
-
-const store = createStore(reducer);
+const store = createStore(combineReducers(rootReducer));
 
 export default store;
