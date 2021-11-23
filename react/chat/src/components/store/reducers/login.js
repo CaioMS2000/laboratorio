@@ -12,6 +12,13 @@ export default function logon(state = initialState, action){
             nickname: action.nick
         };
     }
+    else if(action.type === "LOGOUT"){
+        return{
+            ...state,
+            logedIn: false,
+            nickname: ''
+        };
+    }
 
     return state;
 }

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import {connect} from 'react-redux';
 import { IconContext } from "react-icons";
 import {BsArrowRightSquareFill} from 'react-icons/bs';
@@ -21,6 +21,10 @@ function login(nick){
 const Login = ({dispatch}) => {
     const input = useRef();
     const button = useRef();
+
+    useEffect(() => {
+        console.log("login montado");
+    }, [])
 
     return (
         <>

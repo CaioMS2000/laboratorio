@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import enum
 from typing import Optional
 from pydantic import BaseModel
-
+#source ./venv/bin/activate && uvicorn main:app --reload
 
 class Product(BaseModel):
     id: int

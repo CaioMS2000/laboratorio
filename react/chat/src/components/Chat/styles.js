@@ -7,7 +7,7 @@ export const Container = styled.div`
     background-color: rgba(140, 50, 50, 1);
     width: ${WH}vw;
     height: ${WH}vh;
-    margin: ${mTop}vh auto 0 auto;
+    margin: ${mTop-2}vh auto 0 auto;
     border-radius: 10px;
 `;
 
@@ -16,6 +16,21 @@ export const Messages = styled.div`
     width: 100%;
     height: 92%;
     border-radius: 10px 10px 0 0;
+    padding: 1vh 0;
+    overflow-y: scroll;
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track{
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.637);
+    }
+
+    ::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: rgb(27, 27, 27);
+    }
 `;
 
 export const TypeSend = styled.div`
@@ -57,5 +72,19 @@ export const Button = styled.button`
     border-radius: 10px;
     &:hover{
         color: rgba(300, 300, 300, 1);
+    }
+`;
+
+export const Message = styled.div`
+    width: 100%;
+    font-size: 16pt;
+    word-wrap: break-word;
+    margin: 0.5vh 0;
+
+    p{
+        text-align: left;
+    }
+    .nick{
+        font-weight: 800;
     }
 `;
