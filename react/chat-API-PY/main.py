@@ -2,13 +2,16 @@ from fastapi import FastAPI
 from typing import Optional
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+
+import sql_app.schemas as schema
+from sql_app.database import SessionLocal, engine
+import sql_app.models as model
+
+# from sql_app.models import Base
+
 #source ./venv/bin/activate && uvicorn main:app --reload
 #Response Model
 #skiped: CORS
-
-class Message(BaseModel):
-    sender: str
-    content: str
 
 
 app = FastAPI()
@@ -25,11 +28,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# sql_app.models.Base.metadata.create_all(bind=engine)
+# model.Base.metadata.create_all(bind=engine)
+
+def get_database_session():
+    try:
+        db = SessionLocal()
+        yield db
+    finally:
+        db.close()
+
+
 @app.get("/")
 async def get_all():
     return "All data that we have stored"
 
 
-@app.post("/")
-async def insert(data: Message):
-    return {**data.dict()}
+# @app.post("/")
+# async def insert(data: Message):
+#     return {**data.dict()}
