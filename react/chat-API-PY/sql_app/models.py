@@ -1,12 +1,11 @@
-from sqlalchemy.schema import Column
+from sqlalchemy.schema import Column, Sequence
 from sqlalchemy.types import String, Integer, Text, Date, Boolean
 from sqlalchemy.orm import relationship
-# from .database import Base
-from .mixed import Base
+from .database import Base
 
 class User(Base):
     __tablename__ = "User"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
     nickname = Column(String(100), unique=True)
     nick_color = Column(String(7))
     num_msg = Column(Integer)
@@ -17,7 +16,7 @@ class User(Base):
 
 class Message(Base):
     __tablename__ = "Message"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
     content = Column(String(500), unique=True)
     num_char = Column(Integer)
     sent_date = Column(Date)

@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 class MessageBase(BaseModel):
-    id: int
+    id: int = 0
     sent_date: date
     num_char: int
     deleted: bool
@@ -21,10 +21,10 @@ class Message(BaseModel):
 
 
 class UserBase(BaseModel):
-    id: int
-    nick_color: str
-    num_msg: int
-    reg_date: date
+    id: int = 0
+    nick_color: str = "#000000"
+    num_msg: int = 0
+    reg_date: date = "2021-11-11"
 
 
 class UserCreate(UserBase):

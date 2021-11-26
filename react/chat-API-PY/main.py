@@ -7,14 +7,13 @@ from sqlalchemy.orm import Session
 import sql_app.crud as crud
 import sql_app.schemas as schema
 import sql_app.models as model
-# from sql_app.database import SessionLocal, engine
-from sql_app.mixed import SessionLocal, engine
+from sql_app.database import SessionLocal, engine
 
 # from sql_app.models import Base
 
 #source ./venv/bin/activate && uvicorn main:app --reload
 #Response Model
-#skiped: CORS
+#skiped: CORS; Bigger Applications - Multiple Files
 
 model.Base.metadata.create_all(bind=engine)
 
@@ -44,7 +43,7 @@ def get_db():
 @app.post("/users/", response_model=schema.User)
 def create_user(user: schema.UserCreate, db: Session = Depends(get_db)):
     print("\ncomeçou a inserir\n")
-    db_user = crud.get_user_by_nick(db, nick=user.nick)
+    db_user = crud.get_user_by_nick(db, nick=user.nickname)
     if db_user:
         raise HTTPException(status_code=400, detail="Nick already registered")
     return crud.create_user(db=db, user=user)
