@@ -1,7 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 from pydantic import BaseModel
 from typing import List, Optional
 
+"""
 class MessageBase(BaseModel):
     id: int = 0
     sent_date: date
@@ -37,4 +38,28 @@ class User(UserBase):
 
     class Config:
         orm_mode = True
+"""
 
+class Message(BaseModel):
+    id: int = 0
+    sent_date: datetime = "2021-11-11 12:45:13:1000"
+    num_char: int = 0
+    deleted: bool = False
+    owner_id: int 
+    content: str
+
+    class Config:
+        orm_mode = True
+
+
+class User(BaseModel):
+    password: str
+    nickname: str
+    id: int = 0
+    nick_color: str = "#000000"
+    num_msg: int = 0
+    reg_date: datetime = "2021-11-11 12:45:13:1000"
+    messages: List[Message] = []    
+
+    class Config:
+        orm_mode = True
