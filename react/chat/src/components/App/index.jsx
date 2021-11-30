@@ -6,6 +6,7 @@ import * as S from './styles';
 import Login from '../Login';
 import Chat from '../Chat';
 import {MessageProvider} from '../Chat/context/Message';
+import { getAPI } from '../../services';
 
 function logout(){
   return{
@@ -13,12 +14,14 @@ function logout(){
   }
 }
 
+
 function App({dispatch}) {
   const logedIn = useSelector(state => state.logon.logedIn)
   const nickname = useSelector(state => state.logon.nickname)
-
+  
   useEffect(() => {
     console.log("app montado");
+    getAPI();
   }, [])
 
   return (
