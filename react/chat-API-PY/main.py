@@ -3,6 +3,7 @@ from typing import Optional, List
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from datetime import datetime
 
 import sql_app.crud as crud
 import sql_app.schemas as schema
@@ -26,7 +27,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -40,51 +41,15 @@ def get_db():
     finally:
         db.close()
 
-"""
-@app.post("/users/", response_model=schema.User)
-def create_user(user: schema.UserCreate, db: Session = Depends(get_db)):
-    print("\ncomeçou a inserir\n")
-    db_user = crud.get_user_by_nick(db, nick=user.nickname)
-    if db_user:
-        raise HTTPException(status_code=400, detail="Nick already registered")
-    return crud.create_user(db=db, user=user)
 
 
-@app.get("/users/", response_model=List[schema.User])
-def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    users = crud.get_users(db, skip=skip, limit=limit)
-    return users
 
-
-@app.get("/users/{user_id}", response_model=schema.User)
-def read_user(user_id: int, db: Session = Depends(get_db)):
-    db_user = crud.get_user(db, user_id=user_id)
-    if db_user is None:
-        raise HTTPException(status_code=404, detail="User not found")
-    return db_user
-
-
-@app.post("/users/{user_id}/messages/", response_model=schema.Message)
-def create_message_for_user(
-    user_id: int, message: schema.MessageCreate, db: Session = Depends(get_db)
-):
-    return crud.create_user_message(db=db, message=message, user_id=user_id)
-
-
-@app.get("/messages/", response_model=List[schema.Message])
-def read_messages(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    messages = crud.get_messages(db, skip=skip, limit=limit)
-    return messages
-"""
-
-"""
 @app.post("/users/", response_model=schema.User)
 def create_user(user: schema.User, db: Session = Depends(get_db)):
-    print("\ncomeçou a inserir\n")
-    db_user = crud.get_user_by_nick(db, nick=user.nickname)
+    db_user = crud.get_user_by_nick(db, nick = user.nickname)
     if db_user:
         raise HTTPException(status_code=400, detail="Nick already registered")
-    return crud.create_user(db=db, user=user)
+    return crud.create_user(db=db, user=schema.User(nickname = user.nickname, password = user.password))
 
 
 @app.get("/users/", response_model=List[schema.User])
@@ -95,23 +60,18 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 
 @app.get("/users/{user_id}", response_model=schema.User)
 def read_user(user_id: int, db: Session = Depends(get_db)):
-    db_user = crud.get_user(db, user_id=user_id)
+    db_user = crud.get_user(db, user_id = user_id)
     if db_user is None:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code = 404, detail = "User not found")
     return db_user
 
 
-@app.post("/users/{user_id}/messages/", response_model=schema.Message)
-def create_message_for_user(
-    user_id: int, message: schema.Message, db: Session = Depends(get_db)
-):
-    return crud.create_user_message(db=db, message=message, user_id=user_id)
+@app.post("/messages/users", response_model = schema.Message)
+def create_message_for_user(message: schema.Message, db: Session = Depends(get_db)):
+    return crud.create_user_message(message = message, db = db)
 
 
 @app.get("/messages/", response_model=List[schema.Message])
 def read_messages(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    messages = crud.get_messages(db, skip=skip, limit=limit)
+    messages = crud.get_messages(db, skip = skip, limit = limit)
     return messages
-"""
-db = SessionLocal()
-crud.create_user(db= db, user= schema.User(password= "senha", nickname= "fake"))
