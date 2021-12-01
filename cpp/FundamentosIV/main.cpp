@@ -59,8 +59,9 @@ int main(){
 
     cout << "erro: " << erro << "\n";
 
-    if(erro >= 0.0001){
-        cout << "tentando melhorar a solucao";
+    int cont(0);
+    while(erro >= 0.0001 and cont < 100){
+        cout << "tentando melhorar a solucao\n";
         refinementSolution(v, l, c, r);
 
         std::tie(m, ti) = revertIncreasedMatrix(v, l, c, m, ti);
@@ -69,6 +70,23 @@ int main(){
         printMatrix(m, l, c-1, true);
         cout << "Termos independentes\n";
         printArray(ti, l);
+
+        r = retroativa(m, ti, l);
+        cout << "\nVetor solucao\n";
+        printArray(r, l);
+
+        cout << "\nVetor de residuos\n";
+        r = applySolution(v, r, l);
+        printArray(r, l);
+
+        erro = abs(r[0]);
+        for(i = 1; i < l; i++){
+            if(abs(r[i]) > erro){
+                erro = abs(r[i]);
+            }
+        }
+
+        cout << "erro: " << erro << "\n";
     }
     
     return 0;  
