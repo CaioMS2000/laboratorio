@@ -58,6 +58,18 @@ int main(){
     }
 
     cout << "erro: " << erro << "\n";
+
+    if(erro >= 0.0001){
+        cout << "tentando melhorar a solucao";
+        refinementSolution(v, l, c, r);
+
+        std::tie(m, ti) = revertIncreasedMatrix(v, l, c, m, ti);
+
+        cout << "Matriz dos coeficientes\n";
+        printMatrix(m, l, c-1, true);
+        cout << "Termos independentes\n";
+        printArray(ti, l);
+    }
     
     return 0;  
 }

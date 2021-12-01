@@ -37,18 +37,18 @@ const Chat = ({dispatch}) => {
 
     
     useEffect(() => {
-        const scrollToBottom = () => {
-            // messageScreen.current.scrollIntoView({ behavior: "smooth" });
-            messageScreen.current.scrollBy(0,15);
-            setTimeout(scrollToBottom,1);
-        }
-        // console.log(messages)
         if(messages.length > 0){
             setMessages(renderMessages(messages));
         }
+    }, [messages]);
 
-        scrollToBottom()
-    }, [messages])
+    useEffect(() => {
+        const scrollToBottom = () => {
+            messageScreen.current.scrollTop = messageScreen.current.scrollHeight;
+        }
+
+        scrollToBottom();
+    }, [loadedMessages]);
 
     return (
         <S.Container className = "Chat-Container">

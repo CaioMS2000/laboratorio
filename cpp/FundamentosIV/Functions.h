@@ -200,3 +200,15 @@ float* applySolution(float* m, float* v, int l){
 
     return res;
 }
+
+void refinementSolution (float* m, int l, int c, float* v){
+    int i, j;
+
+    for(i = 0; i < l; i++){
+        for(j = 0; j < c-1; j++){
+            m[pos(i, j, c)] *= v[j];
+        }
+    }
+
+    pivoting(m, l, c);
+}

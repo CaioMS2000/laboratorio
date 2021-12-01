@@ -39,10 +39,10 @@ export const Input = styled.input`
     };
     background-color: rgba(30, 30, 30, 1);
     width: 90%;
-    height: 50%;
+    height: 25%;
     font-size: 50pt;
     text-align: center;
-    margin: 8vh 0 1vh 0;
+    margin: 2vh 0 1vh 0;
     border-radius: 51px;  
     border: 5px solid rgba(0, 0, 0, 0);
     font-family: 'Oswald', sans-serif;

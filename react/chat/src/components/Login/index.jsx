@@ -5,21 +5,22 @@ import {BsArrowRightSquareFill} from 'react-icons/bs';
 
 import * as S from './styles'
 
-function sendNick(nick){
+function login(nick, pswd){
     return{
-        type: 'SEND_NICK',
-        nick: nick,
+        type: 'LOGIN',
+        nickname: nick,
+        password: pswd,
         logedIn: true
     }
 }
 
-function login(nick){
-
-    return sendNick(nick);
+function loginn(nick, pswd){
+    return login(nick, pswd);
 }
 
 const Login = ({dispatch}) => {
-    const input = useRef();
+    const nickInput = useRef();
+    const passwordInput = useRef();
     const button = useRef();
 
     useEffect(() => {
@@ -33,14 +34,20 @@ const Login = ({dispatch}) => {
                 <p style = {{lineHeight:"25vh"}}>LOGIN</p>
             </S.Title>
             <S.Body>
-                <S.Input type="text" ref = {input}
+                <S.Input type="text" ref = {nickInput}
+                onKeyPress = { e => {
+                    if(e.key === "Enter"){
+                        passwordInput.current.focus();
+                    }
+                }}/>
+                <S.Input type="text" ref = {passwordInput}
                 onKeyPress = { e => {
                     if(e.key === "Enter"){
                         button.current.click();
                     }
                 }}/>
                 <IconContext.Provider value={{ color: '#9c9c9c', size: '50px' }}>
-                    <S.Button onClick = { () => dispatch(login(input.current.value)) } ref = {button}>
+                    <S.Button onClick = { () => dispatch(loginn(nickInput.current.value, passwordInput.current.value)) } ref = {button}>
                         <BsArrowRightSquareFill style = {{width:"10vw", height: "10vh"}}/>
                     </S.Button>
                 </IconContext.Provider>

@@ -1,22 +1,25 @@
 const initialState = {
     logedIn: false,
-    nickname: ''
+    nickname: '',
+    password: ''
 }
 
 export default function logon(state = initialState, action){
 
-    if(action.type === "SEND_NICK"){
+    if(action.type === "LOGIN"){
         return{
             ...state,
             logedIn: action.logedIn,
-            nickname: action.nick
+            nickname: action.nickname,
+            password: action.password
         };
     }
     else if(action.type === "LOGOUT"){
         return{
             ...state,
             logedIn: false,
-            nickname: ''
+            nickname: '',
+            password: ''
         };
     }
 

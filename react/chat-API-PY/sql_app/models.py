@@ -11,8 +11,9 @@ class User(Base):
     password = Column(String(100), unique=True)
     nick_color = Column(String(7), default = "#000000")
     reg_date = Column(DateTime, default = datetime.now())
-    messages = relationship("Message", backref = "user")
     num_msg = Column(Integer, default = 0)
+    # messages = relationship("Message", backref = "user")
+    messages = relationship("Message", back_populates = "owner")
 
 
 class Message(Base):
@@ -23,5 +24,6 @@ class Message(Base):
     sent_date = Column(DateTime, default = datetime.now())
     deleted = Column(Boolean, default = False)
     owner_id = Column(Integer, ForeignKey('user.id'))
-    owner = relationship("User")
-    __mapper_args__ = {'inherit_condition': (owner_id == User.id)}
+    # owner = relationship("User")
+    owner = relationship("User", back_populates = "messages")
+    # __mapper_args__ = {'inherit_condition': (owner_id == User.id)}

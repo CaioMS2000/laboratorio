@@ -29,7 +29,7 @@ export const Messages = styled.div`
 
     ::-webkit-scrollbar-thumb{
         border-radius: 5px;
-        background-color: rgb(27, 27, 27);
+        background-color: rgb(66, 66, 66);
     }
 `;
 
