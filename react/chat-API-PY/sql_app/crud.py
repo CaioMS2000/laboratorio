@@ -31,6 +31,7 @@ def create_user(db: Session, user: schemas.User):
 def create_user_message(message: schemas.Message, db: Session):
     db_message = models.Message(**message.dict())
     db.add(db_message)
-    db.commit()
+    # db.commit()
+    db.flush()
     db.refresh(db_message)
     return db_message
