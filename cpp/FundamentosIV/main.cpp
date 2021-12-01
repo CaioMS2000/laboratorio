@@ -57,11 +57,11 @@ int main(){
         }
     }
 
-    cout << "erro: " << erro << "\n";
+    cout << "\nerro: " << erro << "\n";
 
     int cont(0);
     while(erro >= 0.0001 and cont < 100){
-        cout << "tentando melhorar a solucao\n";
+        cout << "\ntentando melhorar a solucao\n";
         refinementSolution(v, l, c, r);
 
         std::tie(m, ti) = revertIncreasedMatrix(v, l, c, m, ti);
