@@ -1,118 +1,15 @@
 const initialState = {
-    messages: [
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-        {
-            nickname: 'John',
-            message: 'slhfgowief'
-        },
-        {
-            nickname: 'Chris',
-            message: 'efpoejf0wj0ef'
-        },
-        {
-            nickname: 'Lis',
-            message: '4g6r5g56rg'
-        },
-        {
-            nickname: 'Maria',
-            message: '4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg 4g6r5g56rg4 efpoejf0wj0efg6r 5g56rg '
-        },
-    ]
+    // messages: [
+    //     {
+    //         id: 0,
+    //         sent_date: "2021-12-02T13:35:53.871611",
+    //         num_char: 0,
+    //         deleted: false,
+    //         content: "string",
+    //         owner_id: 0
+    //       }
+    // ]
+    messages: []
 }
 
 export default function send(state = initialState, action){
@@ -124,6 +21,15 @@ export default function send(state = initialState, action){
                 nickname: action.nickname,
                 message: action.message
             }))
+        };
+    }
+    
+    else if(action.type === "STORED_MESSAGES"){
+        console.log("dentro da action", action.payload);
+        console.log("concatenado", state.messages.concat(action.payload))
+        return{
+            ...state,
+            messages: (state.messages.concat(action.payload))
         };
     }
 

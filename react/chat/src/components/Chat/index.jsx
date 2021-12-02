@@ -14,9 +14,10 @@ function sendMessage(msg, nickname){
 }
 
 function renderMessages(array){
-    
+    // console.log("renderizando")
     const res = array.map((e, i) => {
-        return <S.Message className = "message" key = {i}><p><span className="nick">{e.nickname}</span>:<span>&nbsp;&nbsp;</span>{e.message}</p></S.Message>
+        // console.log(e)
+        return <S.Message className = "message" key = {e.id}><p><span className="nick">{e.id}</span>:<span>&nbsp;&nbsp;</span>{e.content}</p></S.Message>
     })
 
     return res;

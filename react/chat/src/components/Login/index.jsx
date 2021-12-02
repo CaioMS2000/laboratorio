@@ -24,7 +24,7 @@ const Login = ({dispatch}) => {
     const button = useRef();
 
     useEffect(() => {
-        console.log("login montado");
+        // console.log("login montado");
     }, [])
 
     return (

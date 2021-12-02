@@ -48,6 +48,7 @@ def get_db():
 def create_user(user: schema.User, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_nick(db, nick = user.nickname)
     if db_user:
+        print("\nNick already registered\n")
         raise HTTPException(status_code=400, detail="Nick already registered")
     return crud.create_user(db=db, user=schema.User(nickname = user.nickname, password = user.password))
 

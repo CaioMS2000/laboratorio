@@ -8,7 +8,8 @@ class User(Base):
     __tablename__ = "user"
     id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
     nickname = Column(String(100), unique=True)
-    password = Column(String(100), unique=True)
+    # password = Column(String(100), unique=True)
+    password = Column(String(100))
     nick_color = Column(String(7), default = "#000000")
     reg_date = Column(DateTime, default = datetime.now())
     num_msg = Column(Integer, default = 0)

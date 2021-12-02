@@ -6,11 +6,19 @@ import * as S from './styles';
 import Login from '../Login';
 import Chat from '../Chat';
 import {MessageProvider} from '../Chat/context/Message';
-import { getAPI } from '../../services';
+import { get_messages } from '../../services';
 
 function logout(){
   return{
     type:"LOGOUT"
+  }
+}
+
+function loadMessages(objarr){
+  console.log("load messages", objarr);
+  return{
+      type: 'STORED_MESSAGES',
+      payload: objarr
   }
 }
 
@@ -20,9 +28,18 @@ function App({dispatch}) {
   const nickname = useSelector(state => state.logon.nickname)
   
   useEffect(() => {
-    console.log("app montado");
-    getAPI();
-  }, [])
+    // console.log("app montado");
+    get_messages().then((resp) => resp.json()).then(data => {
+      // console.log("m", data)
+      dispatch(loadMessages(data));
+    })
+
+  }, [dispatch])
+  
+  useEffect(() => {
+    console.log("esta logado");
+
+  }, [logedIn])
 
   return (
     <>
