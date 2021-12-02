@@ -115,7 +115,7 @@ void switchLines(float*& v, int n, int m = 0, int zero = 0){
     }
 }
 
-void pivoting(float* v, int n, int m = 0){
+void pivoting(float*& v, int n, int m = 0){
     m = (m == 0)? n:m;
     float mult, pivo;
     int check, k, i, j;
@@ -125,33 +125,34 @@ void pivoting(float* v, int n, int m = 0){
 
         if(check > -1){
             switchLines(v, n, m, check);
-            std::cout << "trocou as linhas:\n";
-            printMatrix(v, n, m);
+            //std::cout << "trocou as linhas:\n";
+            //printMatrix(v, n, m);
         }
 
         pivo = v[pos(k, k, m)];
-        std::cout << "pivo da etapa " << k << ": " << pivo << "\n";
+        //std::cout << "pivo da etapa " << k << ": " << pivo << "\n";
         for(i = k+1; i < n; i++){
             mult = v[pos(i, k, m)] / pivo;
             mult *= -1;
 
-            std::cout << "multiplicador da linha " << i << ": " << mult << "\n";
+            //std::cout << "multiplicador da linha " << i << ": " << mult << "\n";
 
             for(j = 0; j < m && mult != 0; j++){
                 if(j == 0){
-                    printf("soma entre as linhas %d e %d\n", i, k);
+                    //printf("soma entre as linhas %d e %d\n", i, k);
                 }
 
-                printf("somando %.2f com (%.2f * %.2f)\n", v[pos(i, j, m)], v[pos(k, j, m)], mult);
+                //printf("somando %.2f com (%.2f * %.2f)\n", v[pos(i, j, m)], v[pos(k, j, m)], mult);
                 v[pos(i, j, m)] += v[pos(k, j, m)] * mult;
             }
-            std::cout << "\n";
-            printMatrix(v, n, m);
+            //std::cout << "\n";
+            //printMatrix(v, n, m);
         }
     }
 }
 
-std::pair<float*, float*> revertIncreasedMatrix(float* a, int l, int c, float* m, float* i){
+std::pair<float*, float*> revertIncreasedMatrix(float*& a, int l, int c, float*& m, float* i){
+    
     for(int k(0); k < l; k++){
         for(int j(0); j < c; j++){
             if(j == c-1){
@@ -166,7 +167,7 @@ std::pair<float*, float*> revertIncreasedMatrix(float* a, int l, int c, float* m
     return *(new std::pair<float*, float*>(m, i));
 }
 
-float* increaseMatrix(float* a, int l, int c, float* b, int n){
+float* increaseMatrix(float*& a, int l, int c, float*& b, int n){
     if (n != l){
         // return nullptr;
         throw std::invalid_argument("o numero de elementos do vetor precisa ser igual ao numero de linhas da matriz");
@@ -185,7 +186,7 @@ float* increaseMatrix(float* a, int l, int c, float* b, int n){
     return res;
 }
 
-float* applySolution(float* m, float* v, int l){
+float* applySolution(float*& m, float*& v, int l){
     float ac = 0;
     float* res = new float[l];
     int i, j;
@@ -201,7 +202,7 @@ float* applySolution(float* m, float* v, int l){
     return res;
 }
 
-void refinementSolution (float* m, int l, int c, float* v){
+void refinementSolution (float*& m, int l, int c, float*& v){
     int i, j;
 
     for(i = 0; i < l; i++){
