@@ -181,36 +181,31 @@ std::pair<float*, float*> revertIncreasedMatrix(float*& a, int l, int c){
     return *(new std::pair<float*, float*>(m, i));
 }
 
-float* increaseMatrix(float*& a, int l, int c, float*& b, int n){
-    if (n != l){
-        // return nullptr;
-        throw std::invalid_argument("o numero de elementos do vetor precisa ser igual ao numero de linhas da matriz");
+float* increaseMatrix(float*& a, int l, int c, float*& b, int n = -1){
+    if (n == -1){
+        n = l;
     }
 
-    float* res = new float[l*(c+1)];
+    float* res = new float[l*c];
     int i, j;
 
     for(i = 0; i < l; i++){
-        for(j = 0; j < c; j++){
-            res[pos(i, j, c+1)] = a[pos(i, j, c)];
+        for(j = 0; j < c-1; j++){
+            res[pos(i, j, c)] = a[pos(i, j, c-1)];
         }
-        res[pos(i, j, c+1)] = b[i];
+        res[pos(i, j, c)] = b[i];
     }
 
     return res;
 }
 
-float* applySolution(float*& m, float*& v, int l){
+float* residue(float*& a, float*& b, int l){
     float ac = 0;
     float* res = new float[l];
     int i, j;
 
     for(i = 0; i < l; i++){
-        ac = 0;
-        for(j = 0; j < l; j++){
-            ac += m[pos(i, j, l+1)] * v[j];
-        }
-        res[i] = ac - m[pos(i, j, l+1)];
+        res[i] = a[i] - b[i];
     }
 
     return res;
@@ -224,4 +219,13 @@ void applyPortions(float*& m, int l, int c, float*& v){
             m[pos(i, j, c)] *= v[j];
         }
     }
+}
+
+float* copyArray(float*& v, int n){
+    float* res = new float[n];
+
+    for(int i(0); i < n; i++)
+        res[i] = v[i];
+    
+    return res;
 }
