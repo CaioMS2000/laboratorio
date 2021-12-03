@@ -63,6 +63,9 @@ float* retroativa(float *&a, float *&b, int n){
             ac += a[pos(i, j, n)] * res[j];
         }
         res[i] = b[i] - ac;
+        // std::cout << "divisor: " << a[pos(i, i, n)] << "\n";
+        // a[pos(i, i, n)] = (a[pos(i, i, n)] == 0 || a[pos(i, i, n)] == -0)? 0.0001:a[pos(i, i, n)];
+        // std::cout << "divisor2: " << a[pos(i, i, n)] << "\n";
         res[i] /= a[pos(i, i, n)];
     }
 
@@ -85,7 +88,7 @@ float* progressiva(float *&a, float *&b, int n){
     return res;
 }
 
-int zeroOnMainDiagonal(float*& v, int n, int m = 0){
+int zeroOnMainDiagonal(float* v, int n, int m = 0){
     int i, j;
 
     for(i = 0; i < n; i++){
@@ -96,7 +99,7 @@ int zeroOnMainDiagonal(float*& v, int n, int m = 0){
     return -1;
 }
 
-void switchLines(float*& v, int n, int m = 0, int zero = 0){
+void switchLines(float* v, int n, int m = 0, int zero = 0){
     int i, target = zero;
     float value = 0;
 
@@ -115,24 +118,30 @@ void switchLines(float*& v, int n, int m = 0, int zero = 0){
     }
 }
 
-void pivoting(float*& v, int n, int m = 0){
-    m = (m == 0)? n:m;
+float* pivoting(float*& v, int n, int m){
     float mult, pivo;
     int check, k, i, j;
 
+    float* res = new float[n*m];
+
+    for(i = 0; i < n; i++)
+        for(j = 0; j < m; j++)
+            res[pos(i, j, m)] = v[pos(i, j, m)];
+
     for(k = 0; k < n-1; k++){
-        check = zeroOnMainDiagonal(v, n, m);
+        check = zeroOnMainDiagonal(res, n, m);
 
         if(check > -1){
-            switchLines(v, n, m, check);
+            switchLines(res, n, m, check);
             //std::cout << "trocou as linhas:\n";
             //printMatrix(v, n, m);
         }
 
-        pivo = v[pos(k, k, m)];
-        //std::cout << "pivo da etapa " << k << ": " << pivo << "\n";
+        pivo = res[pos(k, k, m)];
+        // pivo = (pivo == 0)? 0.00001:pivo;
+        // std::cout << "pivo da etapa " << k << ": " << pivo << "\n";
         for(i = k+1; i < n; i++){
-            mult = v[pos(i, k, m)] / pivo;
+            mult = res[pos(i, k, m)] / pivo;
             mult *= -1;
 
             //std::cout << "multiplicador da linha " << i << ": " << mult << "\n";
@@ -143,15 +152,20 @@ void pivoting(float*& v, int n, int m = 0){
                 }
 
                 //printf("somando %.2f com (%.2f * %.2f)\n", v[pos(i, j, m)], v[pos(k, j, m)], mult);
-                v[pos(i, j, m)] += v[pos(k, j, m)] * mult;
+                //v[pos(i, j, m)] += v[pos(k, j, m)] * mult;
+                res[pos(i, j, m)] = res[pos(i, j, m)] + (res[pos(k, j, m)] * mult);
             }
             //std::cout << "\n";
             //printMatrix(v, n, m);
         }
     }
+
+    return res;
 }
 
-std::pair<float*, float*> revertIncreasedMatrix(float*& a, int l, int c, float*& m, float* i){
+std::pair<float*, float*> revertIncreasedMatrix(float*& a, int l, int c){
+    float* m = new float[l*l];
+    float* i = new float[l];
     
     for(int k(0); k < l; k++){
         for(int j(0); j < c; j++){
@@ -196,13 +210,13 @@ float* applySolution(float*& m, float*& v, int l){
         for(j = 0; j < l; j++){
             ac += m[pos(i, j, l+1)] * v[j];
         }
-        res[i] = m[pos(i, j, l+1)] - ac;
+        res[i] = ac - m[pos(i, j, l+1)];
     }
 
     return res;
 }
 
-void refinementSolution (float*& m, int l, int c, float*& v){
+void applyPortions(float*& m, int l, int c, float*& v){
     int i, j;
 
     for(i = 0; i < l; i++){
@@ -210,6 +224,4 @@ void refinementSolution (float*& m, int l, int c, float*& v){
             m[pos(i, j, c)] *= v[j];
         }
     }
-
-    pivoting(m, l, c);
 }

@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    int l, c, i, j;
+    int l, c, i, j, cont;
     freopen("txt.txt", "r", stdin);
 
     cout << "Digite a quantidade de coeficientes e em seguida a matriz aumentada\n";
@@ -13,80 +13,82 @@ int main(){
     c = l + 1;
 
     float* v = new float[l*c];
-    // float* arr = new float[l];
 
     for(i = 0; i < l; i++){
         for(j = 0; j < c; j++){
             cin >> v[pos(i, j, c)];
         }
     }
+    printMatrix(v, l, c);
+    cout << "\n\n";
 
-    // for(i = 0; i < l; i++){
-    //     cin >> arr[i];
-    // }
-
-    // float* r = IncreaseMatrix(v, l, --c, arr, l);
-    // printMatrix(r, l, ++c);
-
-    pivoting(v, l, c);
+    float* r = pivoting(v, l, c);
     cout << "\n\nMatriz escalonada\n";
-    printMatrix(v, l, c, true);
+    printMatrix(r, l, c, true);
 
-    float* m = new float[l*l];
-    float* ti = new float[l];
+    // float* m = new float[l*l];
+    // float* ti = new float[l];
+    float* m = nullptr;
+    float* ti = nullptr;
 
-    std::tie(m, ti) = revertIncreasedMatrix(v, l, c, m, ti);
+    std::tie(m, ti) = revertIncreasedMatrix(r, l, c);
 
     cout << "Matriz dos coeficientes\n";
     printMatrix(m, l, c-1, true);
     cout << "Termos independentes\n";
     printArray(ti, l);
 
-    float* r = retroativa(m, ti, l);
+    float* ret = retroativa(m, ti, l);
     cout << "\nVetor solucao\n";
-    printArray(r, l);
+    printArray(ret, l);
+    cout << "\n";
 
-    cout << "\nVetor de residuos\n";
-    r = applySolution(v, r, l);
-    printArray(r, l);
+    float* resq = applySolution(v, ret, l);
+    cout << "\nResquicios\n";
+    printArray(resq, l);
 
-    float erro = abs(r[0]);
-    for(i = 1; i < l; i++){
-        if(abs(r[i]) > erro){
-            erro = abs(r[i]);
-        }
-    }
+    float erro(0);
+    erro = abs(resq[0]);
+    for(i = 1; i < l; i++)
+        if(abs(resq[i]) > erro)
+            erro = abs(resq[i]);
+    cout << "erro: " << erro << "\n";
+    
+    cont = 0;
+    while(erro > 0.0001 and cont < 3){
+        cout << "\nwhile -> " << cont << "\n";
+        
+        applyPortions(v, l, c, resq);
+        // cout << "\n\n";
+        // printMatrix(v, l, c, true);
 
-    cout << "\nerro: " << erro << "\n";
+        r = pivoting(v, l, c);
+        cout << "\n\nMatriz escalonada\n";
+        printMatrix(r, l, c, true);
 
-    int cont(0);
-    while(erro >= 0.0001 and cont < 100){
-        cout << "\ntentando melhorar a solucao\n";
-        refinementSolution(v, l, c, r);
-
-        std::tie(m, ti) = revertIncreasedMatrix(v, l, c, m, ti);
+        std::tie(m, ti) = revertIncreasedMatrix(r, l, c);
 
         cout << "Matriz dos coeficientes\n";
         printMatrix(m, l, c-1, true);
         cout << "Termos independentes\n";
         printArray(ti, l);
 
-        r = retroativa(m, ti, l);
+        ret = retroativa(m, ti, l);
         cout << "\nVetor solucao\n";
-        printArray(r, l);
+        printArray(ret, l);
+        cout << "\n";
 
-        cout << "\nVetor de residuos\n";
-        r = applySolution(v, r, l);
-        printArray(r, l);
+        resq = applySolution(v, ret, l);
+        cout << "\nResquicios\n";
+        printArray(resq, l);
 
-        erro = abs(r[0]);
-        for(i = 1; i < l; i++){
-            if(abs(r[i]) > erro){
-                erro = abs(r[i]);
-            }
-        }
-
+        erro = abs(resq[0]);
+        for(i = 1; i < l; i++)
+            if(abs(resq[i]) > erro)
+                erro = abs(resq[i]);
         cout << "erro: " << erro << "\n";
+        
+        cont++;
     }
     
     return 0;  
