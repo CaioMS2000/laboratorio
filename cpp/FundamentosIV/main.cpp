@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    int l, c, i, j, cont(0), limit(5);
+    int l, c, i, j, cont(0), limit(50);
     freopen("txt.txt", "r", stdin);
 
     cout << "Digite a quantidade de coeficientes e em seguida a matriz aumentada\n";
