@@ -5,10 +5,10 @@
 using namespace std;
 
 int main(){
-    int l, c, i, j, cont(0), limit(50);
+    int l, c, i, j, cont(0), limit(10);
     freopen("txt.txt", "r", stdin);
 
-    cout << "Digite a quantidade de coeficientes e em seguida a matriz aumentada\n";
+    // cout << "Digite a quantidade de coeficientes e em seguida a matriz aumentada\n";
     cin >> l;
     c = l + 1;
 
@@ -24,7 +24,8 @@ int main(){
     while(erro >= precision and cont < limit){
         cont++;
 
-        cout << "\n\nWhile -> " << cont << "\n";
+        cout << fixed;
+        cout << "\n\n===== While #" << cont << " =====\n";
         cout << "Matriz aumentada\n";
         printMatrix(v, l, c);
         cout << "\n";
@@ -33,8 +34,7 @@ int main(){
         cout << "\nMatriz escalonada\n";
         printMatrix(r, l, c, true);
 
-        // float* m = new float[l*l];
-        // float* ti = new float[l];
+
         float* m(nullptr);
         float* ti(nullptr);
 
@@ -50,7 +50,12 @@ int main(){
         printArray(ret, l);
         cout << "\n";
 
-        float* residuo = residue(ret, ti, l);
+        float* b(nullptr);
+        float* a(nullptr);
+
+        std::tie(a, b) = revertIncreasedMatrix(v, l, c);
+
+        float* residuo = residue(a, l, ret, b);
         cout << "\nResiduos\n";
         printArray(residuo, l);
 

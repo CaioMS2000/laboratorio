@@ -26,7 +26,6 @@ void printMatrix(float* v, int n, int m = 0, bool doubleDecimal = false){
 
     for(int i(0); i < n; i++){
         for(int j(0); j < m; j++){
-            // std::cout << v[pos(i, j, m)] << " ";
             bool added(false);
 
             std::ostringstream ss;
@@ -63,9 +62,6 @@ float* retroativa(float *&a, float *&b, int n){
             ac += a[pos(i, j, n)] * res[j];
         }
         res[i] = b[i] - ac;
-        // std::cout << "divisor: " << a[pos(i, i, n)] << "\n";
-        // a[pos(i, i, n)] = (a[pos(i, i, n)] == 0 || a[pos(i, i, n)] == -0)? 0.0001:a[pos(i, i, n)];
-        // std::cout << "divisor2: " << a[pos(i, i, n)] << "\n";
         res[i] /= a[pos(i, i, n)];
     }
 
@@ -133,30 +129,16 @@ float* pivoting(float*& v, int n, int m){
 
         if(check > -1){
             switchLines(res, n, m, check);
-            //std::cout << "trocou as linhas:\n";
-            //printMatrix(v, n, m);
         }
 
         pivo = res[pos(k, k, m)];
-        // pivo = (pivo == 0)? 0.00001:pivo;
-        // std::cout << "pivo da etapa " << k << ": " << pivo << "\n";
         for(i = k+1; i < n; i++){
             mult = res[pos(i, k, m)] / pivo;
             mult *= -1;
 
-            //std::cout << "multiplicador da linha " << i << ": " << mult << "\n";
-
             for(j = 0; j < m && mult != 0; j++){
-                if(j == 0){
-                    //printf("soma entre as linhas %d e %d\n", i, k);
-                }
-
-                //printf("somando %.2f com (%.2f * %.2f)\n", v[pos(i, j, m)], v[pos(k, j, m)], mult);
-                //v[pos(i, j, m)] += v[pos(k, j, m)] * mult;
                 res[pos(i, j, m)] = res[pos(i, j, m)] + (res[pos(k, j, m)] * mult);
             }
-            //std::cout << "\n";
-            //printMatrix(v, n, m);
         }
     }
 
@@ -199,13 +181,18 @@ float* increaseMatrix(float*& a, int l, int c, float*& b, int n = -1){
     return res;
 }
 
-float* residue(float*& a, float*& b, int l){
+float* residue(float*& a, int l, float*& v, float*& b){
     float ac = 0;
     float* res = new float[l];
     int i, j;
 
+
     for(i = 0; i < l; i++){
-        res[i] = a[i] - b[i];
+        ac = 0;
+        for(j = 0; j < l; j++){
+            ac += a[pos(i, j, l)] * v[j];
+        }
+        res[i] = b[i] - ac;
     }
 
     return res;
