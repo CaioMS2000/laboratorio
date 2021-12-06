@@ -5,33 +5,24 @@ import {GlobalStyles} from '../styles/Global';
 import * as S from './styles';
 import Login from '../Login';
 import Chat from '../Chat';
+import Home from '../Home';
+import SignUp from '../SignUp';
 import {MessageProvider} from '../Chat/context/Message';
 import { get_messages } from '../../services';
-
-function logout(){
-  return{
-    type:"LOGOUT"
-  }
-}
-
-function loadMessages(objarr){
-  console.log("load messages", objarr);
-  return{
-      type: 'STORED_MESSAGES',
-      payload: objarr
-  }
-}
-
+import * as ChatActions from '../store/actions/chat';
+import * as LoginActions from '../store/actions/login';
 
 function App({dispatch}) {
   const logedIn = useSelector(state => state.logon.logedIn)
   const nickname = useSelector(state => state.logon.nickname)
+  const signedUp = useSelector(state => state.signup.signedUp)
+  const signingUp = useSelector(state => state.register.signingUp)
   
   useEffect(() => {
     // console.log("app montado");
     get_messages().then((resp) => resp.json()).then(data => {
       // console.log("m", data)
-      dispatch(loadMessages(data));
+      dispatch(ChatActions.loadMessages(data));
     })
 
   }, [dispatch])
@@ -45,7 +36,7 @@ function App({dispatch}) {
     <>
     <S.UserName className = "UserName">
       <span
-      onClick = { () => dispatch(logout()) }
+        onClick = { () => dispatch(LoginActions.logout()) }
       className="global-nick"
       style = {{cursor: 'pointer'}}
       >
@@ -54,7 +45,10 @@ function App({dispatch}) {
       <S.AppWrapper className = "AppWrapper">
         <GlobalStyles className = "GlobalStyles"/>
         <MessageProvider className = "MessageProvider">
-          {logedIn?<Chat className = "Chat"></Chat>:<Login className = "Login"></Login>}
+          {
+            (signedUp)?((logedIn)? <Chat/>:<Login/>):((signingUp)?<SignUp/>:<Home/>)
+            // <SignUp/>
+          }
         </MessageProvider>
       </S.AppWrapper>
     </>

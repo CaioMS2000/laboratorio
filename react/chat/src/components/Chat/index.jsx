@@ -4,14 +4,7 @@ import { IconContext } from "react-icons";
 
 import * as S from './styles';
 import {useMessage} from './context/Message';
-
-function sendMessage(msg, nickname){
-    return{
-        type: 'SEND_MESSAGE',
-        message: msg,
-        nickname: nickname,
-    }
-}
+import * as ChatActions from "../store/actions/chat";
 
 function renderMessages(array){
     // console.log("renderizando")
@@ -67,7 +60,7 @@ const Chat = ({dispatch}) => {
                     <S.Button
                     ref = {button}
                         onClick = {() => {
-                            dispatch(sendMessage(message, nickname));
+                            dispatch(ChatActions.sendMessage(message, nickname));
                             input.current.value = ''
                         }}
                     >Send</S.Button>

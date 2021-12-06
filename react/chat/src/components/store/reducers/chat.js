@@ -33,5 +33,5 @@ export default function send(state = initialState, action){
         };
     }
 
-    return state;
+    return {...state};
 }
