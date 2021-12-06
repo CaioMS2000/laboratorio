@@ -8,7 +8,7 @@ import Chat from '../Chat';
 import Home from '../Home';
 import SignUp from '../SignUp';
 import {MessageProvider} from '../Chat/context/Message';
-import { get_messages } from '../../services';
+import * as API from '../../services';
 import * as ChatActions from '../store/actions/chat';
 import * as LoginActions from '../store/actions/login';
 
@@ -19,12 +19,18 @@ function App({dispatch}) {
   const signingUp = useSelector(state => state.register.signingUp)
   
   useEffect(() => {
-    // console.log("app montado");
-    get_messages().then((resp) => resp.json()).then(data => {
-      // console.log("m", data)
+    API.getMessages().then((resp) => resp.json()).then(data => {
       dispatch(ChatActions.loadMessages(data));
     })
-
+    
+    API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
+      console.log("user", data)
+    })
+    
+    API.getUserById(5).then((resp) => resp.json()).then(data => {
+      console.log("user", data)
+    })
+    
   }, [dispatch])
   
   useEffect(() => {
