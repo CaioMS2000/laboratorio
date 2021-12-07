@@ -1,13 +1,16 @@
 from sqlalchemy.orm import Session
 from . import models, schemas
 
+# print('', flush = True)
 #getters
 def get_user(db: Session, user_id: int):
     return db.query(models.User).filter(models.User.id == user_id).first()
 
 
 def get_user_by_nick(db: Session, nick: str):
-    return db.query(models.User).filter(models.User.nickname == nick).first()
+    var = db.query(models.User).filter(models.User.nickname == nick).first()
+    print(var, flush = True)
+    return var
 
 
 def get_users(db: Session, skip: int = 0, limit: int = 100):

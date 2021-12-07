@@ -10,7 +10,6 @@ import sql_app.schemas as schema
 import sql_app.models as model
 from sql_app.database import SessionLocal, engine
 
-# from sql_app.models import Base
 
 #source ./venv/bin/activate && uvicorn main:app --reload
 #Response Model
@@ -42,6 +41,25 @@ def get_db():
         db.close()
 
 
+# from sql_app.models import Base
+
+def read_user_by_nick(user_nick: str, db: Session = Depends(get_db)):
+    db_user = crud.get_user_by_nick(db, nick = user_nick)
+    if db_user is None:
+        raise HTTPException(status_code = 404, detail = "User not found")
+    return db_user
+
+
+def read_user_by_id(user_id: int, db: Session = Depends(get_db)):
+    db_user = crud.get_user(db, user_id = user_id)
+    if db_user is None:
+        raise HTTPException(status_code = 404, detail = "User not found2")
+    return db_user
+
+
+def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    users = crud.get_users(db, skip=skip, limit=limit)
+    return users
 
 
 @app.post("/users/", response_model=schema.User)
@@ -53,26 +71,48 @@ def create_user(user: schema.User, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=schema.User(nickname = user.nickname, password = user.password))
 
 
+# @app.get("/users/", response_model=List[schema.User])
+# def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+#     users = crud.get_users(db, skip=skip, limit=limit)
+#     return users
+
+
+# @app.get("/users/{user_nick}", response_model=schema.User)
+# def read_user_by_nickk(user_nick: str, db: Session = Depends(get_db)):
+#     db_user = crud.get_user_by_nick(db, nick = user_nick)
+#     if db_user is None:
+#         raise HTTPException(status_code = 404, detail = "User not found")
+#     return db_user
+
+
+# @app.get("/users/{user_id}", response_model=schema.User)
+# def read_user_by_id(user_id: int, db: Session = Depends(get_db)):
+#     db_user = crud.get_user(db, user_id = user_id)
+#     if db_user is None:
+#         raise HTTPException(status_code = 404, detail = "User not found2")
+#     return db_user
 @app.get("/users/", response_model=List[schema.User])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    print('primeiro', flush = True)
     users = crud.get_users(db, skip=skip, limit=limit)
+    
     return users
 
 
-@app.get("/users/{user_nick}", response_model=schema.User)
-def read_user_by_nick(user_nick: str, db: Session = Depends(get_db)):
-    db_user = crud.get_user_by_nick(db, nick = user_nick)
-    if db_user is None:
-        raise HTTPException(status_code = 404, detail = "User not found")
-    return db_user
+@app.get("/users/", response_model=schema.User)
+def read_user(user_id: Optional[int] = None, user_nick: Optional[str] = None, db: Session = Depends(get_db)):
+    if (user_id is None) and (user_nick is not None):
+        print("pelo nick", flush = True)
+        return read_user_by_nick(user_nick = user_nick, db = db)
 
+    elif (user_nick is None) and (user_id is not None):
+        print("pelo id", flush = True)
+        return read_user_by_id(user_id= user_id, db = db)
 
-@app.get("/users/{user_id}", response_model=schema.User)
-def read_user(user_id: int, db: Session = Depends(get_db)):
-    db_user = crud.get_user(db, user_id = user_id)
-    if db_user is None:
-        raise HTTPException(status_code = 404, detail = "User not found2")
-    return db_user
+    else:
+        print('todos', flush = True)
+        return read_users(skip = 0, limit = 100, db = db)
+        # raise HTTPException(status_code = 500, detail = "Internal Server Error")
 
 
 @app.post("/messages/users", response_model = schema.Message)
