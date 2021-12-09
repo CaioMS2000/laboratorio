@@ -24,11 +24,11 @@ function App({dispatch}) {
     })
     
     API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
-      console.log("user", data)
+      console.log("user nick", data)
     })
     
-    API.getUserById(5).then((resp) => resp.json()).then(data => {
-      console.log("user", data)
+    API.getUserById(1).then((resp) => resp.json()).then(data => {
+      console.log("user id", data)
     })
     
   }, [dispatch])

@@ -20,9 +20,9 @@ const makePost = (nickname, password) => {
 }
 
 export const getUserByNick = (nick) => {
-    return fetch(url + "users/" + nick);
+    return fetch(url + "users/?user_nick=" + nick);
 }
 
 export const getUserById = (id) => {
-    return fetch(url + "users/" + id);
+    return fetch(url + "users/?user_id=" + id);
 }
