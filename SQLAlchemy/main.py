@@ -55,3 +55,4 @@ Base.metadata.create_all(engine)
 
 session.add_all(list1 + list2)
 session.commit()
+session.refresh()

@@ -18,25 +18,20 @@ function App({dispatch}) {
   const signedUp = useSelector(state => state.signup.signedUp)
   const signingUp = useSelector(state => state.register.signingUp)
   
-  useEffect(() => {
-    API.getMessages().then((resp) => resp.json()).then(data => {
-      dispatch(ChatActions.loadMessages(data));
-    })
+  // useEffect(() => {
+  //   API.getMessages().then((resp) => resp.json()).then(data => {
+  //     dispatch(ChatActions.loadMessages(data));
+  //   })
     
-    API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
-      console.log("user nick", data)
-    })
+  //   API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
+  //     console.log("user nick", data)
+  //   })
     
-    API.getUserById(1).then((resp) => resp.json()).then(data => {
-      console.log("user id", data)
-    })
+  //   API.getUserById(1).then((resp) => resp.json()).then(data => {
+  //     console.log("user id", data)
+  //   })
     
-  }, [dispatch])
-  
-  useEffect(() => {
-    console.log("esta logado");
-
-  }, [logedIn])
+  // }, [dispatch])
 
   return (
     <>

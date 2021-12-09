@@ -5,6 +5,7 @@ import { IconContext } from "react-icons";
 import * as S from './styles';
 import {useMessage} from './context/Message';
 import * as ChatActions from "../store/actions/chat";
+import * as API from '../../services';
 
 function renderMessages(array){
     // console.log("renderizando")
@@ -15,10 +16,6 @@ function renderMessages(array){
 
     return res;
 }
-
-// function scrollToBottom(){
-//     messageContainer.scrollIntoView({ behavior: "smooth" });
-// }
 
 const Chat = ({dispatch}) => {
     const { message, setMessage } = useMessage();
@@ -43,6 +40,21 @@ const Chat = ({dispatch}) => {
 
         scrollToBottom();
     }, [loadedMessages]);
+
+    useEffect(() => {
+        API.getMessages().then((resp) => resp.json()).then(data => {
+          dispatch(ChatActions.loadMessages(data));
+        })
+        
+        API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
+          console.log("user nick", data)
+        })
+        
+        API.getUserById(1).then((resp) => resp.json()).then(data => {
+          console.log("user id", data)
+        })
+        
+      }, [dispatch])
 
     return (
         <S.Container className = "Chat-Container">

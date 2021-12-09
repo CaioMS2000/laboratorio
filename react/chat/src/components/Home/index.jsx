@@ -14,7 +14,7 @@ const Home = ({dispatch}) => {
             LOGIN
             </S.Button>
             <S.Button 
-            onClick = {() => {dispatch(HomeActions.register());}}>
+            onClick = { () => dispatch(HomeActions.register()) }>
                 SIGN UP
             </S.Button>
         </S.Container>
