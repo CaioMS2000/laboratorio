@@ -19,7 +19,7 @@ const Login = ({dispatch}) => {
         <>
         <S.Container>
             <S.Title>
-                <p style = {{lineHeight:"25vh"}}>LOGIN</p>
+                <p style = {{lineHeight:"17vw"}}>LOGIN</p>
             </S.Title>
             <S.Body>
                 <S.Input type="text" ref = {nickInput}

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const WH = 60;
+const WH = 70;
 const mTop = (100 - WH) / 2;
 
 export const Container = styled.div`
     width: ${WH}vw;
-    height: ${WH}vh;
+    height: ${WH-25}vw;
     background-color: rgba(40, 40, 40, 1);
     margin: 0 auto;
     margin-top: ${mTop}vh;
@@ -16,7 +16,7 @@ export const Title = styled.div`
     background-color: rgba(250, 234, 127, 0);
     width: 100%;
     height: 30%;
-    font-size: 80pt;
+    font-size: 10vw;
     border-radius: 21px 21px 0 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -40,9 +40,10 @@ export const Input = styled.input`
     background-color: rgba(30, 30, 30, 1);
     width: 90%;
     height: 25%;
-    font-size: 50pt;
+    height: 8vw;
+    font-size: 5vw;
     text-align: center;
-    margin: 2vh 0 1vh 0;
+    margin: 3vh 0 1vh 0;
     border-radius: 51px;  
     border: 5px solid rgba(0, 0, 0, 0);
     font-family: 'Oswald', sans-serif;

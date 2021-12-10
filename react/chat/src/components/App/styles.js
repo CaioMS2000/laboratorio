@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AppWrapper = styled.div`
     text-align: center;
+    font-size: 20px;
 `;
 
 export const UserName = styled.div`
