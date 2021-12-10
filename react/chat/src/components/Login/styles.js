@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const WH = 70;
-const mTop = (100 - WH) / 2;
+const mTop = (70 - WH) / 2;
 
 export const Container = styled.div`
     width: ${WH}vw;

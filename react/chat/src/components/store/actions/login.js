@@ -1,36 +1,38 @@
 import * as API from '../../../services/'
 
 export function login(nick, pswd){
-    let res = {};
-
-    // (async() => {
-    //     const res = await API.getUserByNick(nick);
-    //     console.log(res);        
         
-    //     if(res.status === 200){
-    //         return{
-    //             type: 'LOGINN',
-    //             nickname: nick,
-    //             password: pswd,
-    //             logedIn: true
-    //         }
-    //     }
-    // })();
-            
-    API.getUserByNick(nick).then(r => r.json()).then(r => {
-        console.log(r)
-        if(!r.detail){
-            res["nickname"] = r.nickname,
-            res["password"] = r.password
+    // API.getUserByNick(nick).then(r => r.json()).then(r => {
+    //     console.log("sem await", r);
+    // });
+
+    const f = async () => {
+        try {
+            const response = await API.getUserByNick(nick);
+            const data = await response.json()
+            console.log(data)      
+        } catch (error) {
+            const {data, status} = error;
+            console.log(data)
+            console.log(status)
         }
-    });
 
-    console.log(res);
 
-    return{
-        type: "FAIL"
-    };
+    }
     
+    f();
+    console.log("final");
+    
+    return{
+        type: 'LOGINN',
+        nickname: nick,
+        password: pswd,
+        logedIn: true
+    }
+
+    // return{
+    //     type: "FAIL"
+    // };   
 
 }
 
