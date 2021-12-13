@@ -8,6 +8,8 @@ import Chat from '../Chat';
 import Home from '../Home';
 import SignUp from '../SignUp';
 import {MessageProvider} from '../Chat/context/Message';
+import {LoginProvider} from '../Login/context/Login';
+
 import * as API from '../../services';
 import * as ChatActions from '../store/actions/chat';
 import * as LoginActions from '../store/actions/login';
@@ -45,12 +47,14 @@ function App({dispatch}) {
     </S.UserName>
       <S.AppWrapper className = "AppWrapper">
         <GlobalStyles className = "GlobalStyles"/>
-        <MessageProvider className = "MessageProvider">
-          {
-            (signedUp)?((logedIn)? <Chat/>:<Login/>):((signingUp)?<SignUp/>:<Home/>)
-            // <SignUp/>
-          }
-        </MessageProvider>
+        <LoginProvider>
+          <MessageProvider className = "MessageProvider">
+            {
+              (signedUp)?((logedIn)? <Chat/>:<Login/>):((signingUp)?<SignUp/>:<Home/>)
+              // <SignUp/>
+            }
+          </MessageProvider>
+        </LoginProvider>
       </S.AppWrapper>
     </>
   );

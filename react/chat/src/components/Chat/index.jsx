@@ -41,21 +41,6 @@ const Chat = ({dispatch}) => {
         scrollToBottom();
     }, [loadedMessages]);
 
-    useEffect(() => {
-        API.getMessages().then((resp) => resp.json()).then(data => {
-          dispatch(ChatActions.loadMessages(data));
-        })
-        
-        API.getUserByNick('caio').then((resp) => resp.json()).then(data => {
-          console.log("user nick", data)
-        })
-        
-        API.getUserById(1).then((resp) => resp.json()).then(data => {
-          console.log("user id", data)
-        })
-        
-      }, [dispatch])
-
     return (
         <S.Container className = "Chat-Container">
             <IconContext.Provider value={{ color: '#9c9c9c', size: '50px' }}>

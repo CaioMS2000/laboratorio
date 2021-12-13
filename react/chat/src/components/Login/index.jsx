@@ -6,6 +6,7 @@ import {BsArrowRightSquareFill} from 'react-icons/bs';
 import * as S from './styles'
 import * as LoginActions from "../store/actions/login";
 
+
 const Login = ({dispatch}) => {
     const nickInput = useRef();
     const passwordInput = useRef();
