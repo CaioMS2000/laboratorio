@@ -1,16 +1,22 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useContext} from 'react';
 import {connect} from 'react-redux';
 import { IconContext } from "react-icons";
 import {BsArrowRightSquareFill} from 'react-icons/bs';
 
 import * as S from './styles'
 import * as LoginActions from "../store/actions/login";
+import LoginContext from './context/Login';
 
 
 const Login = ({dispatch}) => {
     const nickInput = useRef();
     const passwordInput = useRef();
     const button = useRef();
+    const {logged, Login} = useContext(LoginContext);
+    const handleLogin =  (n, p) => {
+        console.log("handle");
+        return  Login(n, p);
+    }
 
     useEffect(() => {
         // console.log("login montado");
@@ -37,7 +43,8 @@ const Login = ({dispatch}) => {
                 }}/>
                 <IconContext.Provider value={{ color: '#9c9c9c', size: '50px' }}>
                     <S.Button 
-                    onClick = { () => dispatch(LoginActions.login(nickInput.current.value, passwordInput.current.value)) } 
+                    // onClick = { () => dispatch(LoginActions.login(nickInput.current.value, passwordInput.current.value)) }
+                    onClick = { async() => dispatch(await handleLogin(nickInput.current.value, passwordInput.current.value)) }
                     ref = {button}>
                         <BsArrowRightSquareFill style = {{width:"10vw", height: "10vh"}}/>
                     </S.Button>
