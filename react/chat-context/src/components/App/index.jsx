@@ -6,14 +6,12 @@ import Login from '../Login';
 import Chat from '../Chat';
 import Home from '../Home';
 import SignUp from '../SignUp';
-import {MessageProvider} from '../Chat/context/Message';
-import {LoginProvider} from '../Login/context/Login';
+import {MessageProvider} from '../context/Message';
+import LoginContext, {LoginProvider} from '../context/Login';
 
-import * as API from '../../services';
-
-function App({dispatch}) {
-  const logedIn = 0;
-  const nickname = 0;
+function App() {
+  const {logged, user} = useContext(LoginContext);
+  const nickname = user.nickname;
   const signedUp = 0;
   const signingUp = 0;
 
@@ -32,7 +30,7 @@ function App({dispatch}) {
         <LoginProvider>
           <MessageProvider className = "MessageProvider">
             {
-              (signedUp)?((logedIn)? <Chat/>:<Login/>):((signingUp)?<SignUp/>:<Home/>)
+              (signedUp)?((logged)? <Chat/>:<Login/>):((signingUp)?<SignUp/>:<Home/>)
             }
           </MessageProvider>
         </LoginProvider>

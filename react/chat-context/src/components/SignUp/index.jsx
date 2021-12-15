@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 
 import * as S from './styles'
 
-const SignUp = ({dispatch}) => {
+const SignUp = () => {
     const nickInput = useRef();
     const passwordInput = useRef();
     const button = useRef();

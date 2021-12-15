@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as S from './styles';
 
-const Home = ({dispatch}) => {
+const Home = () => {
     return (
         <S.Container>
             <S.Label>LIVE CHAT</S.Label>

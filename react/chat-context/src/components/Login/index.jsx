@@ -3,10 +3,10 @@ import { IconContext } from "react-icons";
 import {BsArrowRightSquareFill} from 'react-icons/bs';
 
 import * as S from './styles'
-import LoginContext from './context/Login';
+import LoginContext from '../context/Login';
 
 
-const Login = ({dispatch}) => {
+const Login = () => {
     const nickInput = useRef();
     const passwordInput = useRef();
     const button = useRef();

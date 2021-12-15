@@ -1,11 +1,12 @@
 import React, {createContext, useState} from 'react';
 
-import * as API from '../../../services';
+import * as API from '../../services';
 
 const LoginContext = createContext();
 
 export const LoginProvider = ({children}) => {
-    const [logedIn, setLogedIn] = useState(false)
+    const [logedIn, setLogedIn] = useState(false);
+    const [user, setUser] = useState({});
     const Login = async (nick, pswd) => {
         const response = await API.getUserByNick(nick)
         const data = await response.json();
@@ -13,21 +14,22 @@ export const LoginProvider = ({children}) => {
         console.log(data);
         console.log("context");
         if(data.detail === undefined){
-            console.log("existe")
-            return /*LoginActions.login(data.nickname, data.password);*/0
+            if(data.password === pswd){
+                console.log("logado com sucesso")
+                setLogedIn(true);
+            }
+            else{
+                console.log("login falhou, a senha está errada")
+            }
         }
         else{
-            return{
-                type:"FAIL"
-            }
+            console.log("login falhou, usuário não existe")
         }
     }
 
     return (
         <LoginContext.Provider value = {{
-            logedIn,
-            setLogedIn,
-            Login
+            logedIn, setLogedIn, Login, user, setUser
         }}>
             {children}
         </LoginContext.Provider>

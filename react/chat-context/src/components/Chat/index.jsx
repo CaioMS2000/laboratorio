@@ -2,8 +2,7 @@ import React, {useRef, useEffect, useState} from 'react';
 import { IconContext } from "react-icons";
 
 import * as S from './styles';
-import {useMessage} from './context/Message';
-import * as API from '../../services';
+import {useMessage} from '../context/Message';
 
 function renderMessages(array){
     // console.log("renderizando")
@@ -15,7 +14,7 @@ function renderMessages(array){
     return res;
 }
 
-const Chat = ({dispatch}) => {
+const Chat = () => {
     const { message, setMessage } = useMessage();
     const messages = useSelector(state => state.send.messages);
     const nickname = useSelector(state => state.logon.nickname)
