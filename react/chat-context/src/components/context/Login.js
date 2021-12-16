@@ -8,7 +8,7 @@ export const LoginProvider = ({ children }) => {
   const [logedIn, setLogedIn] = useState(false);
   const [user, setUser] = useState({});
   const login = async (nick, pswd) => {
-      console.log("iniciando função Login")
+    console.log("iniciando função Login");
     if (typeof nick != "object") {
       const response = await API.getUserByNick(nick);
       const data = await response.json();
@@ -20,15 +20,18 @@ export const LoginProvider = ({ children }) => {
         if (data.password === pswd) {
           console.log("logado com sucesso");
           setLogedIn(true);
+          setUser({ username: data.username });
         } else {
+          setLogedIn(false);
           console.log("login falhou, a senha está errada");
         }
       } else {
+        setLogedIn(false);
         console.log("login falhou, usuário não existe");
       }
-    }
-    else{
-        console.log("não passou nome")
+    } else {
+      setLogedIn(false);
+      console.log("não passou nome");
     }
   };
 

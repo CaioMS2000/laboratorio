@@ -15,10 +15,6 @@ const Login = () => {
     return await login(n, p);
   };
 
-  useEffect(() => {
-    console.log("login montado");
-  }, []);
-
   return (
     <>
       <S.Container>
@@ -46,8 +42,8 @@ const Login = () => {
           />
           <IconContext.Provider value={{ color: "#9c9c9c", size: "50px" }}>
             <S.Button
-              onClick={async () =>
-                await handleLogin(
+              onClick={() =>
+                handleLogin(
                   nickInput.current.value,
                   passwordInput.current.value
                 )
