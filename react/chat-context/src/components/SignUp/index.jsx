@@ -2,15 +2,13 @@ import React, {useRef, useEffect} from 'react';
 import { IconContext } from "react-icons";
 
 import * as S from './styles'
+import {useSignUp} from '../context/SignUp';
 
 const SignUp = () => {
     const nickInput = useRef();
     const passwordInput = useRef();
     const button = useRef();
-
-    useEffect(() => {
-        // console.log("login montado");
-    }, [])
+    const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
 
     return (
         <>
