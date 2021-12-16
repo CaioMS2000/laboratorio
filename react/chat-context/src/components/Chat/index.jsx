@@ -19,6 +19,7 @@ const Chat = () => {
   const button = useRef();
   const messageScreen = useRef();
   const [loadedMessages, setMessages] = useState(<></>);
+  console.log("user descondtruido ", user)
 
   const renderMessages = (array) => {
     const res = array.map((e, i) => {
@@ -38,11 +39,11 @@ const Chat = () => {
     const res = renderMessages(m);
     console.log("renderizadas", res);
     setMessages(res);
-  }
+  };
   const scrollToBottom = () => {
     messageScreen.current.scrollTop = messageScreen.current.scrollHeight;
   };
-  const getMessages = async() => {
+  const getMessages = async () => {
     const res = await API.getMessages();
     const data = await res.json();
 
@@ -50,7 +51,17 @@ const Chat = () => {
       //   console.log(data);
       insertMessages(data);
     }
-  }
+  };
+  const sendMessage = async(msg) => {
+    console.log("nick a procurar ", user.nickname)
+    const response = await API.getUserByNick(user.nickname);
+    const data = await response.json();
+
+    if (data.detail === undefined) {
+      API.sendMessage(data.id, msg);
+      console.log(JSON.stringify({"content": `${msg}`, "owner_id":data.id}))
+    }
+  };
 
   // mount and update
   // useEffect(() => {
@@ -88,6 +99,7 @@ const Chat = () => {
             ref={button}
             onClick={() => {
               console.log("envie a mensagem");
+              sendMessage(input.current.value);
               input.current.value = "";
             }}
           >

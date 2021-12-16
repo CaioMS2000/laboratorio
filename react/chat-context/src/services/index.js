@@ -26,16 +26,16 @@ export const sendUser = (nickname, password) => {
     });
 }
 
-export const sendMessage = (nickname, password) => {
+export const sendMessage = (userID, content) => {
 
-    console.log("stringfy", JSON.stringify({nickname, password}));
+    console.log("stringfy", JSON.stringify({"owner_id": userID, content}));
     return fetch(url + "messages/users/", {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
-        body: JSON.stringify({nickname, password})
+        body: JSON.stringify({"owner_id": userID, content})
     });
 }
 
