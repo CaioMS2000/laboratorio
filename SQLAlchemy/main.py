@@ -27,32 +27,46 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session = SessionLocal()
 Base = declarative_base()
 
-class Message(Base):
-    __tablename__ = "message"
-    id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
-    content = Column(String(500), unique=True)
-    num_char = Column(Integer, default = 0)
-    sent_date = Column(DateTime, default = datetime.now())
-    deleted = Column(Boolean, default = False)
-    owner_id = Column(Integer, ForeignKey('user.id'))
-    owner = relationship("User")
-    # owner = relationship(User, back_populates="messages")
-
-
 class User(Base):
     __tablename__ = "user"
     id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
     nickname = Column(String(100), unique=True)
-    password = Column(String(100), unique=True)
+    # password = Column(String(100), unique=True)
+    password = Column(String(100))
     nick_color = Column(String(7), default = "#000000")
     reg_date = Column(DateTime, default = datetime.now())
-    messages = relationship(Message, backref = "user")
     num_msg = Column(Integer, default = 0)
+    # messages = relationship("Message", backref = "user")
+    messages = relationship("Message", back_populates = "owner")
 
-list1 = [User(nickname = "98dq", password = "fghdrfh"), User(nickname = "aerwef2", password = "d4g65s")]
-list2 = [Message(content = "094wr0294jcku489349th34ht34h9ct43ct34k9", owner = list1[0]), Message(content = "f1d315515y", owner = list1[0]), Message(content = "55551", owner = list1[1])]
+
+class Message(Base):
+    __tablename__ = "message"
+    id = Column(Integer, Sequence('id', start=1, increment=1), primary_key=True, index=True)
+    content = Column(String(500))
+    num_char = Column(Integer, default = 0)
+    sent_date = Column(DateTime, default = datetime.now())
+    deleted = Column(Boolean, default = False)
+    owner_id = Column(Integer, ForeignKey('user.id'))
+    # owner = relationship("User")
+    owner = relationship("User", back_populates = "messages")
+    # __mapper_args__ = {'inherit_condition': (owner_id == User.id)}
+
+u1 = User(nickname = "98dq", password = "fghdrfh")
+u2 = User(nickname = "aerwef2", password = "d4g65s")
+m1 = Message(content = "094wr0294jcku489349th34ht34h9ct43ct34k9", owner = u1)
+m2 = Message(content = "f1d315515y", owner = u1)
+m3 = Message(content = "55551", owner = u2)
 Base.metadata.create_all(engine)
 
-session.add_all(list1 + list2)
+session.add(u1)
+session.add(u2)
+session.add(m1)
+session.add(m2)
+session.add(m3)
 session.commit()
-session.refresh()
+session.refresh(u1)
+session.refresh(u2)
+session.refresh(m1)
+session.refresh(m2)
+session.refresh(m3)
