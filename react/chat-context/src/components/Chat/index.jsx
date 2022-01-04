@@ -19,7 +19,9 @@ const Chat = () => {
   const button = useRef();
   const messageScreen = useRef();
   const [loadedMessages, setMessages] = useState(<></>);
-  console.log("user descondtruido ", user)
+  const [socketID, setSocketID] = useState("");
+  const [webSocket, setWebSocket] = useState(null);
+  console.log("user descondtruido ", user);
 
   const renderMessages = (array) => {
     const res = array.map((e, i) => {
@@ -52,14 +54,14 @@ const Chat = () => {
       insertMessages(data);
     }
   };
-  const sendMessage = async(msg) => {
-    console.log("nick a procurar ", user.nickname)
+  const sendMessage = async (msg) => {
+    console.log("nick a procurar ", user.nickname);
     const response = await API.getUserByNick(user.nickname);
     const data = await response.json();
 
     if (data.detail === undefined) {
       API.sendMessage(data.id, msg);
-      console.log(JSON.stringify({"content": `${msg}`, "owner_id":data.id}))
+      console.log(JSON.stringify({ content: `${msg}`, owner_id: data.id }));
     }
   };
 
@@ -74,6 +76,12 @@ const Chat = () => {
   // }, [])
 
   useEffect(async () => {
+    const { s_id, socket } = API.connectSocket();
+    setSocketID(s_id);
+    setWebSocket(socket);
+
+    webSocket.onmessage = (event) => {};
+
     getMessages();
 
     scrollToBottom();

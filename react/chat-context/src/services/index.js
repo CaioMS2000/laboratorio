@@ -25,7 +25,7 @@ export const connectSocket = () => {
 
   const ws = new WebSocket("ws://localhost:8000/ws/" + socket_id);
 
-  return ws;
+  return { socket_id, ws };
 };
 
 export const sendUser = (nickname, password) => {
