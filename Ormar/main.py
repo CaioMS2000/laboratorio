@@ -6,6 +6,7 @@ import sql.models as model
 import sql.database as database
 
 # ./venv/Scripts/activate && uvicorn main:app --reload
+# source ./venv/bin/activate && uvicorn main:app --reload
 
 app = FastAPI()
 app.state.database = database.database
