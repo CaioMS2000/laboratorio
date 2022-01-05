@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { IconContext } from "react-icons";
+import useWebSocket from "react-use-websocket";
+import { w3cwebsocket } from "websocket";
 
 import * as S from "./styles";
 import * as API from "../../services";
@@ -11,7 +13,15 @@ import { useLogin } from "../context/Login";
 	"owner_id": 3
 }
 */
+
+const date = new Date();
+const socket_id = `${date.getFullYear()}${
+  date.getMonth() + 1
+}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}${date.getMilliseconds()}`;
+
 const Chat = () => {
+  const WSclient = new w3cwebsocket("ws://localhost:8000/ws/" + socket_id);
+  console.log("socket criado\n");
   const { message, setMessage } = useMessage({});
   const { user } = useLogin();
   const nickname = user.nickname;
@@ -19,12 +29,10 @@ const Chat = () => {
   const button = useRef();
   const messageScreen = useRef();
   const [loadedMessages, setMessages] = useState(<></>);
-  const [socketID, setSocketID] = useState("");
-  const [webSocket, setWebSocket] = useState(null);
-  console.log("user descondtruido ", user);
 
   const renderMessages = (array) => {
     const res = array.map((e, i) => {
+      console.log(`mensagem recebida\n${JSON.stringify(e)}\n`);
       return (
         <S.Message className="message" key={e.id}>
           <p>
@@ -55,13 +63,25 @@ const Chat = () => {
     }
   };
   const sendMessage = async (msg) => {
-    console.log("nick a procurar ", user.nickname);
+    console.log("nick a procurar ", user?.nickname);
     const response = await API.getUserByNick(user.nickname);
     const data = await response.json();
 
-    if (data.detail === undefined) {
+    if (data?.detail === undefined) {
       API.sendMessage(data.id, msg);
       console.log(JSON.stringify({ content: `${msg}`, owner_id: data.id }));
+
+      setMessages(
+        loadedMessages +
+        (
+          <S.Message className="message">
+            <p>
+              <span className="nick">{"new"}</span>:<span>&nbsp;&nbsp;</span>
+              {msg}
+            </p>
+          </S.Message>
+        )
+      );
     }
   };
 
@@ -75,16 +95,26 @@ const Chat = () => {
   //     console.log("mounted")
   // }, [])
 
-  useEffect(async () => {
-    const { s_id, socket } = API.connectSocket();
-    setSocketID(s_id);
-    setWebSocket(socket);
-
-    webSocket.onmessage = (event) => {};
+  useEffect(() => {
+    // useEffect(async () => {
+    console.log("chat mounted\n=============================\n");
 
     getMessages();
 
     scrollToBottom();
+
+    WSclient.onopen = () => {
+      console.log("Client socket connected".toUpperCase());
+    };
+
+    WSclient.onmessage = (msg) => {
+      // insira essa mensagem
+      console.log(`socket recebeu a mensagem:\n${msg}`);
+      sendMessage(msg);
+    };
+
+    console.log("passou por todas as funções");
+    console.log("\n===========================================\n");
   }, []);
 
   return (

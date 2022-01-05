@@ -1,3 +1,5 @@
+import useWebSocket from "react-use-websocket";
+
 const url = "http://127.0.0.1:8000/";
 
 // const makePost = (nickname, password) => {
@@ -13,20 +15,37 @@ const url = "http://127.0.0.1:8000/";
 //     });
 // }
 
-export const connectSocket = () => {
-  const date = new Date();
-  const socket_id = `${date.getFullYear()}${
-    date.getMonth() + 1
-  }${date.getDate()}${date.getHours()}${date.getMinutes}${date.getSeconds()}${
-    date.getMilliseconds
-  }`;
+// export const connectSocket = () => {
+//   const date = new Date();
+//   const socket_id = `${date.getFullYear()}${
+//     date.getMonth() + 1
+//   }${date.getDate()}${date.getHours()}${date.getMinutes}${date.getSeconds()}${
+//     date.getMilliseconds
+//   }`;
 
-  console.log(socket_id);
+//   console.log(socket_id);
 
-  const ws = new WebSocket("ws://localhost:8000/ws/" + socket_id);
+//   // const ws = new WebSocket("ws://localhost:8000/ws/" + socket_id);
+//   const { lastJsonMessage, sendMessage } = useWebSocket(
+//     "ws://localhost:8000/ws/" + socket_id,
+//     {
+//       onOpen: () => console.log(`Connected to App WS`),
+//       onMessage: () => {
+//         if (lastJsonMessage) {
+//           console.log(lastJsonMessage);
+//         }
+//       },
+//       // queryParams: { 'token': '123456' },
+//       onError: (event) => {
+//         console.error(event);
+//       },
+//       shouldReconnect: (closeEvent) => true,
+//       reconnectInterval: 3000,
+//     }
+//   );
 
-  return { socket_id, ws };
-};
+//   return { socket_id, ws };
+// };
 
 export const sendUser = (nickname, password) => {
   console.log("stringfy", JSON.stringify({ nickname, password }));
