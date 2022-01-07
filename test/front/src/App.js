@@ -12,7 +12,6 @@ function App() {
   useEffect(function () {
     // ws = new WebSocket(`ws://localhost:8000/ws/${client_id}`);
     ws.onopen = function () {
-      // ws.send("React is connected");
       console.log("React is connected");
     };
 

@@ -11,7 +11,6 @@ const Login = () => {
   const button = useRef();
   const { logedIn, setLogedIn, login, user, setUser } = useLogin();
   const handleLogin = async (n, p) => {
-    console.log("handle");
     return await login(n, p);
   };
 

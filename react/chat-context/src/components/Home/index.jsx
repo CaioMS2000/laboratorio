@@ -13,20 +13,16 @@ const Home = () => {
       <S.Label>LIVE CHAT</S.Label>
       <S.Button
         onClick={() => {
-          console.log("login");
           setSignedUp(true);
           setSigningUp(false);
-          console.log("signedUp ", signedUp, "signingdUp", signingUp);
         }}
       >
         LOGIN
       </S.Button>
       <S.Button
         onClick={() => {
-          console.log("sign up");
           setSignedUp(false);
           setSigningUp(true);
-          console.log(signedUp, signingUp);
         }}
       >
         SIGN UP

@@ -3,6 +3,26 @@ import json
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
+from datetime import datetime
+
+def generate_id():
+    d = datetime.today().strftime("%d/%m/%Y %H:%M:%S")
+    # dd = filter(f, d)
+    aux = d.split(' ')
+    aux = ''.join(str(it) for it in aux)
+
+    aux = aux.split('/')
+    aux = ''.join(str(it) for it in aux)
+
+    aux = aux.split(':')
+    aux = ''.join(str(it) for it in aux)
+    id = aux
+    print(f'{d}', flush=True)
+    print(id, flush=True)
+
+    return id
+
+generate_id()
 
 # source ./venv/bin/activate && uvicorn main:app --reload
 # ./venv/Scripts/activate && uvicorn main:app --reload
@@ -47,6 +67,7 @@ html = """
 """
 
 
+print(f'', flush=True)
 class ConnectionManager:
     def __init__(self):
         self.active_connections: List[WebSocket] = []
@@ -85,7 +106,8 @@ async def get():
 
 
 @app.websocket("/ws/{client_id}")
-async def websocket_endpoint(websocket: WebSocket, client_id: int):
+# async def websocket_endpoint(websocket: WebSocket, client_id: int):
+async def websocket_endpoint(websocket: WebSocket, client_id: str = generate_id()):
     await manager.connect(websocket)
     try:
         while True:
@@ -101,3 +123,5 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
         manager.disconnect(websocket)
 
         # await manager.broadcast(f"Client #{client_id} left the chat", websocket)
+    
+    return {"seu_id":client_id}
