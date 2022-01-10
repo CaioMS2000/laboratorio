@@ -60,7 +60,7 @@ export const sendUser = (nickname, password) => {
 };
 
 export const sendMessage = (userID, content) => {
-  console.log("stringfy", JSON.stringify({ owner_id: userID, content }));
+  // console.log("stringfy", JSON.stringify({ owner_id: userID, content }));
   return fetch(url + "messages/users/", {
     method: "POST",
     headers: {

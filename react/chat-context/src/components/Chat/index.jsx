@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import useWebSocket from "react-use-websocket";
-import { w3cwebsocket } from "websocket";
 
 import * as S from "./styles";
 import * as API from "../../services";
@@ -17,59 +15,50 @@ const ws = new WebSocket(`ws://localhost:8000/ws/`);
 const Chat = () => {
   const { message, setMessage } = useMessage({});
   const { user } = useLogin();
-  const nickname = user.nickname;
   const input = useRef();
   const button = useRef();
   const messageScreen = useRef();
   const [loadedMessages, setMessages] = useState([]);
 
-  const renderMessages = async (array) => {
-    const res = await array.map(async (e, i) => {
-      // console.log(`mensagem recebida\n${JSON.stringify(e)}\n`);
-      console.log(`mensagem recebida`);
-      console.log(e);
-      console.log("#########");
-      console.log(`id a procurar: ${e.owner.id}`);
-      user = await API.getUserById(e.owner.id);
-      console.log("terminou o get");
-      user = await user.json();
-      console.log("usuario");
-      console.log(user);
-      console.log("#########");
+  const renderMessages = () => {
+    const res = loadedMessages.map((e, i) => {
       return (
         <S.Message className="message" key={i}>
           <p>
-            <span className="nick">{e.nick}</span>:<span>&nbsp;&nbsp;</span>
-            {e.msg}
+            <span className="nick">{e.user}</span>:<span>&nbsp;&nbsp;</span>
+            {e.content}
           </p>
         </S.Message>
       );
     });
 
-    return await res;
+    return res;
   };
 
-  const insertMessages = async (m) => {
-    const res = await renderMessages(m);
-    console.log("depois de renderizar");
-    console.log(res);
-    console.log("#########");
-    setMessages(res);
-  };
   const scrollToBottom = () => {
     messageScreen.current.scrollTop = messageScreen.current.scrollHeight;
   };
+
   const getMessages = async () => {
     const res = await API.getMessages();
     const data = await res.json();
 
+    console.log(data);
+    console.log("\n\n\n");
+
     if (data.detail === undefined) {
-      console.log("chegou da API");
-      console.log(data);
-      console.log("#########");
-      await insertMessages(data);
+      data.forEach(async (element) => {
+        const r = await API.getUserById(element.owner.id);
+        const d = await r.json();
+        const aux = { content: element.content, user: d.nickname };
+        console.log(aux);
+
+        // ws.send(JSON.stringify(aux));
+        setMessages((prevState) => prevState.concat(aux));
+      });
     }
   };
+
   const sendMessage = async (msg) => {
     const response = await API.getUserByNick(user.nickname);
     const data = await response.json();
@@ -97,21 +86,25 @@ const Chat = () => {
     scrollToBottom();
   }, []);
 
+  // useEffect(() => {
+  //   console.log("nothing");
+  // }, [loadedMessages]);
+
   useEffect(function () {
-    // ws = new WebSocket(`ws://localhost:8000/ws/${client_id}`);
     ws.onopen = function () {
       console.log("React is connected");
     };
 
     ws.onmessage = function (event) {
-      // console.log(event.data);
-      setMessages(loadedMessages.concat(event.data));
+      // setMessages(loadedMessages.concat(JSON.parse(event.data)));
+      setMessages((prevState) => prevState.concat(JSON.parse(event.data)));
     };
   });
+
   return (
     <S.Container className="Chat-Container">
       <IconContext.Provider value={{ color: "#9c9c9c", size: "50px" }}>
-        <S.Messages ref={messageScreen}>{loadedMessages}</S.Messages>
+        <S.Messages ref={messageScreen}>{renderMessages()}</S.Messages>
         <S.TypeSend>
           <S.Input
             onChange={(e) => {
