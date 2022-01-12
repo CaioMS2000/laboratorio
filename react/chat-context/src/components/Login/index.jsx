@@ -4,23 +4,28 @@ import { BsArrowRightSquareFill } from "react-icons/bs";
 
 import * as S from "./styles";
 import LoginContext, { useLogin } from "../context/Login";
+import { useWindow } from "../context/Window";
 
 const Login = () => {
   const nickInput = useRef();
   const passwordInput = useRef();
   const button = useRef();
   const { logedIn, setLogedIn, login, user, setUser } = useLogin();
+  const { windowSize, setWindowSize } = useWindow();
   const handleLogin = async (n, p) => {
     return await login(n, p);
   };
 
   return (
     <>
-      <S.Container>
-        <S.Title>
+      {windowSize.height}
+      <br />
+      {windowSize.width}
+      <S.Container className="container">
+        <S.Title className="title">
           <p style={{ lineHeight: "17vw" }}>LOGIN</p>
         </S.Title>
-        <S.Body>
+        <S.Body className="body">
           <S.Input
             type="text"
             ref={nickInput}
@@ -39,7 +44,13 @@ const Login = () => {
               }
             }}
           />
-          <IconContext.Provider value={{ color: "#9c9c9c", size: "50px" }}>
+          <IconContext.Provider
+            value={{
+              color: "#5c5a5a",
+              size: `${windowSize.width > 554 ? 10 : 7}vw`,
+            }}
+          >
+            {/* <IconContext.Provider value={{ color: "#9c9c9c" }}> */}
             <S.Button
               onClick={() =>
                 handleLogin(
@@ -50,7 +61,7 @@ const Login = () => {
               ref={button}
             >
               <BsArrowRightSquareFill
-                style={{ width: "10vw", height: "10vh" }}
+              // style={{ width: "30vw", height: "10vh" }}
               />
             </S.Button>
           </IconContext.Provider>

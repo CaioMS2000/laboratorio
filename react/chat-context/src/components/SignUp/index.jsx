@@ -4,12 +4,14 @@ import { IconContext } from "react-icons";
 import * as S from "./styles";
 import * as API from "../../services";
 import { useSignUp } from "../context/SignUp";
+import { useWindow } from "../context/Window";
 
 const SignUp = () => {
   const nickInput = useRef();
   const passwordInput = useRef();
   const button = useRef();
   const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
+  const { windowSize, setWindowSize } = useWindow();
   const clearInputs = () => {
     nickInput.current.value = "";
     passwordInput.current.value = "";
@@ -32,7 +34,7 @@ const SignUp = () => {
     <>
       <S.Container>
         <S.Title>
-          <p style={{ lineHeight: "25vh" }}>SIGN UP</p>
+          <p style={{ lineHeight: "17vw" }}>SIGN UP</p>
         </S.Title>
         <S.Body>
           <S.Input
@@ -53,7 +55,11 @@ const SignUp = () => {
               }
             }}
           />
-          <IconContext.Provider value={{ color: "#9c9c9c", size: "50px" }}>
+          <IconContext.Provider
+            value={{
+              color: "#9c9c9c",
+            }}
+          >
             <S.Button
               onClick={() => {
                 handleRegister(
@@ -62,6 +68,9 @@ const SignUp = () => {
                 );
               }}
               ref={button}
+              style={{
+                fontSize: `${windowSize.width > 300 ? 5 : 4}vw`,
+              }}
             >
               REGISTER
             </S.Button>
