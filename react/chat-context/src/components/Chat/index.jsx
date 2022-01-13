@@ -86,9 +86,9 @@ const Chat = () => {
     scrollToBottom();
   }, []);
 
-  // useEffect(() => {
-  //   console.log("nothing");
-  // }, [loadedMessages]);
+  useEffect(() => {
+    scrollToBottom();
+  }, [loadedMessages]);
 
   useEffect(function () {
     ws.onopen = function () {

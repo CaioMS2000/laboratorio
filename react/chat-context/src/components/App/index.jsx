@@ -1,4 +1,5 @@
 import { useEffect, useContext } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { GlobalStyles } from "../styles/Global";
 import * as S from "./styles";
@@ -16,15 +17,22 @@ function App() {
 
   return (
     <>
-      <S.UserName className="UserName">
-        <span
-          onClick={() => dispatch()}
-          className="global-nick"
-          style={{ cursor: "pointer" }}
-        >
-          {nickname}
-        </span>
-      </S.UserName>
+      {logedIn && (
+        <S.UserName className="UserName">
+          <span
+            onClick={() => {
+              setSignedUp(false);
+              setSigningUp(false);
+              setLogedIn(false);
+              setUser({ nickname: "" });
+            }}
+            className="global-nick"
+            style={{ cursor: "pointer" }}
+          >
+            {nickname}
+          </span>
+        </S.UserName>
+      )}
       <S.AppWrapper className="AppWrapper">
         <GlobalStyles className="GlobalStyles" />
         {signedUp ? (

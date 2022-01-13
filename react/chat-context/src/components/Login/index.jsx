@@ -18,12 +18,9 @@ const Login = () => {
 
   return (
     <>
-      {windowSize.height}
-      <br />
-      {windowSize.width}
       <S.Container className="container">
         <S.Title className="title">
-          <p style={{ lineHeight: "17vw" }}>LOGIN</p>
+          <p style={{ lineHeight: "17vw", color: "#272932" }}>LOGIN</p>
         </S.Title>
         <S.Body className="body">
           <S.Input
@@ -50,7 +47,6 @@ const Login = () => {
               size: `${windowSize.width > 554 ? 10 : 7}vw`,
             }}
           >
-            {/* <IconContext.Provider value={{ color: "#9c9c9c" }}> */}
             <S.Button
               onClick={() =>
                 handleLogin(

@@ -32,6 +32,7 @@ export const Input = styled.input`
   &:focus {
     border: 5px solid rgba(30, 30, 30, 0.7);
     background-color: rgba(50, 50, 50, 1);
+    background-color: #272932;
     color: rgba(100, 100, 100, 1);
   }
   transition: 0.3s;
@@ -48,6 +49,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   background-color: rgba(46, 46, 46, 1);
+  background-color: #272932;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-weight: 800;

@@ -32,6 +32,7 @@ export const Input = styled.input`
   &:focus {
     border: 5px solid rgba(30, 30, 30, 0.7);
     background-color: rgba(50, 50, 50, 1);
+    background-color: #272932;
     color: rgba(100, 100, 100, 1);
   }
   transition: 0.3s;

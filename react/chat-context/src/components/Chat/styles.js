@@ -1,22 +1,20 @@
 import styled from "styled-components";
 
-const WH = 90;
-const mTop = (100 - WH) / 2;
-
 export const Container = styled.div`
   background-color: rgba(140, 50, 50, 1);
-  width: ${WH}vw;
-  height: ${WH}vh;
-  margin: ${mTop - 2}vh auto 0 auto;
+  width: 90vw;
+  height: 90vh;
+  margin: 2vh auto 0 auto;
   border-radius: 10px;
 `;
 
 export const Messages = styled.div`
   background-color: rgba(66, 135, 245, 1);
+  background-color: #707070;
   width: 100%;
   height: 92%;
   border-radius: 10px 10px 0 0;
-  padding: 1vh 0;
+  padding: 1vh 1vw;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 10px;
@@ -35,10 +33,11 @@ export const Messages = styled.div`
 `;
 
 export const TypeSend = styled.div`
-  background-color: rgba(66, 245, 120, 1);
+  background-color: #272932;
   width: 100%;
   height: 8%;
   border-radius: 0 0 10px 10px;
+  padding: 0 1vw;
   padding-top: 3px;
 `;
 
@@ -62,7 +61,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  background-color: rgba(10, 10, 10, 1);
+  background-color: rgba(25, 25, 25, 1);
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 15pt;

@@ -34,7 +34,7 @@ const SignUp = () => {
     <>
       <S.Container>
         <S.Title>
-          <p style={{ lineHeight: "17vw" }}>SIGN UP</p>
+          <p style={{ lineHeight: "17vw", color: "#272932" }}>SIGN UP</p>
         </S.Title>
         <S.Body>
           <S.Input

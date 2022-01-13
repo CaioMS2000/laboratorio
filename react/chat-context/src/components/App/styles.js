@@ -7,7 +7,6 @@ export const AppWrapper = styled.div`
 
 export const UserName = styled.div`
   font-family: "Poppins", sans-serif;
-  font-family: "Permanent Marker", cursive;
   font-size: 20pt;
   font-weight: 800;
   min-width: 2vw;
