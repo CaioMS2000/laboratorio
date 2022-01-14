@@ -1,20 +1,28 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { IconContext } from "react-icons";
 import { BsArrowRightSquareFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
-import LoginContext, { useLogin } from "../context/Login";
+import { useLogin } from "../context/Login";
 import { useWindow } from "../context/Window";
 
 const Login = () => {
+  const navigate = useNavigate();
   const nickInput = useRef();
   const passwordInput = useRef();
   const button = useRef();
   const { logedIn, setLogedIn, login, user, setUser } = useLogin();
   const { windowSize, setWindowSize } = useWindow();
   const handleLogin = async (n, p) => {
-    return await login(n, p);
+    await login(n, p);
   };
+
+  useEffect(() => {
+    if (logedIn) {
+      navigate("/chat");
+    }
+  }, [logedIn]);
 
   return (
     <>

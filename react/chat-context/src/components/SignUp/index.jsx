@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { IconContext } from "react-icons";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
 import * as API from "../../services";
@@ -7,18 +8,20 @@ import { useSignUp } from "../context/SignUp";
 import { useWindow } from "../context/Window";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const nickInput = useRef();
   const passwordInput = useRef();
   const button = useRef();
   const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
   const { windowSize, setWindowSize } = useWindow();
+
   const clearInputs = () => {
     nickInput.current.value = "";
     passwordInput.current.value = "";
   };
+
   const handleRegister = async (nick, pswd) => {
     const res = await API.sendUser(nick, pswd);
-    // console.log(res);
     if (res.detail === undefined) {
       const json = await res.json();
       console.log(json);
@@ -29,6 +32,12 @@ const SignUp = () => {
       console.log(res.detail);
     }
   };
+
+  useEffect(() => {
+    if (signedUp) {
+      navigate("/login");
+    }
+  }, [signedUp]);
 
   return (
     <>

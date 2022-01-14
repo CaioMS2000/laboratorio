@@ -1,11 +1,10 @@
 import React from "react";
 
 import * as S from "./styles";
-// import {useLogin} from '../context/Login';
+import { _Link } from "../styles/Global";
 import { useSignUp } from "../context/SignUp";
 
 const Home = () => {
-  // const { logedIn, setLogedIn, login, user, setUser } = useLogin();
   const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
 
   return (
@@ -17,7 +16,7 @@ const Home = () => {
           setSigningUp(false);
         }}
       >
-        LOGIN
+        <_Link to="/login">LOGIN</_Link>
       </S.Button>
       <S.Button
         onClick={() => {
@@ -25,7 +24,7 @@ const Home = () => {
           setSigningUp(true);
         }}
       >
-        SIGN UP
+        <_Link to="/signup">SIGN UP</_Link>
       </S.Button>
     </S.Container>
   );
