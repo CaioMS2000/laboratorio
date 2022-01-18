@@ -5,6 +5,7 @@ import * as S from "./styles";
 import * as API from "../../services";
 import { useMessage } from "../context/Message";
 import { useLogin } from "../context/Login";
+import { useToken } from "../context/Token";
 
 const ws = new WebSocket(`ws://localhost:8000/ws/`);
 // const date = new Date();
@@ -19,6 +20,7 @@ const Chat = () => {
   const button = useRef();
   const messageScreen = useRef();
   const [loadedMessages, setMessages] = useState([]);
+  const { token, setToken } = useToken();
 
   const renderMessages = () => {
     const res = loadedMessages.map((e, i) => {
@@ -40,18 +42,18 @@ const Chat = () => {
   };
 
   const getMessages = async () => {
-    const res = await API.getMessages();
+    const res = await API.getMessages(token);
     const data = await res.json();
 
-    console.log(data);
-    console.log("\n\n\n");
+    // console.log(data);
+    // console.log("\n\n\n");
 
     if (data.detail === undefined) {
       data.forEach(async (element) => {
-        const r = await API.getUserById(element.owner.id);
+        const r = await API.getUserById(element.owner.id, token);
         const d = await r.json();
         const aux = { content: element.content, user: d.nickname };
-        console.log(aux);
+        // console.log(aux);
 
         // ws.send(JSON.stringify(aux));
         setMessages((prevState) => prevState.concat(aux));
@@ -60,11 +62,11 @@ const Chat = () => {
   };
 
   const sendMessage = async (msg) => {
-    const response = await API.getUserByNick(user.nickname);
+    const response = await API.getUserByNick(user.nickname, token);
     const data = await response.json();
 
     if (data?.detail === undefined) {
-      API.sendMessage(data.id, msg);
+      API.sendMessage(data.id, msg, token);
       msg = JSON.stringify({ content: `${msg}`, user: data.nickname });
       ws.send(msg);
     }
@@ -92,7 +94,7 @@ const Chat = () => {
 
   useEffect(function () {
     ws.onopen = function () {
-      console.log("React is connected");
+      // console.log("React is connected");
     };
 
     ws.onmessage = function (event) {

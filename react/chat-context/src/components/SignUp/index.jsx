@@ -6,6 +6,7 @@ import * as S from "./styles";
 import * as API from "../../services";
 import { useSignUp } from "../context/SignUp";
 import { useWindow } from "../context/Window";
+import { useToken } from "../context/Token";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const SignUp = () => {
   const button = useRef();
   const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
   const { windowSize, setWindowSize } = useWindow();
+  const { token, setToken } = useToken();
 
   const clearInputs = () => {
     nickInput.current.value = "";
@@ -21,15 +23,15 @@ const SignUp = () => {
   };
 
   const handleRegister = async (nick, pswd) => {
-    const res = await API.sendUser(nick, pswd);
+    const res = await API.sendUser(nick, pswd, token);
     if (res.detail === undefined) {
       const json = await res.json();
-      console.log(json);
+      // console.log(json);
       clearInputs();
       setSignedUp(true);
       setSigningUp(false);
     } else {
-      console.log(res.detail);
+      // console.log(res.detail);
     }
   };
 

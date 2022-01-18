@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { GlobalStyles } from "../styles/Global";
 import * as S from "./styles";
+import * as API from "../../services";
 import Login from "../Login";
 import Chat from "../Chat";
 import Home from "../Home";
@@ -14,6 +15,22 @@ function App() {
   const { logedIn, setLogedIn, login, user, setUser } = useLogin();
   const { signedUp, setSignedUp, signingUp, setSigningUp } = useSignUp();
   const nickname = user.nickname;
+
+  // useEffect(() => {
+  //   async function main() {
+  //     const res = await API.getToken("caio", "123");
+  //     console.log(res);
+
+  //     if (res.ok) {
+  //       const data = await res.json();
+  //       console.log(data);
+  //     } else {
+  //       console.log("erro ao buscar o token");
+  //     }
+  //   }
+
+  //   main();
+  // }, []);
 
   return (
     <>

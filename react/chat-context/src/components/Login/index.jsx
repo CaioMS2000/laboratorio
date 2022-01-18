@@ -4,8 +4,10 @@ import { BsArrowRightSquareFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 import * as S from "./styles";
+import * as API from "../../services";
 import { useLogin } from "../context/Login";
 import { useWindow } from "../context/Window";
+import { useToken } from "../context/Token";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,8 +16,21 @@ const Login = () => {
   const button = useRef();
   const { logedIn, setLogedIn, login, user, setUser } = useLogin();
   const { windowSize, setWindowSize } = useWindow();
+  const { token, setToken } = useToken();
+
   const handleLogin = async (n, p) => {
-    await login(n, p);
+    // await login(n, p);
+    const res = await API.getToken(n, p);
+
+    if (res.ok) {
+      const data = await res.json();
+      // console.log(data);
+      setToken(data.access_token);
+      setLogedIn(true);
+      setUser({ nickname: n });
+    } else {
+      console.log("erro ao buscar o token");
+    }
   };
 
   useEffect(() => {
