@@ -27,11 +27,12 @@ for i in range(len(all_words)):
 
 print("Database ready.\n\n\n")
 # ===============================================
-all_words1: List[str] = all_words
-all_words = list()
 
-for i in range(0, 11):
-    all_words.append(all_words1[i])
+# all_words1: List[str] = all_words
+# all_words = list()
+
+# for i in range(11, 30):
+#     all_words.append(all_words1[i])
 
 # Word filtering ================================
 word: str = ['', '', '', '', '']
@@ -59,10 +60,6 @@ while methods.array_find_element(options, option) != None:
 
                 if len(letter) == 1:
                     methods.add_word(included_letters, letter, 5)
-
-
-            for i in range(len(included_letters)):
-                word[i] = included_letters[i]
         
         elif option == 2:
             letter = ''

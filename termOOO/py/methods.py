@@ -32,12 +32,15 @@ def string_find_element(arr: str, el):
     return False
 
 def clear_console(OS: str = platform.system(), message = ''):
-    if(array_find_element(['Linux', 'Darwin'], OS) != None):
+
+    if(array_find_element(['Linux', 'Darwin'], OS)):
         os.system('clear')
     else:
         os.system('cls')
     
-    print('')
+    print(f'\n{OS}\n')
+    
+    print('', end='')
 
 def add_word(arr: [], el, limit:int = 26):
     if len(arr) >= limit:
@@ -61,16 +64,37 @@ def print_words(array: [], white_filter: list = [], black_filter: list = [], exa
         else:
             if len(white_filter) > 0:
                 count: int = 0
-                for l in w:
-                
-                    if array_find_element(white_filter, l):
-                        valid = True
-                    else:
-                        valid = False
-                    
-                    count = count + 1
-            else:
+                temp: bool = valid
                 valid = True
+                limit: int = len(white_filter)
+
+                while count < limit and valid:
+                    valid = False
+
+                    for l in w:
+                        if l == white_filter[count]:
+                            valid = True
+
+                    count = count + 1
+                
+                if count < limit:
+                    valid = False
+                else:
+                    valid = True
+                
+                # for l in w:
+                
+                #     if array_find_element(white_filter, l):
+                #         valid = True
+                #         print(f"W: {w} aprovado por {l}")
+                #     else:
+                #         if not valid:
+                #             valid = False
+                #             print(f"W: {w} reprovado por {l}")
+                    
+                #     count = count + 1
+            # else:
+            #     valid = True
                 
             if len(black_filter) > 0:
                 count: int = 0
@@ -84,16 +108,15 @@ def print_words(array: [], white_filter: list = [], black_filter: list = [], exa
         
         if len(exact_position) > 0:
             for p in range(len(exact_position)):
-                # print(p, end=' ')
                 if exact_position[p] != '':
-                    # print(f'em {w}\ncomparando {exact_position[p].lower()} com {w[p].lower()}\n')
-                    if w[p].lower() != exact_position[p].lower():
+                    if w[p] != exact_position[p]:
                         valid = False
-                        # print(f'{w} não passou no teste')
 
         if valid == True:
+            # print(f"{w} entrou")
             printable.append(w)
 
+    print('\n')
     count: int = 1
     for w in printable:
         print(w, end='   ')
