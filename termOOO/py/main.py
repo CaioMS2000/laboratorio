@@ -26,6 +26,9 @@ for i in range(len(all_words)):
 #=================
 
 print("Database ready.\n\n\n")
+
+for w in all_words:
+    print(w)
 # ===============================================
 
 # all_words1: List[str] = all_words
@@ -35,6 +38,7 @@ print("Database ready.\n\n\n")
 #     all_words.append(all_words1[i])
 
 # Word filtering ================================
+"""
 word: str = ['', '', '', '', '']
 excluded_letters: List[str] = []
 included_letters: List[str] = []
@@ -89,15 +93,14 @@ while methods.array_find_element(options, option) != None:
                 else:
                     print("Some position is invalid!\n")
         else:
-            # methods.clear_console()
             print('\n\n')
             print(word)
             print(included_letters)
             print(excluded_letters)
     
-    # methods.clear_console()
     print('\n\n')
     methods.print_words(all_words, included_letters, excluded_letters, word)
+"""
 # ===============================================
 
 # options = ChromeOptions()
