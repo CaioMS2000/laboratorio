@@ -133,4 +133,4 @@ if __name__ == "__main__":
     collection_name = args.collection
 
     for i in range(n):
-        generate_art(collection_name, f"{collection_name}_image_{i}")
+        generate_art(collection_name, f"{i}")
