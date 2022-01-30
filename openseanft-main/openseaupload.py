@@ -1,5 +1,6 @@
 import tkinter
 import subprocess
+import platform
 from tkinter import *
 from tkinter import filedialog
 import os
@@ -95,6 +96,16 @@ def save():
 def main_program_loop():
     ###START###
     project_path = main_directory
+    driver_path = "chromedriver"
+    OS = platform.system()
+
+    # print(f'\n\n\n{OS}\n\n\n')
+
+    if OS == 'Linux':
+        driver_path = "/driver/linux/chromedriver"
+    else:
+        driver_path = "/driver/windows/chromedriver"
+
     file_path = upload_path
     collection_link = collection_link_input.input_field.get()
     start_num = int(start_num_input.input_field.get())
@@ -109,7 +120,8 @@ def main_program_loop():
     opt = Options()
     opt.add_experimental_option("debuggerAddress", "localhost:8989")
     driver = webdriver.Chrome(
-        executable_path=project_path + "/chromedriver.exe",
+        # executable_path=project_path + "/chromedriver.exe",
+        executable_path=project_path + driver_path,
         chrome_options=opt,
     )
     wait = WebDriverWait(driver, 60)
