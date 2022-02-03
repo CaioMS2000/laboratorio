@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Short+Stack&family=Titillium+Web:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+
+/* font-family: 'Patrick Hand', cursive;
+font-family: 'Short Stack', cursive;
+font-family: 'Titillium Web', sans-serif; */
+
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5dbd6;
+  background-color: #ff3562;
   font-size: 16px;
 }
 
