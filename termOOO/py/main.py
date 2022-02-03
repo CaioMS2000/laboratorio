@@ -6,30 +6,42 @@ from typing import List
 import methods
 methods.clear_console()
 
+all_words: List[str] = []
+online = False
+
+if not online:
+    archive = open("words.txt", "r")
+
+    for line in archive:
+        all_words.append(line.replace("\n", ""))
+
+    archive.close()
+
+else:
 # Web scraping ==================================
-print("Building a portuguese words database.\nPlease, you can minimize the browser window, but DON\'T CLOSE IT.\nThe browser window will close automatically.\n")
-driver = webdriver.Chrome()
+    print("Building a portuguese words database.\nPlease, you can minimize the browser window, but DON\'T CLOSE IT.\nThe browser window will close automatically.\n")
+    driver = webdriver.Chrome()
 
-driver.minimize_window()
-driver.get("https://www.ime.usp.br/~pf/dicios/br-utf8.txt")
+    driver.minimize_window()
+    driver.get("https://www.ime.usp.br/~pf/dicios/br-utf8.txt")
 
-DOM_element = driver.find_element(By.TAG_NAME, "pre")
+    DOM_element = driver.find_element(By.TAG_NAME, "pre")
 
-all_words: List[str] = DOM_element.text.split('\n')
+    all_words: List[str] = DOM_element.text.split('\n')
 
-driver.quit()
+    driver.quit()
 
 # Removing accents and capital letters
-for i in range(len(all_words)):
-    all_words[i] = unidecode(all_words[i])
-    all_words[i] = all_words[i].lower()
+    for i in range(len(all_words)):
+        all_words[i] = unidecode(all_words[i])
+        all_words[i] = all_words[i].lower()
 #=================
 
+# ===============================================
 print("Database ready.\n\n\n")
 
-for w in all_words:
-    print(w)
-# ===============================================
+# for w in all_words:
+#     print(w)
 
 # all_words1: List[str] = all_words
 # all_words = list()
@@ -38,7 +50,7 @@ for w in all_words:
 #     all_words.append(all_words1[i])
 
 # Word filtering ================================
-"""
+
 word: str = ['', '', '', '', '']
 excluded_letters: List[str] = []
 included_letters: List[str] = []
@@ -47,7 +59,7 @@ options: List[int] = [1, 2, 3, 4]
 option: int = 1
 letter: str
 
-methods.print_words(all_words, included_letters, excluded_letters, word)
+# methods.print_words(all_words, included_letters, excluded_letters, word)
 
 while methods.array_find_element(options, option) != None:
     print("[1] para adicionar uma letra que existe na palavra\n[2] para adicionar uma letra que não existe na palavra\n[3] para posicionar uma letra na palavra\n[4] ver a palavra atual")
@@ -100,7 +112,7 @@ while methods.array_find_element(options, option) != None:
     
     print('\n\n')
     methods.print_words(all_words, included_letters, excluded_letters, word)
-"""
+
 # ===============================================
 
 # options = ChromeOptions()
