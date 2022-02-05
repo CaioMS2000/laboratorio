@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from unidecode import unidecode
 from typing import List
+from random import randint
+from time import sleep
 
 import methods
 methods.clear_console()
@@ -38,16 +40,21 @@ else:
 #=================
 
 # ===============================================
-print("Database ready.\n\n\n")
+print("Database ready.\n\n")
 
 # for w in all_words:
 #     print(w)
 
+# limit = len(all_words)
 # all_words1: List[str] = all_words
 # all_words = list()
 
-# for i in range(11, 30):
-#     all_words.append(all_words1[i])
+# for i in range(50):
+#     new_word = ''
+#     while len(new_word) != 5:
+#         new_word = all_words1[randint(0, limit-1)]
+
+#     all_words.append(new_word)
 
 # Word filtering ================================
 
@@ -57,61 +64,79 @@ included_letters: List[str] = []
 word_size: int = 5
 options: List[int] = [1, 2, 3, 4]
 option: int = 1
-letter: str
-
-# methods.print_words(all_words, included_letters, excluded_letters, word)
+letter: str = ''
 
 while methods.array_find_element(options, option) != None:
-    print("[1] para adicionar uma letra que existe na palavra\n[2] para adicionar uma letra que não existe na palavra\n[3] para posicionar uma letra na palavra\n[4] ver a palavra atual")
+    print("[1] to add a required word\n[2] to add a blocked word\n[3] to positionate a letter into the word\n[4] to get the current word")
+    print("\nq -> stop the program")
 
-    option = int(input())
+    option = input()
 
-    if not methods.array_find_element(options, option):
-        methods.clear_console('This option is not valid!')
+    if option.lower() == "q":
+        methods.clear_console()
+        print("\nFINISHING PROGRAM\n")
+        sleep(3)
+        methods.clear_console()
+        break
     else:
-        if option == 1:
-            letter = ''
-            while letter != 'stop':
-                letter = input("Type a letter\n")
+        option = int(option)
 
-                if len(letter) == 1:
-                    methods.add_word(included_letters, letter, 5)
-        
-        elif option == 2:
-            letter = ''
-            while letter != 'stop':
-                letter = input("Type a letter\n")
-
-                if len(letter) == 1:
-                    methods.add_word(excluded_letters, letter)
-
-        elif option == 3:
-            methods.clear_console()
-            print(word)
-            print()
-
-            pos:int = 1
-            new_pos:int = 1
-
-            while pos > 0 and new_pos > 0:
-                print("Selecione as duas posições a serem trocadas [1, 5]\n")
-                pos = int(input())
-                new_pos = int(input())
-
-                if pos > 0 and pos < 6 and new_pos > 0 and new_pos < 6:
-                    aux = word[pos]
-                    word[pos] = word[new_pos]
-                    word[new_pos] = aux
-                else:
-                    print("Some position is invalid!\n")
+        if not methods.array_find_element(options, option):
+            methods.clear_console('This option is not valid!')
         else:
-            print('\n\n')
-            print(word)
-            print(included_letters)
-            print(excluded_letters)
-    
-    print('\n\n')
-    methods.print_words(all_words, included_letters, excluded_letters, word)
+            if option == 1:
+                letter = ''
+                while letter != 'stop':
+                    letter = input("Type a letter\n\"stop\" to left this option\n")
+
+                    if len(letter) == 1:
+                        methods.add_word(included_letters, letter, word_size)
+            
+            elif option == 2:
+                letter = ''
+                while letter != 'stop':
+                    letter = input("Type a letter\n\"stop\" to left this option\n")
+
+                    if len(letter) == 1:
+                        methods.add_word(excluded_letters, letter)
+
+            elif option == 3:
+
+                pos:int = 1
+                new_pos:int = 1
+
+                while pos > 0 and new_pos > 0:
+                    methods.clear_console()
+                    
+                    print(f"required letters:{included_letters}\nblocked letters: {excluded_letters}\ncurrent word: {word}\n")
+
+                    print("Select a required word to be put in the word [1, 5]\n")
+                    pos = int(input())
+                    new_pos = int(input())
+
+                    if pos > 0 and pos < 6 and new_pos > 0 and new_pos < 6:
+                        if new_pos == -1:
+                            word[pos] = ""
+                        else:
+                            pos = pos - 1
+                            new_pos = new_pos - 1
+
+                            word[new_pos] = included_letters[pos]
+                            
+                            pos = pos + 1
+                            new_pos = new_pos + 1
+                    elif pos == new_pos == 0:
+                        print("Quiting\n")
+                    else:
+                        print("Some position is invalid!\n")
+            else:
+                print('\n\n')
+                print(word)
+                print(included_letters)
+                print(excluded_letters)
+        
+        print('\n\n')
+        methods.print_words(all_words, included_letters, excluded_letters, word)
 
 # ===============================================
 

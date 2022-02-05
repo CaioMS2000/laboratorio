@@ -34,14 +34,14 @@ def clear_console(OS: str = platform.system(), message = ''):
     else:
         os.system('cls')
     
-    print(f'\n{OS}\n')
+    # print(f'\n{OS}\n')
     
     print('', end='')
 
-def add_word(arr: [], el, limit:int = 26):
+def add_word(arr: [], el, limit:int = 26, repeat = True):
     if len(arr) >= limit:
         print("You can't add more letters into this array")
-    elif array_find_element(arr, el):
+    elif not repeat and array_find_element(arr, el):
         print("This letter is already in this array")
     else:
         arr.append(el)
@@ -53,62 +53,46 @@ def print_words(array: [], white_filter: list = [], black_filter: list = [], exa
     print('==============\n')
 
     for w in array:
-        valid: bool = False
+        valid: bool = True
 
-#====================================================
+# filtering it self =================================
         if len(w) == 5:
-            print(f'{w}\n')
-            
-            if len(white_filter) == 0:
-                valid = True
-
-            if len(black_filter) == 0:
-                valid = True         
+            # print(f'{w}\n')       
 
             if len(black_filter) > 0:
                 for l in black_filter:
-                    print(f'B: procurando {l} em {w}\n')
                     if string_find_element(w, l):
                         valid = False
-                        print(f'achou\n')
                     else:
-                        print(f'não achou\n')
+                        pass
 
             if len(white_filter) > 0 and valid:
                 for l in white_filter:
-                    print(f'W: procurando {l} em {w}\n')
                     if not string_find_element(w, l):
                         valid = False
-                        print(f'não achou\n')
                     else:
-                        print(f'achou\n')
-                        valid = True
+                        pass
         
         
-            # if len(exact_position) > 0:
-            #     for p in range(len(exact_position)):
-            #         if exact_position[p] != '':
-            #             if w[p] != exact_position[p]:
-            #                 valid = False
+            if len(exact_position) > 0:
+                for p in range(len(exact_position)):
+                    if exact_position[p] != '':
+                        if w[p] != exact_position[p]:
+                            valid = False
 
-            # print(f'{valid}\n######\n')
             if valid == True:
-                print(f"{w} entrou")
                 printable.append(w)
 #====================================================
 
-    # print('\n')
-    # count: int = 1
-    # for w in printable:
-    #     print(w, end='   ')
+    print('\n')
+    count: int = 1
+    for w in printable:
+        print(w, end='   ')
 
-    #     if count%8 == 0:
-    #         print('\n')
+        if count%8 == 0:
+            print('\n')
         
-    #     count = count + 1
+        count = count + 1
     
-    array = printable
     print(f'\n{len(printable)} words\n\n')
-    # print(printable)
-    # print('\n')
     
