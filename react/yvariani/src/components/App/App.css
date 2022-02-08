@@ -30,7 +30,7 @@ h1 {
 }
 
 header {
-  background-image: url("../../images/background/45f32bf3-6018-4f07-8089-a3d3981a90d8-profile_banner-480-1.jpeg");
+  background-image: url("../../images/background2.jpeg");
   background-repeat: no-repeat;
   width: 100%;
   padding-top: 30px;
@@ -60,6 +60,56 @@ main {
   margin-top: 80px;
   padding: 2px 30px 2px 5px;
 }
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+.container {
+  margin-top: 8vh;
+  font-size: 2rem;
+  width: 85.5%;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.slider-wrap {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.slider-button {
+  cursor: pointer;
+}
+
+.slider-iten {
+  flex: none;
+}
+
+.slider-iten img {
+  max-height: 300px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* .slider::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 10px rgba(77, 202, 46, 0.637);
+}
+
+.slider::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(206, 32, 32);
+} */
 
 .profileNickname {
   font-size: 2.5rem;

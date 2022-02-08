@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./App.css";
 // import { profilePicture } from "../../images";
 import * as IMAGES from "../../images";
 import { imgs } from "../../images";
+import { IoCaretForwardOutline, IoCaretBackOutline } from "react-icons/io5";
 
 const paleta = false;
 const { images } = IMAGES;
@@ -15,6 +16,20 @@ const obj = JSON.parse(JSON.stringify(imgs));
 // });
 
 function App(): JSX.Element {
+  const slider = useRef<HTMLDivElement>(null);
+
+  function leftClick(e: React.MouseEvent) {
+    e.preventDefault();
+
+    slider.current!.scrollLeft -= slider.current!.offsetWidth;
+  }
+
+  function rightClick(e: React.MouseEvent) {
+    e.preventDefault();
+
+    slider.current!.scrollLeft += slider.current!.offsetWidth;
+  }
+
   function render() {
     const res: React.DetailedHTMLProps<
       React.ImgHTMLAttributes<HTMLImageElement>,
@@ -29,12 +44,9 @@ function App(): JSX.Element {
         console.log(images[key]);
         c = c + 1;
         res.push(
-          <img
-            className="carrousel-iten"
-            src={images[key].module}
-            key={c}
-            alt=""
-          />
+          <div className="slider-iten" key={c}>
+            <img src={images[key].module} alt="" />
+          </div>
         );
       }
     }
@@ -86,8 +98,20 @@ function App(): JSX.Element {
             <article>
               Aqui você vai encontrar alguns dos desenhos/designs que fiz. A
               arte de desenhar é uma das minhas paixões, e adoro trazer esse
-              conteúdo pras minhas lives. Atualmente eu uso{" "}
-              <i style={{ color: "#fae" }}>*Ipad, programa e mesa*</i>
+              conteúdo pras minhas lives. Atualmente eu desenho usando:
+              <br />
+              <br />
+              <ul>
+                <li>
+                  <strong>Mesa digitalizadora: </strong> Wacom One
+                </li>
+                <li>
+                  <strong>Programa de edição: </strong> Procreate
+                </li>
+                <li>
+                  <strong>Dispositivo: </strong> iPad Air 4ª geração
+                </li>
+              </ul>
               <br />
               <br />
             </article>
@@ -107,14 +131,43 @@ function App(): JSX.Element {
           <br />
           <br />
           Tenho uma página na{" "}
-          <a href="https://trello.com/b/RBA4723P/jogos" rel="">
+          <a
+            href="https://trello.com/b/RBA4723P/jogos"
+            rel="noreferrer"
+            target="_blank"
+          >
             Trello
           </a>{" "}
           onde organizo todos os jogos que trouxe ou pretendo trazer para as
           minhas lives, deixando inclusive um review sobre os jogos que foram
           zerados.
         </aside>
-        <section>{render()}</section>
+        <div className="container">
+          <h3>Algumas amostras dos meus desenhos...</h3>
+          <div className="slider-wrap">
+            <div className="slider-button" onClick={leftClick}>
+              <IoCaretBackOutline
+                style={{
+                  height: "50px",
+                  width: "50px",
+                  color: "#820933",
+                }}
+              />
+            </div>
+            <div className="slider" ref={slider}>
+              {render()}
+            </div>
+            <div className="slider-button" onClick={rightClick}>
+              <IoCaretForwardOutline
+                style={{
+                  height: "50px",
+                  width: "50px",
+                  color: "#820933",
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
       {/* fim do App */}
     </>
