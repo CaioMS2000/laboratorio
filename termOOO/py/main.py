@@ -65,16 +65,17 @@ word_size: int = 5
 options: List[int] = [1, 2, 3, 4]
 option: int = 1
 letter: str = ''
+_print = True
 
 while methods.array_find_element(options, option) != None:
-    print("[1] to add a required word\n[2] to add a blocked word\n[3] to positionate a letter into the word\n[4] to get the current word")
+    _print = True
+    print("[1] to add a required word\n[2] to add a blocked word\n[3] to positionate a letter into the word\n[4] to get the current word\n[9] to RESET")
     print("\nq -> stop the program")
 
     option = input()
 
     if option.lower() == "q":
-        methods.clear_console()
-        print("\nFINISHING PROGRAM\n")
+        methods.clear_console(message="\nFINISHING PROGRAM\n")
         sleep(3)
         methods.clear_console()
         break
@@ -82,7 +83,8 @@ while methods.array_find_element(options, option) != None:
         option = int(option)
 
         if not methods.array_find_element(options, option):
-            methods.clear_console('This option is not valid!')
+            methods.clear_console(message=f'{option}\nThis option is not valid!')
+            _print = False
         else:
             if option == 1:
                 letter = ''
@@ -129,14 +131,22 @@ while methods.array_find_element(options, option) != None:
                         print("Quiting\n")
                     else:
                         print("Some position is invalid!\n")
-            else:
+            
+            elif option == 4:
                 print('\n\n')
                 print(word)
                 print(included_letters)
                 print(excluded_letters)
+            
+            elif option == 9:
+                word: str = ['', '', '', '', '']
+                excluded_letters: List[str] = []
+                included_letters: List[str] = []
+                
         
         print('\n\n')
-        methods.print_words(all_words, included_letters, excluded_letters, word)
+        if _print:
+            methods.print_words(all_words, included_letters, excluded_letters, word)
 
 # ===============================================
 

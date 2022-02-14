@@ -34,9 +34,8 @@ def clear_console(OS: str = platform.system(), message = ''):
     else:
         os.system('cls')
     
-    # print(f'\n{OS}\n')
-    
-    print('', end='')
+    # print(f'\n{OS}\n')    
+    print(message, end='\n')
 
 def add_word(arr: [], el, limit:int = 26, repeat = True):
     if len(arr) >= limit:
