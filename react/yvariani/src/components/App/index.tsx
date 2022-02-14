@@ -5,6 +5,8 @@ import "./App.css";
 import * as IMAGES from "../../images";
 import { imgs } from "../../images";
 import { IoCaretForwardOutline, IoCaretBackOutline } from "react-icons/io5";
+import { BsInstagram, BsTwitter, BsTwitch } from "react-icons/bs";
+import { SiSteam } from "react-icons/si";
 
 const paleta = false;
 const { images } = IMAGES;
@@ -87,9 +89,39 @@ function App(): JSX.Element {
             <p className="profileNickname">yVariani</p>
           </div>
         </header>
+        <div className="social-icons">
+          <a
+            href="https://www.twitch.tv/yvariani"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsTwitch className="social-icon" />
+          </a>
+          <a
+            href="https://www.instagram.com/yvariani/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsInstagram className="social-icon" />
+          </a>
+          <a
+            href="https://twitter.com/yvariani"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsTwitter className="social-icon" />
+          </a>
+          <a
+            href="https://steamcommunity.com/id/avariani/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SiSteam className="social-icon" />
+          </a>
+        </div>
         <h1>
           Olá, eu sou Yasmin Variani, sou streamer e artista digital. Este site
-          me serve de portifólio, ou uma vitrine virtual se preferir.
+          serve como portifólio, ou uma vitrine virtual se preferir.
         </h1>
         <br />
         <br />
@@ -121,6 +153,7 @@ function App(): JSX.Element {
         <aside>
           Para quem tem interesse, faço lives na{" "}
           <a
+            className="link"
             href="https://www.twitch.tv/yvariani"
             target="_blank"
             rel="noreferrer"
@@ -132,6 +165,7 @@ function App(): JSX.Element {
           <br />
           Tenho uma página na{" "}
           <a
+            className="link"
             href="https://trello.com/b/RBA4723P/jogos"
             rel="noreferrer"
             target="_blank"
