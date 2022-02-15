@@ -20,13 +20,15 @@ namespace Caio
         void _infixa(Node<T> **node)
         {
             // cout << node << "\n";
-            if ((*node)->left != nullptr and (*node)->left != 0){
-                cout << "indo pra esquerda\n";
+            if ((*node)->left != nullptr and (*node)->left != 0)
+            {
+                // cout << "indo pra esquerda\n";
                 _infixa(&((*node)->left));
             }
             cout << (*node)->data << "\n";
-            if ((*node)->right != nullptr and (*node)->right != 0){
-                cout << "indo pra direita\n";
+            if ((*node)->right != nullptr and (*node)->right != 0)
+            {
+                // cout << "indo pra direita\n";
                 _infixa(&((*node)->right));
             }
         }
