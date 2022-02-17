@@ -19,6 +19,8 @@ import img17 from "./17.png";
 import img18 from "./18.png";
 import img19 from "./19.png";
 import img20 from "./20.png";
+import img21 from "./21.png";
+import img22 from "./22.png";
 
 function importAll(r: __WebpackModuleApi.RequireContext) {
   // console.log(r.keys());
@@ -64,6 +66,8 @@ const imgs = {
   img18,
   img19,
   img20,
+  img21,
+  img22,
   profilePicture,
 };
 // console.log(imgs);

@@ -36,7 +36,7 @@ function App(): JSX.Element {
     const res: React.DetailedHTMLProps<
       React.ImgHTMLAttributes<HTMLImageElement>,
       HTMLImageElement
-    >[] = new Array();
+    >[] = [];
 
     let c: number = 0;
     console.log(images);
@@ -177,7 +177,7 @@ function App(): JSX.Element {
           zerados.
         </aside>
         <div className="container">
-          <h3>Algumas amostras dos meus desenhos...</h3>
+          <h3>Alguns dos desenhos que eu fiz...</h3>
           <div className="slider-wrap">
             <div className="slider-button" onClick={leftClick}>
               <IoCaretBackOutline
