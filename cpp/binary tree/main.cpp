@@ -14,4 +14,11 @@ int main(void)
     tree.add(2);
     tree.add(8);
     tree.infixa();
+
+    string res = tree.exists(2) ? "existe" : "nao existe";
+    cout << "\n\n"
+         << res << "\n";
+
+    tree.remove(8);
+    tree.infixa();
 }
