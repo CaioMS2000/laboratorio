@@ -15,6 +15,7 @@ namespace Caio
     {
     private:
         Node<T> *root = nullptr;
+
         void ADD(Node<T> **n, T element);
 
         void _infixa(Node<T> **node)
@@ -34,7 +35,7 @@ namespace Caio
         }
 
         bool _exists(T element, Node<T> **node);
-        void _remove(T element, Node<T> **node, Node<T> **parent = nullptr);
+        void _remove(T element, Node<T> **node);
 
     public:
         BnTree()
@@ -46,6 +47,7 @@ namespace Caio
         inline Node<T> *get_root() { return root; }
         void infixa()
         {
+            // cout << root << "\n";
             _infixa(&root);
             cout << "\n";
             return;
@@ -104,12 +106,12 @@ namespace Caio
             {
                 if ((*node)->data > element)
                 {
-                    cout << element << " eh menor que " << (*node)->data << " -> esquerda\n";
+                    // cout << element << " eh menor que " << (*node)->data << " -> esquerda\n";
                     return _exists(element, &((*node)->left));
                 }
                 else
                 {
-                    cout << element << " eh maior que " << (*node)->data << " -> direita\n";
+                    // cout << element << " eh maior que " << (*node)->data << " -> direita\n";
                     return _exists(element, &((*node)->right));
                 }
             }
@@ -119,68 +121,57 @@ namespace Caio
     }
 
     template <class T>
-    void BnTree<T>::_remove(T element, Node<T> **node, Node<T> **parent)
+    void BnTree<T>::_remove(T element, Node<T> **node)
     {
-        if ((*node) != nullptr)
-        {
-            if (element < (*node)->data)
-            {
-                return _remove(element, &((*node)->left), parent);
-            }
-            else
-            {
-                return _remove(element, &((*node)->right), parent);
-            }
+        Node<T> **parent = node;
+        Node<T> **aux;
 
-            if ((*node)->right == nullptr && (*node)->left == nullptr)
-            { // nó folha
-                delete *node;
-                (*node) = nullptr;
-            }
-            else
-            {
-                if ((*node)->right != nullptr && (*node)->left != nullptr)
-                {
-                    // nó com 2 sub arvores
-                    bool stop = false;
-                    Node<T> **n = &((*node)->right);
+        // achar o nó que será removido
+        while(node != nullptr and (*node)->data != element){
+            if(element < (*node)->data)
+                node = &((*node)->left);
+            else if(element > (*node)->data)
+                node = &((*node)->right);
+        }
 
-                    while (!stop)
-                    {
-                        if ((*n)->left != nullptr)
-                        {
-                            parent = &(*n);
-                            n = &((*n)->left);
-                        }
-                        else
-                        {
-                            stop = true;
-                        }
-                    }
+        if((*node) != nullptr){// nó encontrado
+            // nó com 2 subarvores
+            if((*node)->left != nullptr and (*node)->right != nullptr){
+                cout << element << " possui 2 subarvores\n";
 
-                    (*parent)->left = (*n)->right;
-                    (*node)->data = (*n)->data;
-                    delete *n;
+                aux = parent = node;
+                node = &((*node)->right);
+
+                while((*node)->left != nullptr){// procurar o menor entre os maiores que o nó a ser removido
+                    parent = node;
+                    node = &((*node)->left);
                 }
-                else if ((*parent) != nullptr)
-                {
-                    // nó com 1 sub arvore
-                    if ((*node)->right != nullptr)
-                    {
-                        *parent = (*node)->right;
-                    }
-                    else
-                    {
-                        *parent = (*node)->left;
-                    }
-                }
-                else
-                    cout << "Need a parent pointer\n";
+
+                (*aux)->data = (*node)->data;
+
+                (*parent)->right = (*node)->right;
+
             }
 
-            delete *node;
-            (*node) = nullptr;
-            return;
+            // nó com 1 subarvore
+            else if((*node)->left != nullptr){// subarvore na esquerda
+                cout << element << " possui apenas subarvore na esquerda\n";
+            }
+            else if((*node)->right != nullptr){// subarvore na direita
+                cout << element << " possui apenas subarvore na direita\n";
+            }
+
+            // nó folha
+            else{
+                cout << element << " eh um no folha\n";
+            }
+
+            // cout << "antes de deletar\n";
+            // delete *node;
+            // delete node;
+            // (*node)->left = nullptr;
+            // (*node)->right = nullptr;
+            // cout << "depois de deletar\n";
         }
     }
 } // namespace
