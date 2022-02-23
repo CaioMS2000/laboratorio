@@ -25,10 +25,13 @@ int main(void)
     tree.add(15);
     tree.add(14);
     tree.add(18);
-    tree.add(18);
+    // tree.add(18);
 
-    tree.infixa();
+    // tree.infixa();
 
-    tree.remove(18);
+    // tree.remove(18);
+    // tree.remove(14);
+    cout << "inseriu todos\n";
     tree.infixa();
+    cout << "heigth: " << tree.heigth() << "\n";
 }

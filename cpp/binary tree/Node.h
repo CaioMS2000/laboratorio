@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace Caio
 {
     template <class T>
@@ -11,6 +13,7 @@ namespace Caio
         {
             left = nullptr;
             right = nullptr;
+            std::cout << "\nNODE DESTRUCTED\n";
         }
         T data;
         Node<T> *left;

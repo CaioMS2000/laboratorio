@@ -15,7 +15,7 @@ namespace Caio
     class BnTree
     {
     private:
-        Node<T> *root = nullptr;
+        Node<T> *root;
 
         void ADD(Node<T> **n, T element);
 
@@ -34,14 +34,21 @@ namespace Caio
 
         bool _exists(T element, Node<T> **node);
         void _remove(T element, Node<T> **node);
+        int _heigth(Node<T> **node);
+        void _LL(Node<T> **node);
+        void _RR(Node<T> **node);
+        void _LR(Node<T> **node);
+        void _RL(Node<T> **node);
 
     public:
         BnTree()
         {
             // std::cout << "new empty tree\n";
+            root = nullptr;
         }
 
         void add(T element);
+        inline int heigth(Node<T> **node = nullptr) { return _heigth(node == nullptr ? &root : node); }
         inline Node<T> *get_root() { return root; }
         void infixa()
         {
@@ -62,6 +69,10 @@ namespace Caio
             }
             return;
         }
+        void LL(Node<T> **node = nullptr) { _LL(*node == nullptr ? &root : node); }
+        void RR(Node<T> **node = nullptr) { _RR(*node == nullptr ? &root : node); }
+        void LR(Node<T> **node = nullptr) { _LR(*node == nullptr ? &root : node); }
+        void RL(Node<T> **node = nullptr) { _RL(*node == nullptr ? &root : node); }
     };
 
     template <class T>
@@ -76,14 +87,54 @@ namespace Caio
 
         if ((*n)->data > element)
         {
-            return ADD(&((*n)->left), element);
+            ADD(&((*n)->left), element);
+            cout << element << " foi inserido na esquerda\n";
+
+            int balance = heigth(&((*n)->left)) - heigth(&((*n)->right));
+
+            if (balance > 1 or balance < -1)
+            {
+                if (element < (*n)->left->data)
+                {
+                    LL(n);
+                    cout << element << " nao falhou\n";
+                }
+                else
+                {
+                    LR(n);
+                    cout << element << " nao falhou\n";
+                }
+            }
+
+            // return;
         }
         else if ((*n)->data < element)
         {
-            return ADD(&((*n)->right), element);
-        }
+            ADD(&((*n)->right), element);
+            cout << element << " foi inserido na direita\n";
 
-        cout << element << " it's already in the tree\n";
+            int balance = heigth(&((*n)->left)) - heigth(&((*n)->right));
+
+            if (balance > 1 or balance < -1)
+            {
+                if (element < (*n)->right->data)
+                {
+                    RR(n);
+                    cout << element << " nao falhou\n";
+                }
+                else
+                {
+                    RL(n);
+                    cout << element << " nao falhou\n";
+                }
+            }
+
+            // return;
+        }
+        else
+        {
+            cout << element << " it's already in the tree\n";
+        }
     }
 
     template <class T>
@@ -173,9 +224,7 @@ namespace Caio
             // nó folha
             else
             {
-                cout << element << " eh um no folha\n";
-
-                if ((*parent)->right->data == (*node)->data)
+                if ((*parent)->right != nullptr and (*parent)->right->data == (*node)->data)
                 {
                     (*parent)->right = nullptr;
                 }
@@ -185,7 +234,55 @@ namespace Caio
                 }
             }
 
-            delete *node;
+            // delete *node;
         }
+    }
+
+    template <class T>
+    int BnTree<T>::_heigth(Node<T> **node)
+    {
+        if (node == nullptr)
+            return 0;
+        if (*node == nullptr)
+            return 0;
+
+        int left = _heigth(&((*node)->left));
+        int right = _heigth(&((*node)->right));
+
+        return (1 + (left > right ? left : right));
+    }
+
+    template <class T>
+    void BnTree<T>::_LL(Node<T> **node)
+    {
+        Node<T> **aux = &((*node)->left);
+
+        (*node)->left = (*aux)->right;
+        (*aux)->right = *node;
+        *node = *aux;
+    }
+
+    template <class T>
+    void BnTree<T>::_RR(Node<T> **node)
+    {
+        Node<T> **aux = &((*node)->right);
+
+        (*node)->right = (*aux)->left;
+        (*aux)->left = *node;
+        *node = *aux;
+    }
+
+    template <class T>
+    void BnTree<T>::_LR(Node<T> **node)
+    {
+        _RR(&((*node)->left));
+        _LL(node);
+    }
+
+    template <class T>
+    void BnTree<T>::_RL(Node<T> **node)
+    {
+        _LL(&((*node)->right));
+        _RR(node);
     }
 } // namespace
