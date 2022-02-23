@@ -62,7 +62,7 @@ word: str = ['', '', '', '', '']
 excluded_letters: List[str] = []
 included_letters: List[str] = []
 word_size: int = 5
-options: List[int] = [1, 2, 3, 4]
+options: List[int] = [1, 2, 3, 4, 9]
 option: int = 1
 letter: str = ''
 _print = True
@@ -76,7 +76,7 @@ while methods.array_find_element(options, option) != None:
 
     if option.lower() == "q":
         methods.clear_console(message="\nFINISHING PROGRAM\n")
-        sleep(3)
+        sleep(2)
         methods.clear_console()
         break
     else:
