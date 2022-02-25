@@ -86,7 +86,7 @@ function App(): JSX.Element {
         <header>
           <div className="img">
             <img className="profilePicture" src={profilePicture} alt="" />
-            <p className="profileNickname">yVariani</p>
+            <p className="profileNickname">YVariani</p>
           </div>
         </header>
         <div className="social-icons">
