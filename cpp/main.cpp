@@ -12,5 +12,5 @@ int main(int argc, char **argv)
 #ifdef _WIN64
     system("cls");
 #endif
-
+    Array<int>::print((new int[4]{1, 5, 9, 8}), 4);
 }
