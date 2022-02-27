@@ -10,7 +10,7 @@
   text-align: center;
   padding-bottom: 20px;
   background-image: url("../../images/pink\ images\ \(3\)\ tall.png");
-  background-repeat: space;
+  background-repeat: round;
   /* background-size: 100% 100%; */
 }
 

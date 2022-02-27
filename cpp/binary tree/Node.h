@@ -9,14 +9,19 @@ namespace Caio
     {
     private:
     public:
+        T data;
+        Node<T> *left;
+        Node<T> *right;
+
+        Node(T data)
+        {
+            this->data = data;
+        }
         ~Node()
         {
             left = nullptr;
             right = nullptr;
             std::cout << "\nNODE DESTRUCTED\n";
         }
-        T data;
-        Node<T> *left;
-        Node<T> *right;
     };
 }
