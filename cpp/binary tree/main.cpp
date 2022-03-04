@@ -15,11 +15,21 @@ int main(void)
     system("cls");
 #endif
 
-    Caio::BnTree<int> tree;
-    Caio::BnTree<int> tree2;
+    Caio::BnTree<int> tree(10);
 
-    // tree.add(10);
-    // tree.add(9);
+    tree.add(9);
+    tree.add(11);
+    tree.add(4);
+    tree.add(5);
 
-    cout << tree.height() << "\n";
+    cout << "\n#####\n";
+    tree.inorder();
+    cout << "\n#\n";
+    cout << tree.root << "\n";
+    tree.remove(5);
+    cout << tree.root << "\n";
+    cout << "\n#\n";
+    tree.inorder();
+    // tree.postorder();
+    // tree.preorder();
 }
