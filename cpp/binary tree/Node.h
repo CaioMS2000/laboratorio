@@ -13,10 +13,15 @@ namespace Caio
         Node<T> *left;
         Node<T> *right;
 
-        Node(){};
+        Node(){
+            left = nullptr;
+            right = nullptr;
+        };
         Node(T data)
         {
             this->data = data;
+            left = nullptr;
+            right = nullptr;
         }
         ~Node()
         {

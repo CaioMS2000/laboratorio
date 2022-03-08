@@ -21,15 +21,17 @@ int main(void)
     tree.add(11);
     tree.add(4);
     tree.add(5);
+    tree.add(12);
+    tree.add(15);
+    tree.add(14);
+    tree.add(18);
 
-    cout << "\n#####\n";
     tree.inorder();
-    cout << "\n#\n";
-    cout << tree.root << "\n";
-    tree.remove(5);
-    cout << tree.root << "\n";
-    cout << "\n#\n";
+    tree.postorder();
+    tree.preorder();
+    cout << "\n#####\n\n";
+    tree.remove(10);
     tree.inorder();
-    // tree.postorder();
-    // tree.preorder();
+    tree.postorder();
+    tree.preorder();
 }
