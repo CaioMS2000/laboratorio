@@ -26,13 +26,15 @@ int main(void)
     tree.add(14);
     tree.add(18);
 
-    tree.inorder();
-    tree.postorder();
-    tree.preorder();
-    cout << "\n#####\n\n";
-    // tree.remove(10);
-    tree.inorder();
-    tree.postorder();
-    tree.preorder();
-    cout << "\n" << tree.heigth(new int(12)) << "\n";
+    cout << tree.root << "\n";
+
+    // tree.inorder();
+    // tree.postorder();
+    // tree.preorder();
+    // cout << "\n#####\n\n";
+    // // tree.remove(10);
+    // tree.inorder();
+    // tree.postorder();
+    // tree.preorder();
+    // cout << "\n" << tree.heigth(new int(12)) << "\n";
 }
