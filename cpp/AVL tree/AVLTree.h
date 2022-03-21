@@ -163,7 +163,7 @@ namespace Caio
             cout << (*node)->left->data << " na esquerda\n";
             if (fb > 1 and (*node)->left != nullptr)
             {
-                cout << element << " rotacionando\n";
+                cout << "L: " << element << " rotacionando\n";
                 cout << (*node)->left->data << " sdfsd\n";
                 cout << (*node)->left->data << " sdfsd\n";
                 cout << (*node)->left->data << " sdfsd\n";
@@ -202,7 +202,7 @@ namespace Caio
             if (fb > 1 and (*node)->right != nullptr)
             {
                 cout << (*node)->right->data << "sdfsd\n";
-                cout << element << " rotacionando\n"
+                cout << "R: " << element << " rotacionando\n"
                      << (*node)->right << "\n";
                 if (element > (*node)->right->data)
                 {
