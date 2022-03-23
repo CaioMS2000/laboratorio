@@ -1,8 +1,12 @@
+# uvicorn main:app --reload
 import fastapi
 import fastapi.security
 import sqlalchemy.orm
+from datetime import datetime
 
 import services
+import models
+import schemas
 
 services.create_database()
 app = fastapi.FastAPI()
@@ -14,3 +18,5 @@ async def generate_token(form_data: fastapi.security.OAuth2PasswordRequestForm =
 
     if not valid:
         raise fastapi.HTTPException(status_code=401, detail="Invalid Credentials")
+    
+    return await services.create_token()
