@@ -1,3 +1,6 @@
+vogais = ['a', 'e', 'i', 'o', 'u']
+all_words = []
+
 class Array:
     @staticmethod
     def index(array: [], element)->int:
@@ -12,8 +15,19 @@ def Convert(string):
     list1[:0]=string
     return list1
 
-all_words = []
-vogais = ['a', 'e', 'i', 'o', 'u']
+def count_vogals(w, n: int):
+    if type(w) == str:
+        w = Convert(w)
+    
+    count = 0
+    for v in vogais:
+        # if Array.index(w, v) > -1:
+        #     count = count + 1
+        while Array.index(w, 'e') > -1:
+            count = count + 1
+            w.remove('e')
+    
+    return count >= n
 
 archive = open("words.txt", "r")
 
@@ -33,24 +47,18 @@ _res = []
 for word in all_words:
     vec = Convert(word)
 
-    # if Array.index(vec, 'u') > -1:
-    #     if Array.index(vec, 'e') > -1:
-    #         if Array.index(vec, 'a') == -1:
-    #             if Array.index(vec, 'i') == -1:
-    #                 if Array.index(vec, 'o') == -1:
-    #                     _res.append(word)
-    if Array.index(vec, 'b') > -1:
-        if Array.index(vec, 'f') > -1:
-            if Array.index(vec, 'p') > -1:
-                    _res.append(word)
+    if Array.index(vec, 'g') > -1:
+        if count_vogals(vec, 2):
+            _res.append(word)
 #=================================================
 
 # Printing =======================================
 count = 0
 for word in _res:
-    count = (count + 1) % 8
+    count = (count + 1) % 15
     print(word, end='   ')
 
     if count == 0:
         print('\n')
-    
+
+# aguei toque
