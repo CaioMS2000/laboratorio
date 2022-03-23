@@ -1,3 +1,5 @@
+# source /home/caio/Programacao/laboratorio/termOOO/py/venv/bin/activate
+# python3 main.py
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from unidecode import unidecode
@@ -69,7 +71,7 @@ _print = True
 
 while methods.array_find_element(options, option) != None:
     _print = True
-    print("[1] to add a required word\n[2] to add a blocked word\n[3] to positionate a letter into the word\n[4] to get the current word\n[9] to RESET")
+    print("[1] to add a required letter\n[2] to add a blocked letter\n[3] to positionate a letter into the word\n[4] to get the current word\n[9] to RESET")
     print("\nq -> stop the program")
 
     option = input()

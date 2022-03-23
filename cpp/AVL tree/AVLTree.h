@@ -37,7 +37,7 @@ namespace Caio
             if (node == nullptr or *node == nullptr)
                 return -1;
 
-            cout << (*node)->data << " nao eh nulo\n";
+            // cout << (*node)->data << " nao eh nulo\n";
 
             return ((_heigth(&((*node)->left)) > _heigth(&((*node)->right)) ? _heigth(&((*node)->left)) : _heigth(&((*node)->right))) + 1);
         }
@@ -47,24 +47,30 @@ namespace Caio
             Node<T> **aux = &((*node)->left);
             cout << "passou\n";
 
-            if (aux != nullptr)
-            {
-                (*node)->left = (*aux)->right;
-                (*aux)->right = *node;
-                node = aux;
-            }
+            (*node)->left = (*aux)->right;
+            (*aux)->right = *node;
+            *node = *aux;
+            // if (aux != nullptr)
+            // {
+            //     (*node)->left = (*aux)->right;
+            //     (*aux)->right = *node;
+            //     *node = *aux;
+            // }
         }
 
         void RR(Node<T> **node)
         {
             Node<T> **aux = &((*node)->right);
 
-            if (aux != nullptr)
-            {
-                (*node)->right = (*aux)->left;
-                (*aux)->left = *node;
-                node = aux;
-            }
+            (*node)->right = (*aux)->left;
+            (*aux)->left = *node;
+            *node = *aux;
+            // if (aux != nullptr)
+            // {
+            //     (*node)->right = (*aux)->left;
+            //     (*aux)->left = *node;
+            //     *node = *aux;
+            // }
         }
 
         void LR(Node<T> **node)
@@ -96,7 +102,12 @@ namespace Caio
             cout << "\nTREE DESTRUCTED\n";
         }
 
-        bool add(T element) { return _add(element, &root); }
+        bool add(T element)
+        {
+            bool res = _add(element, &root);
+            cout << "inserção finalizada\n\n";
+            return res;
+        }
         bool remove(T element) { return _remove(element, &root); }
         void preorder()
         {
@@ -120,35 +131,43 @@ namespace Caio
     template <class T>
     bool AVLTree<T>::_add(T element, Node<T> **node)
     {
+        cout << "inserindo " << element << "\n";
         bool res;
 
         if (root == nullptr)
         {
             root = new Node<T>(element);
+            cout << "raiz " << element << " criada\n";
             return true;
         }
         // else if (node == nullptr or (*node) == nullptr)
         else if ((*node) == nullptr)
         {
             *node = new Node<T>(element);
+            cout << "nó " << element << " criado\n";
             return true;
         }
 
         if (element < (*node)->data)
         {
-            cout << element << " antes\n";
+            cout << "de " << (*node)->data << " indo para a esquerda\n";
             res = _add(element, &((*node)->left));
+            cout << "res1: " << res << "\n";
 
             int hl = _heigth(&((*node)->left));
             int hr = _heigth(&((*node)->right));
-            cout << element << " depois\n";
             int fb = hl - hr;
             fb = fb < 0 ? fb * -1 : fb;
 
+            cout << "#" << (*node)->data << "\n";
+            cout << (*node)->left->data << " na esquerda\n";
             if (fb > 1 and (*node)->left != nullptr)
             {
-                cout << (*node)->left->data << "sdfsd\n";
-                cout << element << " rotacionando\n" << (*node)->left << "\n";
+                cout << "L: " << element << " rotacionando\n";
+                cout << (*node)->left->data << " sdfsd\n";
+                cout << (*node)->left->data << " sdfsd\n";
+                cout << (*node)->left->data << " sdfsd\n";
+                cout << (*node)->left->data << " sdfsd\n";
                 if (element < (*node)->left->data)
                 {
                     cout << "aqui\n";
@@ -160,25 +179,44 @@ namespace Caio
                     LR(node);
                 }
             }
+            else{
+                cout << "rotação não realizada\n";
+            }
 
-            cout << element << "retornando\n";
+            cout << element << " retornando\n";
             return res;
         }
         else if (element > (*node)->data)
         {
+            cout << "de " << (*node)->data << " indo para a direita\n";
             res = _add(element, &((*node)->right));
+            cout << "res2: " << res << "\n";
 
             int hl = _heigth(&((*node)->left));
             int hr = _heigth(&((*node)->right));
             int fb = hl - hr;
             fb = fb < 0 ? fb * (-1) : fb;
 
+            cout << "#" << (*node)->data << "\n";
+            cout << (*node)->right->data << " na direita\n";
             if (fb > 1 and (*node)->right != nullptr)
             {
+                cout << (*node)->right->data << "sdfsd\n";
+                cout << "R: " << element << " rotacionando\n"
+                     << (*node)->right << "\n";
                 if (element > (*node)->right->data)
+                {
+                    cout << "aqui\n";
                     RR(node);
+                }
                 else
+                {
+                    cout << "ou aqui";
                     RL(node);
+                }
+            }
+            else{
+                cout << "rotação não realizada\n";
             }
 
             return res;

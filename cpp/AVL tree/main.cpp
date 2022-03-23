@@ -18,13 +18,21 @@ int main(void)
     Caio::AVLTree<int> tree(10);
 
     tree.add(9);
+    cout << "\n";
     tree.add(11);
+    cout << "\n";
     tree.add(4);
+    cout << "\n";
     tree.add(5);
+    cout << "\n";
     tree.add(12);
+    cout << "\n";
     tree.add(15);
+    cout << "\n";
     tree.add(14);
+    cout << "\n";
     tree.add(18);
+    cout << "\n\n\n";
 
     cout << tree.root << "\n";
 
