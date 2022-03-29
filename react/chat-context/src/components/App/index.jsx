@@ -45,8 +45,8 @@ function App() {
         />
       </Helmet> */}
       <GlobalStyles className="GlobalStyles" />
-      <Card inputs={["Name", "Age"]}></Card>
-      {/* <S.AppWrapper className="AppWrapper">
+      {/* <Card inputs={["Name", "Age"]}></Card> */}
+      <S.AppWrapper className="AppWrapper">
         <BrowserRouter>
           <S._Link
             to="/"
@@ -73,7 +73,7 @@ function App() {
             <Route path="*" element={<>{"THIS PAGE DOESN'T EXIST"}</>} />
           </Routes>
         </BrowserRouter>
-      </S.AppWrapper> */}
+      </S.AppWrapper>
     </>
   );
 }

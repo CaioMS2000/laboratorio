@@ -1,4 +1,5 @@
-const url = "http://127.0.0.1:8000/";
+// const url = "http://127.0.0.1:8000/";
+const url = "https://my-web-chat-0.herokuapp.com/";
 
 export const sendUser = (nickname, password, token) => {
   // console.log("stringfy", JSON.stringify({ nickname, password }));

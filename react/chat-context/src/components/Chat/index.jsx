@@ -7,7 +7,8 @@ import { useMessage } from "../context/Message";
 import { useLogin } from "../context/Login";
 import { useToken } from "../context/Token";
 
-const ws = new WebSocket(`ws://localhost:8000/ws/`);
+// const ws = new WebSocket(`ws://localhost:8000/ws/`);
+const ws = new WebSocket(`ws://my-web-chat-0.herokuapp.com/ws/`);
 // const date = new Date();
 // const socket_id = `${date.getFullYear()}${
 //   date.getMonth() + 1
@@ -69,6 +70,7 @@ const Chat = () => {
       API.sendMessage(data.id, msg, token);
       msg = JSON.stringify({ content: `${msg}`, user: data.nickname });
       ws.send(msg);
+      console.log(`WS: a mensagem ${msg} foi enviada`);
     }
   };
 
@@ -99,6 +101,7 @@ const Chat = () => {
 
     ws.onmessage = function (event) {
       // setMessages(loadedMessages.concat(JSON.parse(event.data)));
+      console.log(`WS: chegou ${event.data}`);
       setMessages((prevState) => prevState.concat(JSON.parse(event.data)));
     };
   });
@@ -122,7 +125,6 @@ const Chat = () => {
           <S.Button
             ref={button}
             onClick={() => {
-              console.log("envie a mensagem");
               sendMessage(input.current.value);
               input.current.value = "";
             }}
