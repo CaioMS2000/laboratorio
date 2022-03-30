@@ -8,7 +8,7 @@ import { useLogin } from "../context/Login";
 import { useToken } from "../context/Token";
 
 // const ws = new WebSocket(`ws://localhost:8000/ws/`);
-const ws = new WebSocket(`ws://my-web-chat-0.herokuapp.com/ws/`);
+const ws = new WebSocket(`wss://my-web-chat-0.herokuapp.com/ws/`);
 // const date = new Date();
 // const socket_id = `${date.getFullYear()}${
 //   date.getMonth() + 1
