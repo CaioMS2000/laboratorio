@@ -12,3 +12,7 @@ mysqlclient
 django-widget-tweaks
 django-crispy-forms
 django-localflavor
+mercadopago
+django-environ
+pytest-mock
+requests
