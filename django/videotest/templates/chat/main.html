@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC</title>
+  </head>
+  <body>
+    <h3 id="label-username">Username</h3>
+    <div>
+      <input type="text" id="username" /><button id="btn-join">Join</button>
+    </div>
+    <div class="main-grid-container">
+      <div class="video-container">
+        <div>
+          <video
+            src=""
+            class="local-video"
+            autoplay
+            playsinline
+            style="float: left"
+          ></video>
+        </div>
+        <button id="btn-toggle-audio">Audio mute</button
+        ><button id="btn-toggle-video">Video off</button>
+      </div>
+      <div id="chat">
+        <h3>CHAT</h3>
+        <div id="messages"><ul id="message-list"></ul></div>
+        <div>
+          <input type="text" id="msg" /><button id="btn-send-msg">
+            Send Message
+          </button>
+        </div>
+        <button id="btn-share-screen">Share screen</button>
+      </div>
+    </div>
+  </body>
+</html>
