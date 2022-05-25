@@ -2,13 +2,13 @@ django
 django-autoslug
 django-debug-toolbar
 django-model-utils
+environ
 factory-boy
 ipython
 pillow
 pytest
 pytest-cov
 pytest-django
-mysqlclient
 django-widget-tweaks
 django-crispy-forms
 django-localflavor
@@ -16,3 +16,4 @@ mercadopago
 django-environ
 pytest-mock
 requests
+mysqlclient
