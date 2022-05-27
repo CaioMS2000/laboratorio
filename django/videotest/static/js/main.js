@@ -119,7 +119,6 @@ let userMedia = navigator.mediaDevices.getUserMedia(constraints).then(stream => 
 })
 
 let btnSendMsg = document.querySelector('#btn-send-msg')
-btnSendMsg.addEventListener('click', sendMsgOnClick)
 
 let messageInput = document.querySelector('#msg')
 const sendMsgOnClick = () => {
@@ -128,17 +127,18 @@ const sendMsgOnClick = () => {
 
     li.appendChild(document.createTextNode('Me: '+message))
     messageList.appendChild(li)
-
+    
     let dataChannels = getDataChannels()
-
+    
     message = `${username}: ${message}`
-
+    
     for(index in dataChannels){
         dataChannels[index].send(message)
     }
-
+    
     messageInput.value = ''
 }
+btnSendMsg.addEventListener('click', sendMsgOnClick)
 
 const sendSignal = (action, message) => {
     
