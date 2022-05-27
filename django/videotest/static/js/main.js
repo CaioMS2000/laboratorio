@@ -121,7 +121,24 @@ let userMedia = navigator.mediaDevices.getUserMedia(constraints).then(stream => 
 let btnSendMsg = document.querySelector('#btn-send-msg')
 
 let messageInput = document.querySelector('#msg')
-const sendMsgOnClick = () => {
+// const sendMsgOnClick = () => {
+//     let message = messageInput.value
+//     let li = document.createElement('li')
+
+//     li.appendChild(document.createTextNode('Me: '+message))
+//     messageList.appendChild(li)
+    
+//     let dataChannels = getDataChannels()
+    
+//     message = `${username}: ${message}`
+    
+//     for(index in dataChannels){
+//         dataChannels[index].send(message)
+//     }
+    
+//     messageInput.value = ''
+// }
+function sendMsgOnClick(){
     let message = messageInput.value
     let li = document.createElement('li')
 
@@ -140,7 +157,7 @@ const sendMsgOnClick = () => {
 }
 btnSendMsg.addEventListener('click', sendMsgOnClick)
 
-const sendSignal = (action, message) => {
+function sendSignal(action, message){
     
     let jsonStr = JSON.stringify({
         'peer': username,
