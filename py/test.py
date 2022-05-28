@@ -1,24 +1,24 @@
-from anneal import SimAnneal
-import matplotlib.pyplot as plt
-import random
+from itertools import count
 
+counter = count()
+vec = [1,2,3,4,5,6,7]
 
-def read_coords(path):
-    coords = []
-    with open(path, "r") as f:
-        for line in f.readlines():
-            line = [float(x.replace("\n", "")) for x in line.split(" ")]
-            coords.append(line)
-    return coords
+print(vec)
+print(vec[:-1])
+print(vec[1:])
+print()
 
+zipped = zip(vec[:-1], vec[1:])
 
-def generate_random_coords(num_nodes):
-    return [[random.uniform(-1000, 1000), random.uniform(-1000, 1000)] for i in range(num_nodes)]
+coords2 = []
+for z in zipped:
+    print(z)
+    coords2.append((z[0], z[1]))
 
+print(f'\n({vec[0]}, {vec[-1]})')
+print(coords2)
 
-if __name__ == "__main__":
-    coords = read_coords("coord.txt")  # generate_random_coords(100)
-    sa = SimAnneal(coords, stopping_iter=5000)
-    sa.anneal()
-    sa.visualize_routes()
-    sa.plot_learning()
+print("\n\n\n")
+for i in range(10):
+    c = next(counter)
+    print(c)

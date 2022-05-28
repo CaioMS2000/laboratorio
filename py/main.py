@@ -45,13 +45,12 @@ if __name__ == '__main__':
     ax2 = fig.add_subplot(122)
 
     for first, second in zip(coords[:-1], coords[1:]):
-        pass
-    #     ax1.plot([first.x, second.x], [first.y, second.y], 'b')
+        ax1.plot([first.x, second.x], [first.y, second.y], 'b')
     
-    # ax1.plot([coords[0].x, coords[-1].x], [coords[0].y, coords[-1].y], 'b')
+    ax1.plot([coords[0].x, coords[-1].x], [coords[0].y, coords[-1].y], 'b')
 
-    # for c in coords:
-    #     ax1.plot(c.x, c.y, 'ro')
+    for c in coords:
+        ax1.plot(c.x, c.y, 'ro')
     
     # simulated annealing
     cost0 = Coordinate.get_total_distance(coords)
@@ -68,8 +67,8 @@ if __name__ == '__main__':
             r1, r2 = numpy.random.randint(0, len(coords), size=2)
 
             temp = coords[r1]
-            coords[1] = coords[2]
-            coords[2] = temp
+            coords[r1] = coords[r2]
+            coords[r2] = temp
 
             # get new cost
             cost1 = Coordinate.get_total_distance(coords)
@@ -92,23 +91,18 @@ if __name__ == '__main__':
     print("\n")
     # plot the result
     count = 0
-    # ani = FuncAnimation(plt.gcf(), zip(coords[:-1], coords[1:]), interval=1000)
     for first, second in zip(coords[:-1], coords[1:]):
-        ax1.plot([first.x, second.x], [first.y, second.y])
         ax2.plot([first.x, second.x], [first.y, second.y])
         print(f'({first.x}, {second.x} # {first.y}, {second.y}')
         count += 1
     
     print(f'\n{count} x \n')
     
-    ax1.plot([coords[0].x, coords[-1].x], [coords[0].y, coords[-1].y])
     ax2.plot([coords[0].x, coords[-1].x], [coords[0].y, coords[-1].y])
     print(f'({coords[0].x}, {coords[-1].x} # {coords[0].y}, {coords[-1].y}')
-
+    
     for c in coords:
-        ax1.plot(c.x, c.y, 'ro')
-    # for c in coords:
-    #     ax2.plot(c.x, c.y, 'ro')
+        ax2.plot(c.x, c.y, 'ro')
     
 
     plt.show()
