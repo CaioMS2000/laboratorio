@@ -88,7 +88,9 @@ let localStream = new MediaStream();
 const constraints = {'video': true, 'audio': true}
 const localVideo = document.querySelector('#local-video')
 const btnToggleAudio = document.querySelector('#btn-toggle-audio')
-const btnToggleVideo = document.querySelector('#btn-toggle-Video')
+const btnToggleVideo = document.querySelector('#btn-toggle-video')
+console.log('Query of audio button\n\n')
+console.log(btnToggleAudio)
 console.log('Query of video button\n\n')
 console.log(btnToggleVideo)
 
@@ -107,14 +109,14 @@ let userMedia = navigator.mediaDevices.getUserMedia(constraints).then(stream => 
         audioTracks[0].enabled = !audioTracks[0].enabled
 
         btnToggleAudio.innerHTML = 'Audio '
-        btnToggleAudio = audioTracks[0].enabled? 'Mute':'Unmute'
+        btnToggleAudio.innerHTML = btnToggleAudio.innerHTML + audioTracks[0].enabled? 'Mute':'Unmute'
     })
 
     btnToggleVideo.addEventListener('click', () => {
         videoTracks[0].enabled = !videoTracks[0].enabled
 
         btnToggleVideo.innerHTML = 'Video '
-        btnToggleVideo = videoTracks[0].enabled? 'Off':'On'
+        btnToggleVideo.innerHTML = btnToggleVideo.innerHTML + videoTracks[0].enabled? 'Off':'On'
     })
 }).catch(error => {
     console.log('# Error accessing media devices', error)

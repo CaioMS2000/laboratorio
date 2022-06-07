@@ -1,97 +1,114 @@
-# import matplotlib.pyplot as plt
-# from matplotlib.animation import FuncAnimation
-# import numpy
+import json
+import numpy
+import warnings
 
-class Graph():
+warnings.filterwarnings('ignore')
 
-    def __init__(self, gdict= None):
-        if gdict is None:
-            gdict = {}
-        
-        self.gdict = gdict
-    
-    def edges(self):
-        return self.findEdges()
+data = {}
+adj = []
+NODES = 5
+MAX = 1000
 
-    def AddEdge(self, edge):
-        edge = set(edge)
-        (v1, v2) = tuple(edge)
+# WRITING INTO FILE ===================
+# for i in range(NODES):
+#     data[str(i)] = {}
+#     for j in range(NODES):
+#         if i != j:
+#             data[str(i)][str(j)] = numpy.random.randint(1, 50)
+#         else:
+#             data[str(i)][str(j)] = 0
 
-        if v1 in self.gdict:
-            self.gdict[v1].append(v2)
-        else:
-            self.gdict[v1] = [v2]
-    
-    def findEdges(self):
-        edgename = []
+# json_string = json.dumps(data)
 
-        for v in self.gdict:
-            for nxt in self.gdict[v]:
-                if {nxt, v} not in edgename:
-                    edgename.append({v, nxt})
-        
-        return edgename
+# with open('json_data.json', 'w') as outfile:
+#     outfile.write(json_string)
+# =====================================
 
-NODE_NUMBER = 5
-LIMIT = 100
+# READING FROM FILE ===================
+with open('json_data.json') as json_file:
+    data = json.load(json_file)
+    # print(data)
 
-graph = []
-weigth = []
+k1 = list(data.keys())
 
-for i in range(NODE_NUMBER):
-    graph.append([])
-    weigth.append([])
+for a in k1:
+    adj.append([])
+    k2 = list(data[a].keys())
+    p = len(adj) - 1
+    p = 0 if p < 0 else p
 
-    for j in range(NODE_NUMBER):
-        graph[len(graph) - 1].append(0)
-        weigth[len(graph) - 1].append('N')
+    for b in k2:
+        el = data[a][b]
+        adj[p].append(el)
+# =====================================
 
-
-def print_graph(graph: list):
-    for v in graph:
-        for e in v:
-            print(e, end=' ')
-        print()
-
-def add (a, b, w = 0):
-    a = a - 1
-    b = b - 1
-
-    graph[a][b] = 1
-    graph[b][a] = 1
-    
-    weigth[a][b] = w
-    weigth[b][a] = w
-
-def get_distance(a, b):
-    return weigth[a][b]
-
-def get_total_distance():
+def get_total_distance(arr):
+    size = len(arr)
+    limit = size - 1
+    # print(f'arr: {arr}')
+    # print(f'limit: {limit}')
     d = 0
 
-    for v in weigth:
-        for e in v:
-            if type(e) is not str:
-                d = d + e
+    for i in range((limit - 1)):
+        # print(f'{i} e {i+1}')
+        d += adj[arr[i]][arr[i+1]]
     
+    d+= adj[arr[limit]][arr[0]]
+    # print(f'#{arr} -> {d}')
     return d
 
-add(1,2, 4)
-add(1,4, 5)
-add(2,3, 1)
-add(2,5, 3)
-add(3,5, 2)
-add(5,4, 2)
+curr_temperature = 1000
+iteration = 0
+interval = (int)(MAX / 10)
+accept_p = 0.0
 
-# print(graph, end="\n\n")
-print_graph(graph)
-print('\n')
-print_graph(weigth)
+sl = []
+for i in range(NODES):
+    sl.append(i)
 
-# SA
-cost = get_total_distance()
-T = 30
-factor = 0.9
+for v in adj:
+    for e in v:
+        print(e, end=' ')
+    print()
+print("\n\n")
 
-for i in range(LIMIT):
-    T = T * factor
+print("sl: ", end='')
+print(sl)
+while iteration < MAX:
+    cost0 = get_total_distance(sl)
+
+    new_sl = numpy.copy(sl)
+
+    numpy.random.shuffle(new_sl)
+    cost1 = get_total_distance(new_sl)
+
+    if cost1 < cost0:
+        sl = new_sl
+    else:
+        # print(f'cost0 {cost0}')
+        # print(f'cost1 {cost1}')
+        # print(f'curr_temperature {curr_temperature}')
+        # print('\n')
+        try:
+            frag = (cost1 - cost0) / curr_temperature
+            accept_p = numpy.exp(frag)
+        except RuntimeWarning:
+            print(f"{accept_p} will be considered")
+        # print(f'Prob: {accept_p}')
+
+        if numpy.random.uniform() < accept_p:
+            sl = new_sl
+    
+    if curr_temperature < 0.0001:
+      curr_temperature = 0.0001
+    else:
+      curr_temperature *= 0.9765
+    
+    if iteration % interval == 0:
+        print('# This following result won\'t be considered')
+        print(f'{sl} -> {get_total_distance(sl)}')
+    
+    iteration += 1
+
+print("\n")
+print(f'{sl} -> {get_total_distance(sl)}')
