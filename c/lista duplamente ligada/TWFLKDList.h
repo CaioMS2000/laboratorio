@@ -1,50 +1,55 @@
 #include "Utils.h"
 
-template<class T>
 struct Node{
-    T content;
+    char* id;
+    char* type;
 
-    Node<T> *n = NULL;
-    Node<T> *p = NULL;
+    struct Node *n = NULL;
+    struct Node *p = NULL;
+
+    void print(){
+        printf("[%s %s]\n", id, type);
+    }
 };
 
-template<class T>
 struct List{
-    Node<T> *first = NULL;
-    Node<T> *last = NULL;
+    struct Node *first = NULL;
+    struct Node *last = NULL;
     int quantity = 0;
 
-    T get_first(){
-        return (*first).content;
+    struct Node get_first(){
+        return (*first);
     }
 
-    T get_last(){
-        return (*last).content;
+    struct Node get_last(){
+        return (*last);
     }
 
-    void insert(T e){
+    void insert(char *i, char *t){
         if(first == NULL){
-            first = last = (Node<T>*)malloc(sizeof(Node<T>));
-            (*first).content = e;
+            first = last = (struct Node*)malloc(sizeof(struct Node));
+            (*first).id = i;
+            (*first).type = t;
         }
         else{
-            (*last).n = (Node<T>*)malloc(sizeof(Node<T>));
+            (*last).n = (Node*)malloc(sizeof(struct Node));
             (*((*last).n)).p = last;
             last = (*last).n;
 
-            (*last).content = e;
+            (*first).id = i;
+            (*first).type = t;
         }
         
         quantity++;
     }    
 
-    bool exists(T e){
+    bool exists(char *i, char *t){
         bool answer = false;
 
-        Node<T> *p = first;
+        Node *p = first;
 
         while(p != NULL && !answer){
-            if(p->content == e){
+            if(p->id == i && p->type == t){
                 answer = true;
             }
 
@@ -54,17 +59,17 @@ struct List{
         return answer;
     }
 
-    void remove(T e){
+    void remove(char *i, char *t){
         if(quantity > 0){
             int cont = 0;
-            Node<T> *p1 = first;
-            Node<T> *p2 = NULL;
+            struct Node *p1 = first;
+            struct Node *p2 = NULL;
 
             while(p1 != NULL){
                 cont++;
                 p2 = p1;
 
-                if(p1->content == e){
+                if(p1->id == i && p1->type == t){
 
                     (*((*p1).p)).n = p2->n;
                     (*((*p1).n)).p = p2->p;
@@ -79,12 +84,12 @@ struct List{
 
     void list(){
         if(quantity > 0){
-            Node<T> *p = first;
-            printf("%d ", p->content);
+            struct Node *p = first;
+            printf("[%s;%s] ", p->id, p->type);
 
             p = p->n;
             while(p != NULL){
-                printf("%d ", p->content);
+                printf("[%s;%s] ", p->id, p->type);
                 p = p->n;
             }
 
