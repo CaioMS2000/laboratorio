@@ -1,29 +1,39 @@
-{% extends 'base.html' %}
+{% extends 'core/base.html' %}
 
-{% block title %}Sign up | {% endblock %}
+{% block title %}Sign up{% endblock title %}
 
 {% block content %}
-<div class="hero">
-    <div class="hero-body">
-        <h1 class="title has-text-centered has-text-white">Sign up</h1>
-    </div>
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Sign up</h1>
 </div>
 
-<section class="section has-text-white">
-    <div class="columns">
-        <div class="column is-4 is-offset-4">
-            <form method="post" action=".">
-                {% csrf_token %}
+<form action="." class="lg:w-1/4 px-4 mx-auto" method="post">
+    {% csrf_token %}
 
-                {{ form.as_p }}
-
-                <div class="field">
-                    <div class="control">
-                        <button class="button">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <div class="mb-5">
+        <label for="" class="text-white">Username</label>
+        <input type="text" name="username" class="w-full mt-2 px-4 py-2 rounded-xl">
     </div>
-</section>
-{% endblock %}
+
+    <div class="mb-5">
+        <label for="" class="text-white">Password</label>
+        <input type="text" name="password1" class="w-full mt-2 px-4 py-2 rounded-xl">
+    </div>
+
+    <div class="mb-5">
+        <label for="" class="text-white">Repeat password</label>
+        <input type="text" name="password2" class="w-full mt-2 px-4 py-2 rounded-xl">
+    </div>
+
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="mb-5 p-4 rounded-xl bg-red-300 text-white">
+                    <p>{{ error|escape }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <button class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">Submit</button>
+</form>
+{% endblock content %}
