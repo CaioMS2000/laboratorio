@@ -1,4 +1,4 @@
-Django
 mysqlclient
+Django
 python-dotenv
 django-debug-toolbar
