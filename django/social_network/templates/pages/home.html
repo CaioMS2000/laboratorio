@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="fonts">
+    <p class="_1">Font</p>
+    <p class="_2">Font</p>
+    <p class="_3">Font</p>
+    <p class="_4">Font</p>
+    <p class="_5">Font</p>
+    <p class="_6">Font</p>
+    <p class="_7">Font</p>
+
+    {% for i in range(10) %}
+        {% if i == random  %}
+            <img src="{% static 'images/backgrounds-id{{i}}.jpg' %}" alt="">
+        {% endif %}
+    {% endfor %}
+
+</div>
+<img class="hidden" src="{% static 'images/backgrounds/christin-hume-hBuwVLcYTnA-unsplash.jpg' %}" alt="" style="width:50%;">
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    const backgroundImagesPrefix = "images/backgrounds";
+    const backgroundImages = [
+        `${backgroundImagesPrefix}/abdullah-omar-cu87eTdSsG8-unsplash.jpg`,
+        `${backgroundImagesPrefix}/christin-hume-hBuwVLcYTnA-unsplash.jpg`,
+        `${backgroundImagesPrefix}/david-pupaza-m8-xkrSvBe4-unsplash.jpg`,
+        `${backgroundImagesPrefix}/ilias-chebbi-2gpfqhEFVZ8-unsplash.jpg`,
+        `${backgroundImagesPrefix}/kvalifik-cd79oBJrIWw-unsplash.jpg`,
+        `${backgroundImagesPrefix}/markus-spiske-iABDznUDy6c-unsplash.jpg`,
+        `${backgroundImagesPrefix}/sergey-zolkin-_UeY8aTI6d0-unsplash.jpg`,
+    ];
+
+    {% comment %} const imgTag = document.querySelector('img'); {% endcomment %}
+    {% comment %} imgTag.src = backgroundImages[0]; {% endcomment %}
+</script>
+{% endblock scripts %}
