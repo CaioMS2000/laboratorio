@@ -6,8 +6,6 @@
     box-sizing: border-box;
     text-decoration: none;
     color: #000;
-
-    display: block;
 }
 head, script {
     display: none;
@@ -27,41 +25,75 @@ font-family: 'Righteous', cursive;
 font-family: 'Roboto', sans-serif;
 font-family: 'Staatliches', cursive;
 */
-._1{font-family: 'Fascinate', cursive;}
-._2{font-family: 'Fredoka One', cursive;}
-._3{font-family: 'Kdam Thmor Pro', sans-serif;}
-._4{font-family: 'Open Sans', sans-serif;}
-._5{font-family: 'Righteous', cursive;}
-._6{font-family: 'Roboto', sans-serif;}
-._7{font-family: 'Staatliches', cursive;}
-p{
-    font-size: 50pt;
-}
-.fonts>*{
-    margin: 0 20px;
-}
-.fonts{
-    display: flex;
-}
 
 body{
     background-color: rgb(121, 121, 121);
     font-family: 'Roboto', sans-serif;
-}
-
-#main-nav{
-    background-color: rgb(56, 56, 56);
     display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 1rem;
+    width: 100vw;
+    height: 100vh;
 }
 
-.nav-iten{
-    margin: 0 2rem;
-    padding: 1rem 0.5rem;
-    border-radius: 30px;
-    background-color: rgb(29, 29, 29);
-    color: rgb(204, 204, 204);
+body>*{
+    overflow: hidden;
+}
+
+aside{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    border-radius: 0 10px 10px 0;
+}
+
+.front-page-img{
+    width: 100%;
+    max-height: 100%;
+}
+
+main{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icon-img{
+    width: 10%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    background-color: rgb(19, 18, 18);
+}
+
+.form-field{
+    font-size: 1.5rem;
+    background-color: rgb(77, 56, 56);
+    width: 70%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    /* padding: 20px 0; */
+    border-radius: 20px;
+}
+.form-field label{
+    align-self: flex-start;
+    transform: translate(40%, 0%);
+}
+
+.form-field input{
+    font-size: 1.2rem;
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    padding: 0.5rem 0.2rem;
+    initial-value: 'string';
 }
