@@ -2,30 +2,44 @@
 
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock head %}
+
 {% block content %}
 <aside>
     <img src="{% static bckgr_img_url|safe %}" alt="" class="front-page-img">
     {% comment %} <img src="{% static 'images/backgrounds/1.jpg' %}" alt="" class="front-page-img"> {% endcomment %}
 </aside>
 <main>
-    {% comment %} <div>
+    <div class="icon">
         <img src="{% static icon_img_url|safe %}" alt="" class="icon-img">
-    </div> {% endcomment %}
-    <form action="">
-        <div class="form-field">
-            <label for="Username">Username</label>
-            <input type="text" id="username">
-        </div>
-        <div class="form-field">
-            <label for="Password">Password</label>
-            <input type="text" id="password">
-        </div>
-    </form>
+    </div>
+    <div class="form">
+        <form action="">
+            <h2 class="logo-title">Social Network</h2>
+            <div class="form-field">
+                <label id="l-username" for="Username"> Email</label>
+                <input type="text" id="username">
+            </div>
+            <div class="form-field">
+                <label id="l-password" for="Password">Password</label>
+                <input type="password" id="password">
+            </div>
+            <div class="form-field">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        Caio's studies - 2022
+    </footer>
 </main>
 {% endblock content %}
 
 {% block scripts %}
 <script>
-    document.querySelector('#username').value='string'
+    document.querySelector('#username').value='email@mail.com'
+    document.querySelector('#password').value='passwd'
 </script>
 {% endblock scripts %}
