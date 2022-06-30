@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-    <title>25:29</title>
+    <title>1:20:50</title>
     <title>iMovi</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
@@ -24,30 +24,222 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">
         <div class="container py-3">
-            <a href="#" class="navbar-brand">
+            <a href="#" class="navbar-brand primary-color">
                 <img src="img/imovi-icon.png" alt="iMovi">
                 <span>iMovi</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-itens" aria-controls="navbar-itens" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items" aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbar-items">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                        <a href="#" class="nav-link primary-color active" aria-current="page">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Projetos</a>
+                        <a href="#" class="nav-link primary-color">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Imóveis</a>
+                        <a href="#" class="nav-link primary-color">Imóveis</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contatos</a>
+                        <a href="#" class="nav-link primary-color">Contatos</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="container" id="slider-conatiner">
+        <div class="carousel slide" id="slider" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button class="active" type="button" data-bs-target="#slider" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/banner-1.jpg" alt="Casa 1" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h5>Casas planejadas</h5>
+                        <a href="#" class="btn btn-dark">Ver Projetos</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner-2.jpg" alt="Casa 2" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h5>Projetos Complexos</h5>
+                        <a href="#" class="btn btn-dark">Ver Projetos</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner-3.jpg" alt="Casa 3" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h5>Projetos Inovadores</h5>
+                        <a href="#" class="btn btn-dark">Ver Projetos</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+                <i class="bi bi-chevron-compact-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+                <i class="bi bi-chevron-compact-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="col-12 col-md-10 offset-md-1" id="mini-banners">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card text-center">
+                        <i class="bi bi-box primary-color"></i>
+                        <div class="card-body">
+                            <h5 class="card-title primary-color">Projetos complestos</h5>
+                            <p class="card-text secondary-color">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A consequatur delectus quod similique.</p>
+                            <a href="#" class="btn btn-dark">Saber Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center">
+                        <i class="bi bi-layers primary-color"></i>
+                        <div class="card-body">
+                            <h5 class="card-title primary-color">Você participa também</h5>
+                            <p class="card-text secondary-color">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A consequatur delectus quod similique.</p>
+                            <a href="#" class="btn btn-dark">Saber Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center">
+                        <i class="bi bi-lightning-charge primary-color"></i>
+                        <div class="card-body">
+                            <h5 class="card-title primary-color">Adiantamento de entregas</h5>
+                            <p class="card-text secondary-color">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A consequatur delectus quod similique.</p>
+                            <a href="#" class="btn btn-dark">Saber Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="featured-container">
+        <div class="col-12">
+            <h2 class="title primary-color">Trabalhos em destaque</h2>
+            <p class="subtitle secondary-color">Conheça nossos projetos mais desafiadores</p>
+        </div>
+        <div class="col-12" id="featured-images">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <img src="img/project-1.jpg" alt="Projeto 1" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="img/project-2.jpg" alt="Projeto 2" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="img/project-3.jpg" alt="Projeto 3" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="img/project-4.jpg" alt="Projeto 4" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="img/project-5.jpg" alt="Projeto 5" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="img/project-6.jpg" alt="Projeto 6" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Categoria</p>
+                        <h3>Nome do Projeto</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="info-container">
+        <div class="col-12">
+            <h2 class="title primary-color">Detalhes importamtes</h2>
+            <p class="subtitle secondary-color">Saiba mais sobre a experiência da nossa incrível equipe</p>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-md-5" id="info-banner">
+                    <img src="img/infobanner.jpg" alt="Informações da Empresa" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-7 bg-secondary-color" id="info-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="title primary-color">Estes dados fazem a diferença</h2>
+                            <p class="subtitle secondary-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi quibusdam vitae excepturi voluptatibus accusantium rem fugit asperiores maiores totam temporibus molestiae, eius laudantium, pariatur debitis nobis sed nisi eum?</p>
+                        </div>
+                        <div class="col-12" id="info-numbers">
+                            <div class="row">
+                                <div class="col-4">
+                                    <h3 class="primary-color">18</h3>
+                                    <p class="secondary-color">Anos ena construção civil</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="primary-color">95</h3>
+                                    <p class="secondary-color">Projetos executados</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="primary-color">639</h3>
+                                    <p class="secondary-color">Clientes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="#" class="btn btn-dark">Saber mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="conatiner-fluid bg-dark-color" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="footer-top">
+                    <div class="row justify-content-between">
+                        <div class="col-4">
+                            <h2>iMovi</h2>
+                        </div>
+                        <div class="col-4" id="social-icons">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-youtube"></i>
+                            <i class="bi bi-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" id="footer-details"></div>
+                <div class="col-12" id="footer-bottom"></div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
