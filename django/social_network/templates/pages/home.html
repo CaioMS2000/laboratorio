@@ -8,33 +8,47 @@
 
 {% block content %}
 <div class="container">
-    {% comment %} <img src="{% static bckgr_img_url|safe %}" alt="" class="front-page-img"> {% endcomment %}
-    <img src="{% static 'images/backgrounds/1.jpg' %}" alt="" class="front-page-img">
+    <img src="{% static bckgr_img_url|safe %}" alt="" class="front-page-img">
+    {% comment %} <img src="{% static 'images/backgrounds/1.jpg' %}" alt="" class="front-page-img"> {% endcomment %}
 </div>
+{% comment %} <section class="Form my-4 mx-5">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-7" style="padding:0;">
+                <img src="{% static bckgr_img_url|safe %}" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-5 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Logo</h1>
+                <h4>Sign into your account</h4>
+                <form action=".">
+                    <div class="form-row">
+                        <div class="col-lg-9">
+                            <input type="email" name="" id="" class="form-control my-3 p-2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-9">
+                            <input type="password" name="" id="" class="form-control my-3 p-2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-9">
+                            <button type="button" class="btn1">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
 {% endblock content %}
 
 {% block scripts %}
 <script>
-    /*document.querySelector('#username').value='email@mail.com'
-    document.querySelector('#password').value='passwd'*/
-    const bodyHeight = document.querySelector('body').offsetHeight;
+    {% comment %} const bodyHeight = document.querySelector('body').offsetHeight;
     const containerHeight = document.querySelector('.container').offsetHeight;
-
-    document.querySelector('.container').style.position='absolute';
-    console.log(document.querySelector('.container').style.top)
-
-    console.log(bodyHeight)
-    console.log(containerHeight)
-
-    console.log(bodyHeight-containerHeight)
-
     const res = (bodyHeight-containerHeight) / 2;
+    document.querySelector('.container').style.top = `${res}px`; {% endcomment %}
 
-    console.log(res)
-
-    document.querySelector('.container').offsetTop = res;
-    document.querySelector('.container').style.top = `${res}px`;
-
-    console.log(document.querySelector('.container').offsetTop)
 </script>
 {% endblock scripts %}

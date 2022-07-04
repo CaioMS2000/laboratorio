@@ -10,8 +10,6 @@ font-family: 'Staatliches', cursive;
 body{
     display: flex;
     justify-content: center;
-    padding-top: 2vh;
-    /* padding-bottom: 2vh; */
     background-color: aqua;
     height: 100vh;
     width: 100vw;
@@ -20,10 +18,13 @@ body{
 .container{
     position: absolute;
     background-color: var(--bs-blue);
-    max-width: 95vw;
+    /* max-width: 95vw; */
     max-height: 96vh;
+    min-height: 90vh;
     padding-left: 0;
     display: flex;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .container, .container>*{
@@ -31,7 +32,49 @@ body{
 }
 
 .front-page-img{
-    /* max-height: 100%; */
     max-width: 60%;
     display: block;
 }
+
+/*
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(219, 226, 226);
+}
+
+.container{
+    max-height: 80vh;
+}
+
+.row{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px rgb(128, 128, 128);
+}
+
+img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.btn1{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.btn1:hover{
+    background-color: #fff;
+    border: 1px solid;
+    color: #000;
+}
+*/
