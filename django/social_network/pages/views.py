@@ -6,5 +6,5 @@ import random
 def home(request):
     return render(request, 'pages/home.html', {
         'bckgr_img_url': f'images/backgrounds/{random.randint(1, 7)}.jpg',
-        'icon_img_url':f'images/icons/{random.randint(1, 4)}.png'
+        'icon_img_url':f'images/icons - light/{random.randint(1, 4)}.png'
         })

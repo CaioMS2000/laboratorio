@@ -10,21 +10,21 @@ font-family: 'Staatliches', cursive;
 body{
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    background-color: #000010;
     height: 100vh;
     width: 100vw;
 }
 
 .container{
     position: absolute;
-    background-color: var(--bs-blue);
-    /* max-width: 95vw; */
+    background-color: #121214;
     max-height: 96vh;
     min-height: 90vh;
-    padding-left: 0;
+    padding: 0;
     display: flex;
     top: 50%;
     transform: translateY(-50%);
+    /* box-shadow: 1px 1px 14px 1px #ffffff2e; */
 }
 
 .container, .container>*{
@@ -33,7 +33,88 @@ body{
 
 .front-page-img{
     max-width: 60%;
+    width: 60%;
     display: block;
+}
+
+.login-form{
+    max-width: 40%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(30, 255, 0); */
+}
+
+form{
+    /* background-color: aqua; */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+}
+
+.form-field{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #3c3c3c;
+    margin: 3rem 0;
+    padding: 0.5rem 2rem 1rem 2rem;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.form-field:first-child{
+    margin-top: 0;
+}
+
+.form-field:last-child{
+    margin-bottom: 0;
+    width: 40%;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 0;
+}
+
+.form-field label{
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0a0a0b;
+}
+
+.form-field input{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.form-field button{
+    text-align: center;
+    background-color: #0e74af;
+    border: none;
+    font-size: 1.5rem;
+    font-family: 'Righteous', cursive;
+    color: #f2f2f2;
+    border-radius: 30px;
+}
+
+.form-field input:active{
+    border: none;
+    outline: none;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+}
+
+.icon-img{
+    max-width: 30%;
 }
 
 /*

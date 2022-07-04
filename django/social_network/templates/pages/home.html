@@ -10,6 +10,25 @@
 <div class="container">
     <img src="{% static bckgr_img_url|safe %}" alt="" class="front-page-img">
     {% comment %} <img src="{% static 'images/backgrounds/1.jpg' %}" alt="" class="front-page-img"> {% endcomment %}
+    <div class="login-form">
+        <form action=".">
+            <di class="icon">
+                <img src="{% static icon_img_url|safe %}" alt="" class="icon-img">
+                {% comment %} <img src="{% static 'images/icons - light/1.png' %}" alt="" class="icon-img"> {% endcomment %}
+            </di>
+            <div class="form-field">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="form-field">
+                <button type="submit">Log in</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% comment %} <section class="Form my-4 mx-5">
     <div class="container">
@@ -45,6 +64,8 @@
 
 {% block scripts %}
 <script>
+    document.querySelector('#username').value='email@mail.com'
+    document.querySelector('#password').value='passwd'
     {% comment %} const bodyHeight = document.querySelector('body').offsetHeight;
     const containerHeight = document.querySelector('.container').offsetHeight;
     const res = (bodyHeight-containerHeight) / 2;
