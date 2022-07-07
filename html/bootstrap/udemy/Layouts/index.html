@@ -12,7 +12,6 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <title>Bootstrap</title>
     <link rel="shortcut icon" href="/bootstrap-fill.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
@@ -20,5 +19,24 @@
 <body>
     <h1>Title</h1>
     <button class="btn btn-primary">Button</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+        </div>
+    </div>
 </body>
+<script>
+    const cols= document.querySelectorAll('.col');
+    const colors = ['#0000ff', '#8a2be2', '#ff0000', '#d3e01a'];
+    let i = 0;
+
+    cols.forEach(e => {
+        e.style.backgroundColor = colors[i];
+        // console.log(e.style.backgroundColor);
+        i = (i+1) % colors.length;
+    })
+</script>
 </html>

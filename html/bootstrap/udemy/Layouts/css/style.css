@@ -2,6 +2,27 @@ h1{
     color: aquamarine;
 }
 
+@media(min-width:576px){
+    h1{
+        color: #0000ff;
+    }
+}
+
 .btn-primary{
-    background-color: blueviolet;
+    background-color: #8a2be2;
+}
+
+.container{
+    background-color: black;
+    color: #fff;
+    border: 5px solid #1eff00;
+}
+
+.row{
+    border: 4px solid #00ffff;
+}
+
+.col{
+    width: 50px;
+    height: 20px;
 }
