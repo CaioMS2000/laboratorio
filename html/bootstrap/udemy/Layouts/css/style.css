@@ -15,14 +15,34 @@ h1{
 .container{
     background-color: black;
     color: #fff;
-    border: 5px solid #1eff00;
+    border: 3px solid #1eff00;
+    margin-top: 10px;
 }
 
 .row{
-    border: 4px solid #00ffff;
+    border: 3px solid #fafafa;
 }
 
-.col{
-    width: 50px;
+.colum{
     height: 20px;
+}
+
+.vertical, .horizontal{
+    height: 100px;
+}
+.vertical .row, .horizontal .row, #offset .row{
+    height: 100%;
+}
+
+#gutter .row{
+    height: 200px;
+}
+
+#gutter .colum{
+    margin: auto;
+    height: 100%;
+}
+
+.row p{
+    border: 2px solid green;
 }
