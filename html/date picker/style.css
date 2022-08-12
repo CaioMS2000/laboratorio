@@ -1,0 +1,13 @@
+.row{
+    background-color: aqua;
+}
+
+.column{
+    height: 5vh;
+    background-color: #c3c3c3;
+    border: 1px solid #000;
+}
+
+.block{
+    display: block;
+}
