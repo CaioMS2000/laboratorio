@@ -8,6 +8,18 @@
     border: 1px solid #000;
 }
 
-.block{
-    display: block;
+span i{
+    cursor: pointer;
+}
+
+#week div:first-child{}
+
+#week div:last-child{}
+
+#left-arrow{
+    margin-right: 20px;
+}
+
+#right-arrow{
+    margin-left: 20px;
 }
