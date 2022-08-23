@@ -12,9 +12,13 @@ span i{
     cursor: pointer;
 }
 
-#week div:first-child{}
+#week div:first-child{
+    padding-left: 1px;
+}
 
-#week div:last-child{}
+#week div:last-child{
+    padding-right: 1px;
+}
 
 #left-arrow{
     margin-right: 20px;

@@ -26,22 +26,17 @@
         <!-- <div class="row row-cols-7 days"></div> -->
     </div>
 <script type="text/javascript">
-    document.querySelector('input').addEventListener('input', e =>{
-        console.log(e.target.value)
-    });
-    
-    document.querySelector('form').addEventListener('submit', e =>{
-        e.preventDefault();
-        console.log(e)
-        console.log(e.target.method)
-    });
-
+// os meses com 31 dias são: janeiro, março, maio, julho, agosto, outubro e dezembro.
+// os meses com 30 dias são: abril, junho, setembro e novembro. O mês de fevereiro foge a regra e tem apenas 28 dias.
+    const month31D = [0, 1, 2, 4, 6, 7, 9, 11];
+    const month30D = [3, 5, 8, 10];
     const string_week_days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday",];
     let date = new Date();
-    console.log(date)
+
     console.log(date.getDay())
     console.log(string_week_days[date.getDay()])
     console.log(date.getDate())
+    console.log(date.getMonth())
 </script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
