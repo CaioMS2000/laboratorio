@@ -1,0 +1,19 @@
+body{
+    padding-bottom: 500px;
+}
+
+.divs{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+}
+
+.divs:first-child{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.divs:last-child{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
