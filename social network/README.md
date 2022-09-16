@@ -1,0 +1,1 @@
+# Social Network project built with Django, ReactJS and Nginx. Using containerized applications with Docker.
