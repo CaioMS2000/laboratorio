@@ -1,0 +1,15 @@
+services:
+  php-apache:
+    container_name: php-apache
+    image: php:7.4-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./:/var/www/html/
+    working_dir: /var/www/html/
+    ports:
+      - 3003:3003
+    entrypoint: "php -S 0.0.0.0:3003"
