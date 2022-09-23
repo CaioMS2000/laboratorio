@@ -2,19 +2,40 @@ let minutes = 30;
 let seconds = 0;
 let interval;
 
+function not_zero(a, b){
+    if(a == 0 && b == 0){
+        return false;
+    }
+
+    return true;
+}
+
 document.querySelector('input').addEventListener('input', e => {
-    let value = document.querySelector('input').value;
-    console.log(value)
+    let str = e.target.value;
+
+    if(str.length != 5){
+        let [left, right] = str.split(":");
+
+        if(left.length < 2){
+            left = `0${left}`;
+        }
+        
+        if(right.length < 2){
+            right = `0${right}`;
+        }
+
+        str = `${left}:${right}`;
+    }
+
+    e.target.value = str;
 })
 
 document.querySelector('button').addEventListener('click', e => {
     let value = document.querySelector('input').value;
     value = value.split(":");
     value = [Number(value[0]), Number(value[1])];
-    console.log(value)
-    console.log(value[0] == 0)
 
-    if(value[0] != 0 && value[1] != 0){
+    if(not_zero(value[0], value[1])){
         interval = setInterval(() => {
             let min, s;
 

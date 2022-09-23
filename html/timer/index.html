@@ -9,12 +9,38 @@
 <body>
     <div class="container">
         <div class="counter">
-            <input type="text" value="00:05">
+            <input type="text" value="01:00">
         </div>
         <button>PLAY</button>
     </div>
 
-    <style></style>
+    <style>
+        *{
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            max-width: 90vw;
+            background-color: aquamarine;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .container * {
+            font-size: 100px;
+        }
+
+        .counter{
+            width: 100%;
+            height: 100%;
+        }
+
+        input{
+            text-align: center;
+        }
+    </style>
     
     <script src="./index.js"></script>
 </body>
