@@ -1,5 +1,3 @@
-let minutes = 30;
-let seconds = 0;
 let interval;
 
 function not_zero(a, b){
@@ -10,37 +8,45 @@ function not_zero(a, b){
     return true;
 }
 
-// document.querySelector('input').addEventListener()   
-
-document.querySelector('input').addEventListener('change', e =>{
-    console.log("TRIGGED");
-});
+// document.querySelector('input').addEventListener()
 
 document.querySelector('input').addEventListener('input', e => {
-    let str = e.target.value;
-    console.log("TRIGGED 2");
+    if(!e.target.value.includes(':')){
+        let value = e.target.value;
 
-    if(str.length != 5){
-        let [left, right] = str.split(":");
-
-        if(left.length < 2){
-            left = `0${left}`;
+        if(value.length == 0){
+            e.target.value = "00:00";
         }
-        
-        if(right.length < 2){
-            right = `0${right}`;
+        else if(value.length == 1){
+            e.target.value = `00:0${value}`;
         }
-
-        str = `${left}:${right}`;
+        else if(value.length == 2){
+            e.target.value = `00:${value}`;
+        }
+        else if(value.length == 3){
+            e.target.value = `0${value[0]}:${value[1]+value[2]}`;
+        }
+        else{
+            e.target.value = `${value[0]+value[1]}:${value[2]+value[3]}`;
+        }
     }
+});
 
-    e.target.value = str;
+document.querySelector('input').addEventListener('keyup', e => {
+    if(e.key == "Enter"){
+        document.querySelector('button').click();
+        document.querySelector('input').blur();
+    }
 })
 
 document.querySelector('button').addEventListener('click', e => {
     let value = document.querySelector('input').value;
     value = value.split(":");
     value = [Number(value[0]), Number(value[1])];
+
+    // getComputedStyle(document.querySelector(), null).getPropertyValue("background-color");
+    console.log(getComputedStyle(document.querySelector('button'), null).getPropertyValue("background-color"));
+    e.target.style.backgroundColor = "#fff";
 
     if(not_zero(value[0], value[1])){
         interval = setInterval(() => {
@@ -64,13 +70,32 @@ document.querySelector('button').addEventListener('click', e => {
             }
             
             if(min < 10){
-                m = `0${min}`;
+                min = `0${min}`;
             }
             
             document.querySelector('input').value = `${min}:${s}`
 
-            if(s == 0 && min == 0){
+            let str = document.querySelector('input').value;
+
+            if(str.length != 5){
+                let [left, right] = str.split(":");
+
+                if(left.length < 2){
+                    left = `0${left}`;
+                }
+                
+                if(right.length < 2){
+                    right = `0${right}`;
+                }
+
+                str = `${left}:${right}`;
+            }
+
+            document.querySelector('input').value = str;
+
+            if(Number(s) == 0 && Number(min) == 0){
                 clearInterval(interval);
+                document.querySelector('audio').play()
             }
         }, 1000);
     }
