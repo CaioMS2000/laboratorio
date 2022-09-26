@@ -10,8 +10,15 @@ function not_zero(a, b){
     return true;
 }
 
+// document.querySelector('input').addEventListener()   
+
+document.querySelector('input').addEventListener('change', e =>{
+    console.log("TRIGGED");
+});
+
 document.querySelector('input').addEventListener('input', e => {
     let str = e.target.value;
+    console.log("TRIGGED 2");
 
     if(str.length != 5){
         let [left, right] = str.split(":");
