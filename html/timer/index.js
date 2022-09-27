@@ -8,6 +8,24 @@ function not_zero(a, b){
     return true;
 }
 
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
 // document.querySelector('input').addEventListener()
 
 document.querySelector('input').addEventListener('input', e => {
@@ -40,13 +58,17 @@ document.querySelector('input').addEventListener('keyup', e => {
 })
 
 document.querySelector('button').addEventListener('click', e => {
+    // e.preventDefault();
+
     let value = document.querySelector('input').value;
     value = value.split(":");
     value = [Number(value[0]), Number(value[1])];
 
     // getComputedStyle(document.querySelector(), null).getPropertyValue("background-color");
-    console.log(getComputedStyle(document.querySelector('button'), null).getPropertyValue("background-color"));
-    e.target.style.backgroundColor = "#fff";
+
+    e.target.style.backgroundColor = "#a76156";
+
+    e.target.style.cursor = "default";
 
     if(not_zero(value[0], value[1])){
         interval = setInterval(() => {
@@ -95,7 +117,11 @@ document.querySelector('button').addEventListener('click', e => {
 
             if(Number(s) == 0 && Number(min) == 0){
                 clearInterval(interval);
-                document.querySelector('audio').play()
+
+                document.querySelector('audio').play();
+
+                e.target.style.backgroundColor = "#ce796b";
+                e.target.style.cursor = "pointer";
             }
         }, 1000);
     }
