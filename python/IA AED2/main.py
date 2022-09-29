@@ -19,3 +19,11 @@ for line in file:
 # 3
 num_treinamento = int(0,8*len(x))
 num_teste = len(x) - num_treinamento
+
+# 4
+x_train = x[:num_treinamento]
+y_train = y[:num_treinamento]
+
+# 5
+x_test = x[num_treinamento+1:]
+y_test = y[num_treinamento+1:]
