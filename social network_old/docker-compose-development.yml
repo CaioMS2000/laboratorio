@@ -1,0 +1,11 @@
+services:
+  react:
+    container_name: react
+    image: react-development
+    build:
+      context: ./ReactJS/social-network/
+      dockerfile: Dockerfile.development
+    volumes:
+      - ./ReactJS/social-network/src:/app/src
+    ports:
+      - 3000:3000
