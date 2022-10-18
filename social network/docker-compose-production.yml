@@ -1,11 +1,9 @@
 services:
   react:
-    container_name: react
-    image: react-production
+    container_name: react-production
+    environment:
+      - WATCHPACK_POLLING=true
     build:
-      context: ./ReactJS/social-network/
+      target: production
+      context: ./frontend/
       dockerfile: Dockerfile.production
-    # volumes:
-    #   - ./ReactJS/social-network/src:/app/src
-    # ports:
-    #   - 3000:3000
