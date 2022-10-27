@@ -1,3 +1,5 @@
 django==4.1.2
 djangorestframework
 gunicorn
+markdown
+django-filter
