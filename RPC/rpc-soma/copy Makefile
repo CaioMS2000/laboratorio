@@ -1,0 +1,6 @@
+all: client servidor
+client:
+	gcc -o client simpclient.c simp_clnt.c simp_xdr.c -lnsl
+servidor:
+	gcc -o server simpservice.c simp_svc.c simp_xdr.c -lrpcsvc -lnsl
+run: ./servidor
