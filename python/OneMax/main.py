@@ -41,12 +41,13 @@ def get_bether_neighbor_index(neighbors):
     return index
 
 answer = []
+NUMBER_OF_BITS = 10
 
-for i in range(4):
+for i in range(NUMBER_OF_BITS):
     answer.append(randint(0, 1))
 print(f'Início {answer}\n')
 
-answer_value = count_one(answer)
+answer_weight = count_one(answer)
 i = best = 0
 BTMAX = 1
 T = None
@@ -56,20 +57,21 @@ while(i - best <= BTMAX):
     i = i + 1
 
     print(f'Iteração {i}')
-    print(f'Melhor atualmente {answer}')
+    print(f'Melhor atualmente {answer} - {answer_weight}')
 
-    for j in range(0, 4):
+    for j in range(0, NUMBER_OF_BITS):
         aux = switch_bit(answer, j)
         neighbors.append(Neighbor(aux, count_one(aux), j))
 
     print(f'Seus vizinhos\n')
-    for j in range(0, 4):
+    for j in range(0, NUMBER_OF_BITS):
         print(neighbors[j])
 
     index = get_bether_neighbor_index(neighbors)
 
-    if neighbors[index].bit != T and neighbors[index].weight > answer_value:
+    if neighbors[index].bit != T and neighbors[index].weight > answer_weight:
         answer = neighbors[index].value
+        answer_weight = neighbors[index].weight
         T = neighbors[index].bit
         best = i
     

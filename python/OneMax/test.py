@@ -26,3 +26,6 @@ class Neighbor:
         self.value = value
         self.weight = weight
         self.bit = bit
+    
+    def __str__(self):
+        return f'value:  {self.value}\nweight: {self.weight}\nbit:    {self.bit}\n'
