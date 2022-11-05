@@ -41,10 +41,15 @@ def get_bether_neighbor_index(neighbors):
     return index
 
 answer = []
-NUMBER_OF_BITS = 10
 
+NUMBER_OF_BITS = 4
+PROHIBITED = []
 for i in range(NUMBER_OF_BITS):
-    answer.append(randint(0, 1))
+        PROHIBITED.append(1)
+while (answer == PROHIBITED)
+    for i in range(NUMBER_OF_BITS):
+        answer.append(randint(0, 1))
+
 print(f'Início {answer}\n')
 
 answer_weight = count_one(answer)
