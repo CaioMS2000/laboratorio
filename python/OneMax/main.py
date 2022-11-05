@@ -46,7 +46,11 @@ NUMBER_OF_BITS = 4
 PROHIBITED = []
 for i in range(NUMBER_OF_BITS):
         PROHIBITED.append(1)
-while (answer == PROHIBITED)
+
+answer = PROHIBITED
+while (answer == PROHIBITED):
+    answer = []
+    
     for i in range(NUMBER_OF_BITS):
         answer.append(randint(0, 1))
 
