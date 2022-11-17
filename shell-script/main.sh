@@ -16,7 +16,12 @@ function name_without_extension(){
     echo $name
 }
 
-# name_without_extension $1
-
-# echo $name
 echo "result is $(name_without_extension $1)"
+
+# function name_without_extension(){
+#     filename=$(basename -- "$1")
+#     extension="${filename##*.}"
+#     filename="${filename%.*}"
+
+#     echo $filename
+# }

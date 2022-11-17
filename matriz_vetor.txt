@@ -1,0 +1,3 @@
+Matriz::setElemento(int elemento, int linha, int coluna)const{
+	int pos = linha*quantidadeDeColunas+coluna;
+}
