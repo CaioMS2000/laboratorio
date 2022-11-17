@@ -1,0 +1,3657 @@
+[H[2J[3J@
+[1, 1, 0, 0, 0, 0, 0, 1, 1, 0] com id 0
+[0, 0, 1, 0, 0, 0, 1, 1, 0, 1] com id 1
+[0, 1, 0, 1, 1, 1, 1, 0, 0, 0] com id 2
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.634/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.100/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.662/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.476/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.669/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.410/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.105/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.584/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.520/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.944/0.7
+1-value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+e
+
+0-value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+irão cruzar
+filho gerado: value:  [0, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 3
+from generation:    0
+ID: -1
+probabilidade de mutar: 0.124/0.4
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.210/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.456/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.326/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.653/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.599/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.990/0.7
+1-value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+e
+
+0-value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+irão cruzar
+filho gerado: value:  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 2
+from generation:    0
+ID: -1
+probabilidade de mutar: 0.570/0.4
+filho mutado: value:  [0, 0, 1, 0, 0, 0, 0, 1, 1, 0]
+weight: 2
+from generation:    0
+ID: -1
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.479/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.344/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.309/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.681/0.7
+
+
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.178/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.414/0.7
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.887/0.7
+1-value:  [0, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+weight: 4
+from generation:    0
+ID: 1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.287/0.4
+
+
+#
+value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.971/0.7
+0-value:  [1, 1, 0, 0, 0, 0, 0, 1, 1, 0]
+weight: 4
+from generation:    0
+ID: 0
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.018/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.050/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.745/0.7
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.381/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.767/0.7
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.758/0.4
+filho mutado: value:  [1, 0, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.917/0.7
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.209/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.633/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.437/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.214/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.878/0.7
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.806/0.4
+filho mutado: value:  [0, 0, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.745/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.336/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+=====================================
+probabilidade de cruzar: 0.893/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    0
+ID: 2
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.738/0.4
+filho mutado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.331/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.800/0.7
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.998/0.4
+filho mutado: value:  [0, 1, 0, 1, 1, 1, 0, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.013/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.286/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.800/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+probabilidade de mutar: 0.749/0.4
+filho mutado: value:  [0, 1, 0, 1, 1, 0, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.624/0.7
+
+
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.166/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.121/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.695/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.107/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.666/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.065/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.281/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.487/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.536/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.319/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.799/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    2
+ID: -1
+probabilidade de mutar: 0.419/0.4
+filho mutado: value:  [0, 1, 0, 1, 1, 0, 1, 0, 0, 0]
+weight: 5
+from generation:    2
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.516/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.044/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.821/0.7
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    2
+ID: -1
+probabilidade de mutar: 0.611/0.4
+filho mutado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 7
+from generation:    2
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.940/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    2
+ID: -1
+probabilidade de mutar: 0.267/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.546/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.623/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.925/0.7
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+probabilidade de mutar: 0.008/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.084/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.091/0.7
+
+
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.655/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.127/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.032/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.281/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.552/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.230/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.465/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.181/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.843/0.7
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 0]
+weight: 6
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+probabilidade de mutar: 0.150/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.756/0.7
+1-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    2
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    3
+ID: -1
+probabilidade de mutar: 0.883/0.4
+filho mutado: value:  [0, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    3
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.709/0.7
+1-value:  [0, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 6
+from generation:    3
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+probabilidade de mutar: 0.722/0.4
+filho mutado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.695/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.237/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.664/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.668/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.613/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.430/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.685/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.243/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.428/0.7
+
+
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.855/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.463/0.4
+filho mutado: value:  [0, 0, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.414/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.494/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.739/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 5
+from generation:    1
+ID: -1
+
+e
+
+1-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.137/0.4
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.823/0.7
+1-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+e
+
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.502/0.4
+filho mutado: value:  [0, 1, 1, 0, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.235/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.283/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.702/0.7
+1-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+e
+
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.532/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.153/0.7
+
+
+#
+value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.864/0.7
+0-value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 7
+from generation:    3
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.658/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.830/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.783/0.4
+filho mutado: value:  [1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.038/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.751/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.836/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.180/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.261/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.365/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.944/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.009/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.760/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+probabilidade de mutar: 0.570/0.4
+filho mutado: value:  [1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    4
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.339/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.481/0.7
+
+
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.634/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.960/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.459/0.4
+filho mutado: value:  [1, 0, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.747/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.571/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 0, 0, 1]
+weight: 9
+from generation:    5
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.696/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.290/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.174/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.825/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.702/0.4
+filho mutado: value:  [1, 1, 0, 1, 1, 1, 1, 0, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.577/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.501/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.978/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.459/0.4
+filho mutado: value:  [1, 0, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.566/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.504/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.240/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.833/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.937/0.4
+filho mutado: value:  [1, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    5
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.769/0.7
+2-value:  [0, 1, 0, 1, 1, 1, 1, 1, 0, 1]
+weight: 7
+from generation:    4
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.075/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.957/0.7
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    5
+ID: -1
+probabilidade de mutar: 0.207/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.396/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.014/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.621/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.260/0.7
+
+
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.854/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.483/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.686/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.984/0.7
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    5
+ID: -1
+
+e
+
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.188/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.525/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.965/0.7
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.123/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.177/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.558/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.989/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.553/0.4
+filho mutado: value:  [1, 1, 1, 1, 0, 1, 1, 1, 0, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.549/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.238/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.527/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.165/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.404/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.231/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.422/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.825/0.7
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.835/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    6
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.725/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 10
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.266/0.4
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.986/0.7
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+1-value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+irão cruzar
+filho gerado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 10
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.675/0.4
+filho mutado: value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 10
+from generation:    6
+ID: -1
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.534/0.7
+
+
+#
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+weight: 8
+from generation:    4
+ID: -1
+
+value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+=====================================
+probabilidade de cruzar: 0.708/0.7
+2-value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+
+e
+
+0-value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+irão cruzar
+filho gerado: value:  [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
+probabilidade de mutar: 0.081/0.4
+
+
+
+@
+value:  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+weight: 9
+from generation:    6
+ID: -1
