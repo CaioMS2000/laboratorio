@@ -91,7 +91,7 @@ for i in range(population_size):
     population.append(Specimen(aux.copy(), count_one(aux), 0, i))
     aux.clear()
 
-
+#"""
 for gen in range(generations_size):
     for tr in range(torneio_size):
         print("#")
@@ -107,20 +107,23 @@ for gen in range(generations_size):
             while p1 == p2:
                 p2 = randint(0, population_size -1)
             
-            print(f'{p1}-{population[p1]}\n\ne\n\n{p2}-{population[p2]}\nirão cruzar')
+            print(f'{p1}-{population[p1]}\n\ne\n\n{p2}-{population[p2]}\nirão cruzar\n')
             child = crossover(p1, p2)
-            print(f'filho gerado: {child}')
+            print(f'filho gerado:\n{child}\n')
             prob = random()
             print(f'probabilidade de mutar: {prob:.3f}/{mutation_rate}')
 
             if prob >= mutation_rate:
                 mutate(child)
-                print(f'filho mutado: {child}')
+                print(f'filho mutado:\n{child}')
             
             value_p1 = count_one(population[p1].value)
             value_child = count_one(child.value)
 
             if value_child > value_p1:
+                print('o filho assumirá o lugar do pai')
+                child.id = population[p1].id
+                print(f'filho apatado:\n{child}\n')
                 population[p1] = child.copy()
         print("\n")
     
@@ -133,3 +136,4 @@ for gen in range(generations_size):
 
 print("\n@")
 print(population[best])
+#"""

@@ -40,7 +40,8 @@ int main(int argc, char **argv)
         for (int j = 0; j < c; j++)
         {
             // v[m_idx(i, j)] = rand() / 1000000;
-            v[m_idx(i, j)] = i+j;
+            // v[m_idx(i, j)] = i+j;
+            v[m_idx(i, j)] = i;
         }
         
     }
