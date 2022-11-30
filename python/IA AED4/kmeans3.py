@@ -2,6 +2,8 @@
 .env/bin/python3 -m pip install --upgrade pip
 .env/bin/pip install -r requirements.txt --no-cache-dir --use-pep517
 """
+from os import system
+system('clear')
 
 import pandas as pd
 import numpy as np
