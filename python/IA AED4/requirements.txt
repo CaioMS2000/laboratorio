@@ -1,4 +1,6 @@
 wheel
-sklearn
 numpy
 matplotlib
+scikit-learn
+sklearn
+seaborn

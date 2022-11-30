@@ -5,3 +5,4 @@ extension="${filename##*.}"
 filename="${filename%.*}"
 
 echo $filename
+echo oi

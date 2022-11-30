@@ -25,3 +25,6 @@ echo "result is $(name_without_extension $1)"
 
 #     echo $filename
 # }
+
+. m.sh
+source m.sh
