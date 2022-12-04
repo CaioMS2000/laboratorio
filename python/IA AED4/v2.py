@@ -13,6 +13,25 @@ from random import random, randint
 import matplotlib.pyplot as plt
 import numpy as np
 
+def make_colors(groups, n_points):
+    colors = [-1] * n_points
+
+    for i in groups:
+        for j in groups[i]:
+            colors[j] = i + 1
+    
+    return colors
+
+def save_clusters(clusters):
+    fig, ax = plt.subplots()
+    for i in clusters:
+        clu[0].append(i[0])
+        clu[1].append(i[1])
+    
+    plt.scatter(clu[0], clu[1], c= 'red', s= 100, alpha= 0.9)
+    clu[0].clear()
+    clu[1].clear()
+
 def save(i: int = 0):
     plt.savefig(f'plot{i}.png')
 
@@ -29,7 +48,6 @@ def groups_are_different(g1: dict, g2: dict)-> bool:
 def two_decimals(n: int or float)-> float:
     n = n * 100
     n = int(n)
-    # n = float(n) / 100
     n = n / 100
 
     return n
@@ -48,7 +66,7 @@ def generate_coordinates():
 
     return (x_, y_)
 
-k = 3 # numero de clusters
+k = 5 # numero de clusters
 n_points = 100
 n = 4
 ID = 0
@@ -74,16 +92,9 @@ for i in range(n_points):# criar os pontos
 
     x.append(float(x_))
     y.append(float(y_))
-    # points.append(Point(float(x_), float(y_)))
 
-fig, ax = plt.subplots()
-# ax.scatter(x, y, c= ([1]*int(len(x)/2))+([2]*int(len(x)/2)))
-for i in clusters:
-    clu[0].append(i[0])
-    clu[1].append(i[1])
-plt.scatter(clu[0], clu[1], c= 'red', s= 100, alpha= 0.9)
-ax.scatter(x, y)
-# plt.show()
+save_clusters(clusters)
+plt.scatter(x, y)
 save(ID)
 ID += 1
 
@@ -114,30 +125,12 @@ while diff or t < tries:
         
         aux.sort()
         aux = aux[0]
-        # print(groups)
-        # print(aux)
         groups[aux[2]].append(aux[1])
     
+    colors = make_colors(groups, n_points)
 
-    colors = [-1] * n_points
-    # print(groups)
-    for i in groups:
-        # print(i, end=" ")
-        # print(groups[i])
-
-        for j in groups[i]:
-            colors[j] = i + 1
-
-    # print(f"\n{colors}")
-    fig, ax = plt.subplots()
-    clu[0].clear()
-    clu[1].clear()
-    for i in clusters:
-        clu[0].append(i[0])
-        clu[1].append(i[1])
-    plt.scatter(clu[0], clu[1], c= 'red', s= 100, alpha= 0.9)
-    ax.scatter(x, y, c= colors)
-    # plt.show()
+    save_clusters(clusters)
+    plt.scatter(x, y, c= colors)
     save(ID)
     ID += 1
 
@@ -153,9 +146,7 @@ while diff or t < tries:
             div += 1
         
         clusters.append((s1 / div, s2 / div))
-            
-
-
+    
     diff = groups_are_different(groups, groups1)
     keys = list(groups1.keys())
     
@@ -165,23 +156,7 @@ while diff or t < tries:
     if not diff:
         t = t + 1
 
-colors = [-1] * n_points
-# print(groups)
-for i in groups:
-    # print(i, end=" ")
-    # print(groups[i])
-
-    for j in groups[i]:
-        colors[j] = i + 1
-
-# print(f"\n{colors}")
-fig, ax = plt.subplots()
-clu[0].clear()
-clu[1].clear()
-for i in clusters:
-    clu[0].append(i[0])
-    clu[1].append(i[1])
-plt.scatter(clu[0], clu[1], c= 'red', s= 100, alpha= 0.9)
-ax.scatter(x, y, c= colors)
-# plt.show()
+colors = make_colors(groups, n_points)
+save_clusters(clusters)
+plt.scatter(x, y, c= colors)
 save(ID)
