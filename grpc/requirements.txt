@@ -1,3 +1,5 @@
+grpcio
+grpcio-tools
 # GRPC Python setup requirements
 coverage>=4.0
 cython>=0.29.8

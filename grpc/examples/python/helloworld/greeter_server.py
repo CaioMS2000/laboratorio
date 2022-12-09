@@ -19,15 +19,19 @@ import logging
 import grpc
 import helloworld_pb2
 import helloworld_pb2_grpc
+from random import randint
 
+r = randint(0, 100)
 
 class Greeter(helloworld_pb2_grpc.GreeterServicer):
 
     def SayHello(self, request, context):
-        return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
+        return helloworld_pb2.HelloReply(message=f"{r}")
 
 
 def serve():
+
+    print(f"# {r}")
     port = '50051'
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)

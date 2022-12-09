@@ -20,6 +20,8 @@ import logging
 import grpc
 import helloworld_pb2
 import helloworld_pb2_grpc
+from random import randint
+r = randint(0, 100)
 
 
 def run():
@@ -30,7 +32,12 @@ def run():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = helloworld_pb2_grpc.GreeterStub(channel)
         response = stub.SayHello(helloworld_pb2.HelloRequest(name='you'))
-    print("Greeter client received: " + response.message)
+        response = int(response.message)
+
+        if response == r:
+            print(f"You are write, it really was {r}!")
+        else:
+            print(f"You missed, it was {r}")
 
 
 if __name__ == '__main__':
