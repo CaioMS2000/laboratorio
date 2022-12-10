@@ -28,7 +28,10 @@ def serve():
     server.add_insecure_port(f"{HOST}:{PORT}")
     server.start()
     print(f"Listenning on port {PORT}")
-    server.wait_for_termination()
+    try:
+        server.wait_for_termination()
+    except KeyboardInterrupt:
+        server.stop(0)
 
 if __name__ == "__main__":
     serve()
