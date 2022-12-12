@@ -11,7 +11,7 @@ import sum_pb2_grpc
 
 PORT = 50051
 HOST = "localhost"
-HOST = "192.168.100.9"
+HOST = "192.168.10.6"
 min = 0
 max = 100
 
