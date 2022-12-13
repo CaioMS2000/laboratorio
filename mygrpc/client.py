@@ -1,5 +1,12 @@
+import platform
 from os import system
-system('clear')
+
+OS = platform.system()
+
+if OS.lower() in ["linux", "darwin"]:
+    system('clear')
+else:
+    system('cls')
 
 from concurrent import futures
 import time
@@ -11,7 +18,7 @@ import sum_pb2_grpc
 
 PORT = 50051
 HOST = "localhost"
-HOST = "192.168.10.6"
+HOST = "192.168.100.9"
 min = 0
 max = 100
 

@@ -1,5 +1,12 @@
+import platform
 from os import system
-system('clear')
+
+OS = platform.system()
+
+if OS.lower() in ["linux", "darwin"]:
+    system('clear')
+else:
+    system('cls')
 
 from concurrent import futures
 import time
@@ -9,7 +16,7 @@ import sum_pb2
 import sum_pb2_grpc
 
 PORT = 50051
-HOST = "localhost"
+HOST = "0.0.0.0"
 
 class Servicer(sum_pb2_grpc.SumNumbersServicer):
     def Add(self, request, context):
