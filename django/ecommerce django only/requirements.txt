@@ -1,4 +1,5 @@
 autopep8==1.4.4
+Pillow
 Django==2.2.13
 pep8==1.7.1
 pycodestyle==2.5.0
@@ -6,3 +7,7 @@ pytz==2018.5
 sqlparse==0.2.4
 django-allauth
 django-crispy-forms
+asgiref
+django-countries
+stripe
+# Build an Ecommerce Website with Django // Part 7 - Discount codes 16:40
