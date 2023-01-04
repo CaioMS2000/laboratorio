@@ -10,4 +10,4 @@ django-crispy-forms
 asgiref
 django-countries
 stripe
-# Build an Ecommerce Website with Django // Part 7 - Discount codes 16:40
+#Build an Ecommerce Website with Django // Part 9 - Default addresses 24:52
