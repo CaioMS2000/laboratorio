@@ -11,8 +11,8 @@ import stripe
 import random
 import string
 
-from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund
-from .forms import CheckoutForm, CouponForm, RefundForm
+from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
+from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
