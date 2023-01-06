@@ -2,12 +2,10 @@ from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
 
-
 PAYMENT_CHOICES = (
     ('S', 'Stripe'),
-    ('P', 'PayPal')
+    ('P', 'PayPal'),
 )
-
 
 class CheckoutForm(forms.Form):
     shipping_address = forms.CharField(required=False)
@@ -39,19 +37,17 @@ class CheckoutForm(forms.Form):
 
 
 class CouponForm(forms.Form):
-    code = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Promo code',
-        'aria-label': 'Recipient\'s username',
-        'aria-describedby': 'basic-addon2'
+    code = forms.CharField(widget= forms.TextInput(attrs= {
+        'class':'form-control',
+        'placeholder':'Promo code',
+        'aria-label':'Recipient\'s username',
+        'aria-describedy':'basic-addon2'
     }))
 
 
 class RefundForm(forms.Form):
     ref_code = forms.CharField()
-    message = forms.CharField(widget=forms.Textarea(attrs={
-        'rows': 4
-    }))
+    message = forms.CharField(widget= forms.Textarea(attrs={'rows':4}))
     email = forms.EmailField()
 
 
