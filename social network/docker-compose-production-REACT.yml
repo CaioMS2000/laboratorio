@@ -1,9 +1,0 @@
-services:
-  react:
-    container_name: react-production
-    environment:
-      - WATCHPACK_POLLING=true
-    build:
-      target: production
-      context: ./frontend/
-      dockerfile: Dockerfile.production
