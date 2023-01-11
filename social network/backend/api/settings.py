@@ -31,24 +31,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-_INSTALLED_APPS = [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'rest_framework',
-    '',
-    
+    # '',
+
     'core',
-    '',
+    # '',
 ]
-INSTALLED_APPS = []
-for app in _INSTALLED_APPS:
-    if app != '':
-        INSTALLED_APPS.append(app)
+# INSTALLED_APPS = []
+# for app in _INSTALLED_APPS:
+#     if app != '':
+#         INSTALLED_APPS.append(app)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Password validation
@@ -110,14 +110,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+AUTH_USER_MODEL = 'core.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = os.getenv('DEFAULT_TIME_ZONE')
+# TIME_ZONE = os.getenv('DEFAULT_TIME_ZONE')
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
