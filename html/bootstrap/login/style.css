@@ -1,0 +1,15 @@
+body{
+    overflow: hidden;
+}
+
+#main-container{
+    padding: 0;
+}
+
+/* img{
+    max-height: 100vh;
+} */
+
+img{
+    max-width: 100%;
+}
