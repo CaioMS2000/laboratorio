@@ -16,37 +16,35 @@
     <title>Login</title>
 </head>
 <body>
-    <div id="main-container" class="container-fluid">
+    <div class="container-fluid p-0 m-0" id="body-container">
         <div class="row">
-            <div id="banner-side" class="col col-6">
-                <img src="img_1000.jpg" alt="Side image">
-            </div>
-            <div id="data-side" class="col text-left d-flex justify-content-center">
-                <div class="form-wrapper">
-                    <form action="">
-                        <h3>Faça login</h3>
-                        <div class="field-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="" id="email">
-                        </div>
-                        <div class="field-group">
-                            <label for="password">Senha</label>
-                            <input type="password" name="" id="password">
-                        </div>
-                        <div class="field-group d-flex align-items-center">
+            <div class="column col col-6" id="banner-div"></div>
+            <div class="column col col-6 m-0" id="data-div">
+                <form action="">
+                    <h3>Faça login</h3>
+                    <div class="form-group" id="fg-1">
+                        <label for="email">Email</label>
+                        <input type="email" name="" id="email">
+                    </div>
+                    <div class="form-group" id="fg-2">
+                        <label for="password">Senha</label>
+                        <input type="password" name="" id="password">
+                    </div>
+                    <div class="remember-group d-flex">
+                        <div class="checkbox-group">
                             <input type="checkbox" name="" id="remember" class="order-1">
                             <label for="remember" class="order-2">Lembre de mim</label>
-                            <a href="#" class="order-3">Esqueci a senha</a>
                         </div>
-                        <div class="button-group d-flex flex-column">
-                            <button>Login</button>
-                            <button>
-                                <img id="google-icon" src="./google-icon.png" alt="" srcset="">
-                                Ou entre com o Google
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                        <a href="#" class="order-3">Esqueci a senha</a>
+                    </div>
+                    <div class="button-group">
+                        <button>Login</button>
+                        <button>
+                            <img id="google-icon" src="./google-icon.png" alt="" srcset="">
+                            Ou entre com o Google
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
