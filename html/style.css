@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* padding: 10px 50px; */
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.wrapper{
+    display: flex;
+}
+
+.content{
+    background-color: #81bb66;
+    background-color: #66bb92;
+    /* margin-left: -20px; */
+    padding: 20px 30px;
+    flex-wrap: wrap;
+    min-width: 200px;
+}
+
+.paralelogramo {
+    -webkit-transform: skew(-20deg);
+    background-color: #66bb92;
+    /* background-attachment: initial; */
+    /* background-clip: initial; */
+    /* background-image: initial; */
+    /* background-origin: initial; */
+}
