@@ -1,17 +1,16 @@
-function negative(n){
+async function fetchData(str = ''){
+    const response = await fetch(`https://rickandmortyapi.com/api/${str}`)
+    const data = await response.json()
 
-    if (n > 0)
-        return -1 * n
-
-    return n
+    console.log(data)
+    
+    return data
 }
 
-const height = document.querySelector('.content').clientHeight;
-document.querySelector('.paralelogramo').style.height = `${height}px`;
-document.querySelector('.paralelogramo').style.width = `${height+50}px`;
-document.querySelector('.content').style.marginLeft = `${negative(height-90)}px`
+let res = null
+fetchData('character').then(e => {
+    console.log(e)
+    res = e
+})
 
-console.log(document.querySelector('.content').clientHeight)
-console.log(window.getComputedStyle(document.querySelector('.content')).getPropertyValue('padding-left'))
-console.log(document.querySelector('.paralelogramo').clientWidth)
-console.log(document.querySelector('.content').style.marginLeft)
+console.log(`number of characters is ${res}`)
