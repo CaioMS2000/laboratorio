@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
         "module": "CommonJS",
-        "target": "ES6",
+        "target": "ESNext",
         "sourceMap": true,
         "strictNullChecks": true
     },
