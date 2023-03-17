@@ -1,40 +1,14 @@
-# from os import system, chdir, listdir
+import random
+from os import system
+system('clear')
 
-# chdir('/home/estagiarioti/Downloads/imgs')
+mylist = ["moco", "kabanas", "cao veio", "tatu bola", "piquiras"]
+obj = {
+    "moco":0, "kabanas":0, "cao veio":0, "tatu bola":0, "piquiras":0
+}
 
-# dirs = listdir()
-# img_file = ''
+for i in range(0, 100):
+    choice = (random.choices(mylist, weights = [1, 1, 1, 1, 1], k=1))
+    obj[choice[0]] = obj[choice[0]] + 1
 
-# for dir in dirs:
-#     chdir(dir)
-
-#     files = listdir()
-
-#     for file in files:
-#         aux = file.split('.')
-
-#         if aux[len(aux)-1] == 'jpg':
-#             img_file = file
-    
-#     if img_file:
-#         system(f'code /home/estagiarioti/Downloads/imgs/{dir}/{img_file}')
-    
-#     chdir('..')
-
-import os
-from pathlib import Path
-
-n_files = 7
-paths = sorted(Path('/home/estagiarioti/Downloads/').iterdir(), key=os.path.getatime, reverse=True)
-
-os.chdir('/home/estagiarioti/Downloads/')
-os.mkdir('my_img')
-
-# for path in paths:
-    # print(path.split('/')[4])
-    # print(path.name)
-
-for i in range(0, n_files):
-    os.mkdir(f'my_img/{i}')
-    os.system(f'mv {paths[i].name} my_img/{i}/')
-    os.system(f'gedit my_img/{i}/{paths[i].name}.txt')
+print(obj)
