@@ -5,7 +5,8 @@
         "module": "CommonJS",
         "target": "ESNext",
         "sourceMap": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "noImplicitThis": false
     },
     "exclude": ["node_modules"]
 }
