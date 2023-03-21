@@ -1,0 +1,3 @@
+ npm init -y
+ npm i typescript ts-node-dev -D
+ npx tsc --init 

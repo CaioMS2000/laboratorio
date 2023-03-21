@@ -6,7 +6,7 @@
         "target": "ESNext",
         "sourceMap": true,
         "strictNullChecks": true,
-        "noImplicitThis": false
+        "noImplicitThis": false,
     },
     "exclude": ["node_modules"]
 }
