@@ -1,6 +1,10 @@
 from os import system
 system('clear')
+
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 import numpy as np
 
 # from .utils import Matrix
@@ -80,4 +84,51 @@ def v2():
     # Mostra o gráfico
     plt.show()
 
-v2()
+def v3():
+    # Definindo os vértices do triângulo
+    vertices = np.array([[0, 0], [1, 0], [0.5, 1]])
+
+    # Função para animar a translação do triângulo
+    def animate(frame):
+        # Translação dos vértices do triângulo
+        vertices[:, 1] += 0.01
+        # Plotagem do triângulo
+        plt.clf()
+        plt.plot(vertices[:, 0], vertices[:, 1], '-o')
+
+    # Configurando o gráfico
+    fig, ax = plt.subplots()
+    ax.set_xlim([minor_limit, major_limit])
+    ax.set_ylim([minor_limit, major_limit])
+
+    # Criando a animação
+    ani = FuncAnimation(fig, animate, frames=range(100), interval=50)
+
+    # Mostrando o gráfico animado
+    plt.show()
+
+def v4():
+    vertices = np.array([[0, 0], [0.5, 1], [1, 0]])
+
+    fig = plt.figure(figsize=(12,12))
+    ax = fig.add_subplot(111)
+
+    ax.set_xlim(minor_limit, major_limit)
+    ax.set_ylim(minor_limit, major_limit)
+
+    tria = plt.Polygon(vertices, fill=False)
+    ax.add_patch(tria)
+
+    delta_x, delta_y = 0.1, 0.1
+
+    for i in range(100):
+        vertices[:, 0] += delta_x
+        vertices[:, 1] += delta_y
+        tria.set_xy(vertices)
+        plt.pause(0.1)
+
+v4()
+
+"""
+escreva um codigo python que plote um trinagulo não preenchido e que faça uma translação animada e que use o metodo das matrizes de translação
+"""
