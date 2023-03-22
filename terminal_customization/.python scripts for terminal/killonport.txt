@@ -1,0 +1,14 @@
+killonport(){
+if [ $# -ne 2 ]; then
+arg=$(lsof -t -i:$1)
+if [ $arg = '' ]; then
+echo proccess not found
+return[1]
+else
+echo killing proccess $arg
+fi
+kill -9 $arg
+else
+echo this command require just one parameter
+fi
+}

@@ -1,0 +1,88 @@
+name_without_extension(){
+    name=""
+    name_with_extension=$1
+
+    for ((i=0; i<${#name_with_extension}; i++)); do
+        if [ ${name_with_extension:$i:1} != '.' ]
+        then
+            name="${name}${name_with_extension:$i:1}"
+        else
+            break
+        fi
+    done
+
+    # return $name
+    echo $name
+}
+
+new_command(){
+python3 ~/.python\ scripts\ for\ terminal/new_command.py $@
+}
+
+gdeby(){
+for arg in $@;do
+        sudo gdebi -n $arg
+done
+}
+
+mkcd(){
+mkdir $1
+cd $1
+}
+
+mkvscode(){
+mkdir $1
+
+if [ $# -eq 2 ]; then
+if [ "$2" = "python" ]; then
+echo "# python3 -m venv $PY_VIRTUAL_ENV_FOLDER\n# source $PY_VIRTUAL_ENV_FOLDER/bin/activate\n# python -m pip install --upgrade pip\n# python3 -m venv $PY_VIRTUAL_ENV_FOLDER && source $PY_VIRTUAL_ENV_FOLDER/bin/activate && python -m pip install --upgrade pip ">$1/requirements.txt
+fi
+else
+fi
+
+code $1
+}
+
+create_man_file(){
+man $1 > "man-$1.txt"
+}
+
+C(){
+if [ $# -eq 2 ]; then
+gcc -o $2 $1
+elif [ $# -eq 1 ]; then
+gcc -o $(name_without_extension $1) $1
+else
+echo "too much arguments"
+fi
+}
+
+CPP(){
+if [ $# -eq 2 ]; then
+g++ $1 -o $2
+elif [ $# -eq 1 ]; then
+g++ $1 -o $(name_without_extension $1)
+else
+echo "too much arguments"
+fi
+}
+
+install(){
+sudo apt install $@ -y
+}
+
+update_discord(){
+wget https://discordapp.com/api/download\?platform\=linux\&format\=deb -O ~/Downloads/discord.deb
+sudo gdebi -n ~/Downloads/discord.deb
+rm ~/Downloads/discord.deb
+}
+
+create_file(){
+echo>$1
+}
+
+sldata(){
+mkcd $1
+cp /home/caio/Pictures/sunlight/meta.json .
+cd ..
+}
