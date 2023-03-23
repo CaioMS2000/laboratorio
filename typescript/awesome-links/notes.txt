@@ -1,0 +1,3 @@
+primeira migração: npx prisma migrate dev --name init
+
+ultimo video completo: décimo

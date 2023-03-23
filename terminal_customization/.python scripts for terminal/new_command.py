@@ -1,7 +1,8 @@
 from os import system, getcwd, mkdir, chdir
 from sys import argv
 
-from .utils import create_file
+print(getcwd())
+from .utils import create_file, add_in_alias
 
 system('clear')
 
@@ -18,10 +19,17 @@ commands_archive.close()
 if argv[0] not in available_commands:
     command_name = argv[0]
 
-    commands_archive = open('commands.txt', 'a')
-    commands_archive.write(f'\n{command_name}')
+    # commands_archive = open('commands.txt', 'a')
+    # commands_archive.write(f'\n{command_name}')
+    # commands_archive.close()
 
-    create_file(f'{command_name}', 'py')
+    # create_file(f'{command_name}', 'py')
+
+    # command_file = open(f'{command_name}.py', 'w')
+    # command_file.write(base_text)
+    # command_file.close()
+
+    add_in_alias(f'{command_name}')
 
 else:
     print("comando ja existe")
