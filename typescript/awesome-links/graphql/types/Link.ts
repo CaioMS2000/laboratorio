@@ -33,3 +33,29 @@ export const LinksQuery = extendType({
         })
     },
 })
+
+export const Edge = objectType({
+    name: 'Edge',
+    definition(t) {
+        t.string('cursor');
+        t.field('node', {
+            type: Link,
+        })
+    },
+})
+
+export const PageInfo = objectType({
+    name: 'PageInfo', 
+    definition(t) {
+        t.string('endCursor');
+        t.boolean('hasNextPage');
+    },
+})
+
+export const Response = objectType({
+    name: 'Response',
+    definition(t){
+        t.field('pageInfo', {type: PageInfo});
+        t.list.field('edges', {type: Edge})
+    }
+})
