@@ -23,7 +23,7 @@ type PageInfo {
 }
 
 type Query {
-  links: [Link]!
+  links(after: String, first: Int): Response
 }
 
 type Response {
