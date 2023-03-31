@@ -1,10 +1,15 @@
+import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 import path from 'path';
 import { ApolloServer } from 'apollo-server';
 
+import { UserResolver } from './src/resolvers/UserResolver';
+
 async function main(){
     const schema = await buildSchema({
-        resolvers: [],
+        resolvers: [
+            UserResolver
+        ],
         emitSchemaFile: path.resolve(__dirname, 'schema.gql')
     })
 
@@ -15,7 +20,6 @@ async function main(){
     const {url} = await server.listen()
 
     console.log(`Server running on ${url}`)
-    41min
 }
 
 main()
