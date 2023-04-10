@@ -1,37 +1,14 @@
+from utility import clear_console
+clear_console()
+
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+plt.subplot(1, 2, 1)
+ax = plt.gca()
+ax.plot([1, 2, 3], [0, 0.5, 0.2])
 
-# Define as coordenadas do cubo quadridimensional
-vertices = np.array([[-1, -1, -1, -1],
-                     [-1, -1, -1,  1],
-                     [-1, -1,  1, -1],
-                     [-1, -1,  1,  1],
-                     [-1,  1, -1, -1],
-                     [-1,  1, -1,  1],
-                     [-1,  1,  1, -1],
-                     [-1,  1,  1,  1],
-                     [ 1, -1, -1, -1],
-                     [ 1, -1, -1,  1],
-                     [ 1, -1,  1, -1],
-                     [ 1, -1,  1,  1],
-                     [ 1,  1, -1, -1],
-                     [ 1,  1, -1,  1],
-                     [ 1,  1,  1, -1],
-                     [ 1,  1,  1,  1]])
-
-# Define as arestas do cubo quadridimensional
-arestas = [(0, 1), (0, 2), (0, 4), (1, 3), (1, 5), (2, 3), (2, 6), (3, 7), (4, 5), (4, 6), (5, 7), (6, 7)]
-
-# Desenha as arestas
-for aresta in arestas:
-    x = [vertices[aresta[0], 0], vertices[aresta[1], 0]]
-    y = [vertices[aresta[0], 1], vertices[aresta[1], 1]]
-    z = [vertices[aresta[0], 2], vertices[aresta[1], 2]]
-    w = [vertices[aresta[0], 3], vertices[aresta[1], 3]]
-    ax.plot(x, y, z, w)
+plt.subplot(1, 2, 2)
+ax = plt.gca()
+ax.plot([3, 2, 1], [0, 0.5, 0.2])
 
 plt.show()
