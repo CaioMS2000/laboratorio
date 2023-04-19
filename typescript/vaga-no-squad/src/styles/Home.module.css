@@ -1,0 +1,35 @@
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  height: 100dvh;
+  height: 100svh;
+
+  width: 100vw;
+  width: 100dvw;
+  width: 100svw;
+
+  font-size: 3rem;
+}
+
+.content{
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  padding-block: 2rem;
+}
+
+.container{
+  background-color: #fff;
+  color: #000;
+}
+
+.name{
+  padding-left: 2rem;
+}
+
+.row>*{
+  border: 2px #c11a1a solid;
+}
