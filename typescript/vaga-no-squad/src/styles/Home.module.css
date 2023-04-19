@@ -1,7 +1,5 @@
-.main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.page-content{
+  padding-block: 2rem;
 
   height: 100vh;
   height: 100dvh;
@@ -11,25 +9,100 @@
   width: 100dvw;
   width: 100svw;
 
-  font-size: 3rem;
+  background-color: #dac1ff;
 }
 
-.content{
-  background-color: #000;
-  text-align: center;
+.bordered-row>*{
+  border: var(--color-twitch-purple-5) 2px solid;
+}
+
+.h1{
+  margin: 0;
+  color: var(--color-twitch-purple-5);
+  font-weight: 700;
+}
+
+.main{
+  margin-top: 3rem;
+}
+
+.add-button{
+  background-color: var(--color-twitch-purple-7);
   color: #fff;
-  padding-block: 2rem;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.container{
-  background-color: #fff;
-  color: #000;
+.form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--color-twitch-purple-10);
+  padding-block: 1.5rem;
+  border-radius: 20px;
+}
+
+.form .form-group{
+  text-align: center;
+}
+
+.form label{
+  font-size: 1.5rem;
+}
+
+.form button{
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: var(--color-twitch-purple-5);
+  border: none;
 }
 
 .name{
   padding-left: 2rem;
+  border-bottom: none;
 }
 
-.row>*{
-  border: 2px #c11a1a solid;
+.rounds{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
+  border-left: none;
+}
+
+.head> .rounds{
+  display: block;
+  padding-left: 2rem;
+}
+
+.action-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+/* .action-icon:first-child{
+  color: var(--main-green);
+}
+
+.action-icon:last-child{
+  color: var(--main-red);
+} */
+
+.minus{
+  cursor: pointer;
+  color: var(--main-red);
+}
+
+.plus{
+  cursor: pointer;
+  color: var(--main-green);
+  color: var(--dark-blue);
 }

@@ -1,48 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/page2.module.css'
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import { FormEvent, useState, useEffect } from 'react';
+import { FormEvent, useState } from 'react';
 
-interface User{
-  name: string;
-  rounds: number;
-  id: number;
-}
-
+const {
+    h1, 'page-content': page_content, name, rounds,
+    'action-icon': action_icon, main, 'bordered-row': bordered_row,
+    head, minus, plus, 'add-button': add_button, form, 'form-group': form_group
+} = styles;
 
 export default function Home() {
-    const {
-        h1, 'page-content': page_content, name, rounds,
-        'action-icon': action_icon, main, 'bordered-row': bordered_row,
-        head, minus, plus, 'add-button': add_button, form, 'form-group': form_group
-    } = styles;
-
     const [creatingPlayer, setCreatingPlayer] = useState(false)
-    const [users, setUsers] = useState<User[]>([]);
-
-    async function fetchUsers(){
-      const res = await fetch('/api/users')
-      const data = await res.json()
-
-      setUsers(data)
-      console.log(users)
-    }
-
-    useEffect(() => {
-      fetchUsers()
-
-      window?.addEventListener('keyup', e =>{
-        const key = e.key
-        console.log(key)
-        if(key === 'Escape'){
-          if(creatingPlayer == true){
-            switchCreating()
-            console.log(creatingPlayer)
-          }
-        }
-      })
-    }, []);
 
     function NewUserButton(){
         return(
@@ -109,21 +78,7 @@ export default function Home() {
                         <div className={`col-8 ${name} name`}>Nick</div>
                         <div className={`col-4 ${rounds} rounds`}>Vagas</div>
                     </div>
-                    {
-                      users.map((user, index) => (
-                        <div key={index} className={`row ${bordered_row}`}>
-                          <div className={`col-8 ${name} name`}>{user.name}</div>
-                          <div className={`col-2 ${rounds} rounds`}>{user.rounds}</div>
-                          <div className={`col-1 ${action_icon} ${plus} action-icon`} style={{cursor:"pointer"}}>
-                            <FaPlus />
-                          </div>
-                          <div className={`col-1 ${action_icon} ${minus} action-icon`} style={{cursor:"pointer"}}>
-                            <FaMinus />
-                          </div>
-                        </div>
-                      ))
-                    }
-                    {/* <div className={`row ${bordered_row}`}>
+                    <div className={`row ${bordered_row}`}>
                         <div className={`col-8 ${name} name`}>Someone</div>
                         <div className={`col-2 ${rounds} rounds`}>10</div>
                         <div className={`col-1 ${action_icon} ${plus} action-icon`}>
@@ -132,7 +87,7 @@ export default function Home() {
                         <div className={`col-1 ${action_icon} ${minus} action-icon`}>
                             <FaMinus />
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,22 +95,3 @@ export default function Home() {
     </div>
   )
 }
-
-// async function handleSubmit(event) {
-//   event.preventDefault();
-//   const newUser = {
-//     name: form.name,
-//     email: form.email,
-//     phone: form.phone
-//   };
-//   const response = await fetch('/api/users', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(newUser)
-//   });
-//   const data = await response.json();
-//   setUsers([...users, data]);
-//   setForm({ name: '', email: '', phone: '' });
-// }

@@ -1,5 +1,31 @@
 :root {
   font-size: 62.5%;
+
+  --color-twitch-purple: #9147ff;
+  --color-twitch-purple-1: #040109;
+  --color-twitch-purple-2: #0d031c;
+  --color-twitch-purple-3: #15052e;
+  --color-twitch-purple-4: #24094e;
+  --color-twitch-purple-5: #330c6e;
+  --color-twitch-purple-6: #451093;
+  --color-twitch-purple-7: #5c16c5;
+  --color-twitch-purple-8: #772ce8;
+  --color-twitch-purple-9: #9147ff;
+  --color-twitch-purple-10: #a970ff;
+  --color-twitch-purple-11: #bf94ff;
+  --color-twitch-purple-12: #d1b3ff;
+  --color-twitch-purple-13: #e3d1ff;
+  --color-twitch-purple-14: #ede0ff;
+  --color-twitch-purple-15: #f3ebff;
+
+  --dark-blue: #2b2d42;
+  --main-yellow: #F0F600;
+  --main-green: #72A276;
+  --main-red: #E3170A;
+}
+
+div{
+  overflow: hidden;
 }
 
 html,
@@ -9,3 +35,58 @@ body {
   font-size: 1.6rem;
   background-color: #000;
 }
+
+input[type=number]{
+  width: 8rem;
+  height: 4rem;
+  font-size: 1.5rem;
+}
+
+input[type=text]{
+  /* width: 10rem; */
+  height: 4rem;
+  font-size: 1.5rem;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* para alguns componentes */
+#players-grid{
+  max-width: 700px;
+  font-size: 2rem;
+}
+
+#players-grid .row{
+  background-color: #ffffff;
+}
+#players-grid .row:nth-of-type(1){
+  background-color: #eeeeee;
+  background-color: var(--color-twitch-purple-9);
+  font-weight: 600;
+}
+
+#players-grid .row:not(:nth-of-type(1)){
+  color: var(--color-twitch-purple-6);
+}
+
+#players-grid .row:last-child >*{
+  border-bottom: var(--color-twitch-purple-5) 2px solid;
+}
+
+main > .row:first-child{
+  margin-bottom: 2rem;
+}
+
+/* .row > .action-icon:first-child{
+  color: var(--main-green);
+}
+
+.row > .action-icon:last-child{
+  color: var(--main-red);
+} */
