@@ -75,12 +75,25 @@ input[type=number] {
   color: var(--color-twitch-purple-6);
 }
 
-#players-grid .row:last-child >*{
-  border-bottom: var(--color-twitch-purple-5) 2px solid;
-}
-
 main > .row:first-child{
   margin-bottom: 2rem;
+}
+
+.rounds{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: var(--color-twitch-purple-5) 2px solid;
+  border-right: var(--color-twitch-purple-5) 2px solid;
+}
+
+.user-row{
+  border-left: var(--color-twitch-purple-5) 2px solid;
+  border-right: var(--color-twitch-purple-5) 2px solid;
+}
+
+.user-row:last-child{
+  border-bottom: var(--color-twitch-purple-5) 2px solid;
 }
 
 /* .row > .action-icon:first-child{

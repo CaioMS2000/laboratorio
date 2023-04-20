@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { FaPlus, FaMinus } from 'react-icons/fa';
-import { FormEvent, useState, useEffect } from 'react';
+import { FormEvent, useState, useEffect, useRef } from 'react';
 
 interface User{
   name: string;
@@ -29,19 +29,40 @@ export default function Home() {
       console.log(users)
     }
 
+    async function removeUser(name: string){
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name
+        })
+      })
+
+      const data = await res.json()
+      console.log(data)
+    }
+
+    async function changeUserRounds({name, rounds}: {name: string, rounds: number}){
+      const res = await fetch('/api/users', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          rounds
+        })
+      })
+
+      const data = await res.json()
+      console.log(data)
+    }
+
     useEffect(() => {
       fetchUsers()
 
-      window?.addEventListener('keyup', e =>{
-        const key = e.key
-        console.log(key)
-        if(key === 'Escape'){
-          if(creatingPlayer == true){
-            switchCreating()
-            console.log(creatingPlayer)
-          }
-        }
-      })
     }, []);
 
     function NewUserButton(){
@@ -82,6 +103,59 @@ export default function Home() {
         switchCreating()
     }
 
+    // function UserRow(user: User){
+    function UserRow({user}: {user: User}){
+      const [userRounds, setUserRounds] = useState<number>(user.rounds)
+      let value = userRounds
+      console.log(`${user.name} tem ${user.rounds}`)
+
+      async function handleChangeRounds(operation: string){
+        console.log(`operation: ${operation}`)
+        if(operation == '+'){
+          value = userRounds
+          value++
+          setUserRounds(value)
+          await changeUserRounds({
+            name: user.name,
+            rounds: value
+          })
+        }
+
+        else if(operation == '-'){
+          value = userRounds
+          value--
+          if(value == 0){
+            await removeUser(user.name)
+            console.log(`exluido usuario: ${user.name}`)
+          }
+          else{
+            setUserRounds(value)
+            await changeUserRounds({
+              name: user.name,
+              rounds: value
+            })
+          }
+        }
+      }
+
+      return (
+        <div className={`user-row row ${bordered_row}`}>
+          <div className={`col-8 ${name} name`}>{user.name}</div>
+          <div className={`col-2 ${rounds} rounds`}>{userRounds}</div>
+          <div className={`col-1 ${action_icon} ${plus} action-icon`} style={{cursor:"pointer"}}
+          onClick={() => handleChangeRounds('+')}
+          >
+            <FaPlus />
+          </div>
+          <div className={`col-1 ${action_icon} ${minus} action-icon`} style={{cursor:"pointer"}}
+          onClick={() => handleChangeRounds('-')}
+          >
+            <FaMinus />
+          </div>
+        </div>
+      )
+    }
+
   return (
     // <div>
     // <div className={styles["page-content"]}>
@@ -110,18 +184,9 @@ export default function Home() {
                         <div className={`col-4 ${rounds} rounds`}>Vagas</div>
                     </div>
                     {
-                      users.map((user, index) => (
-                        <div key={index} className={`row ${bordered_row}`}>
-                          <div className={`col-8 ${name} name`}>{user.name}</div>
-                          <div className={`col-2 ${rounds} rounds`}>{user.rounds}</div>
-                          <div className={`col-1 ${action_icon} ${plus} action-icon`} style={{cursor:"pointer"}}>
-                            <FaPlus />
-                          </div>
-                          <div className={`col-1 ${action_icon} ${minus} action-icon`} style={{cursor:"pointer"}}>
-                            <FaMinus />
-                          </div>
-                        </div>
-                      ))
+                      users.map((user, index) => {
+                        return (user.rounds>0? <UserRow key={index} user={user} />: null)
+                      })
                     }
                     {/* <div className={`row ${bordered_row}`}>
                         <div className={`col-8 ${name} name`}>Someone</div>
