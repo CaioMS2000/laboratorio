@@ -4,12 +4,8 @@ import styles from '@/styles/Home.module.css'
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { FormEvent, useState, useEffect, useRef } from 'react';
 
-interface User{
-  name: string;
-  rounds: number;
-  id: number;
-}
-
+import { changeUserRounds, removeUser } from '../utils/api';
+import { User, UserRow } from '../compoents/UserRow';
 
 export default function Home() {
     const {
@@ -18,7 +14,6 @@ export default function Home() {
         head, minus, plus, 'add-button': add_button, form, 'form-group': form_group
     } = styles;
 
-    const [creatingPlayer, setCreatingPlayer] = useState(false)
     const [users, setUsers] = useState<User[]>([]);
 
     async function fetchUsers(){
@@ -26,54 +21,14 @@ export default function Home() {
       const data = await res.json()
 
       setUsers(data)
-      console.log(users)
-    }
-
-    async function removeUser(name: string){
-      const res = await fetch('/api/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name
-        })
-      })
-
-      const data = await res.json()
-      console.log(data)
-    }
-
-    async function changeUserRounds({name, rounds}: {name: string, rounds: number}){
-      const res = await fetch('/api/users', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          rounds
-        })
-      })
-
-      const data = await res.json()
-      console.log(data)
     }
 
     useEffect(() => {
+      console.clear()
       fetchUsers()
+      console.log(users)
 
     }, []);
-
-    function NewUserButton(){
-        return(
-            <div className={`${add_button}`}
-            onClick={switchCreating}
-            >
-                Adicionar novo jogador
-            </div>
-        )
-    }
     
     function NewUserForm(){
         return (
@@ -93,72 +48,13 @@ export default function Home() {
         )
     }
 
-    function switchCreating(){
-        setCreatingPlayer(prevState => !prevState)
-    }
-
     function handleSubmit(event: FormEvent){
         event.preventDefault()
 
         switchCreating()
     }
 
-    // function UserRow(user: User){
-    function UserRow({user}: {user: User}){
-      const [userRounds, setUserRounds] = useState<number>(user.rounds)
-      let value = userRounds
-      console.log(`${user.name} tem ${user.rounds}`)
-
-      async function handleChangeRounds(operation: string){
-        console.log(`operation: ${operation}`)
-        if(operation == '+'){
-          value = userRounds
-          value++
-          setUserRounds(value)
-          await changeUserRounds({
-            name: user.name,
-            rounds: value
-          })
-        }
-
-        else if(operation == '-'){
-          value = userRounds
-          value--
-          if(value == 0){
-            await removeUser(user.name)
-            console.log(`exluido usuario: ${user.name}`)
-          }
-          else{
-            setUserRounds(value)
-            await changeUserRounds({
-              name: user.name,
-              rounds: value
-            })
-          }
-        }
-      }
-
-      return (
-        <div className={`user-row row ${bordered_row}`}>
-          <div className={`col-8 ${name} name`}>{user.name}</div>
-          <div className={`col-2 ${rounds} rounds`}>{userRounds}</div>
-          <div className={`col-1 ${action_icon} ${plus} action-icon`} style={{cursor:"pointer"}}
-          onClick={() => handleChangeRounds('+')}
-          >
-            <FaPlus />
-          </div>
-          <div className={`col-1 ${action_icon} ${minus} action-icon`} style={{cursor:"pointer"}}
-          onClick={() => handleChangeRounds('-')}
-          >
-            <FaMinus />
-          </div>
-        </div>
-      )
-    }
-
   return (
-    // <div>
-    // <div className={styles["page-content"]}>
     <div className={page_content}>
       <Head>
         <title>Comp do LOL</title>
@@ -168,7 +64,6 @@ export default function Home() {
         <link rel="icon" href="/toplane.png" />
 
       </Head>
-      {/* <h1 className={styles.h1}>CONTROLE DE VAGAS</h1> */}
       <h1 className={`${h1} text-center`}>CONTROLE DE VAGAS</h1>
       <main className={`container-fluid ${main}`}>
         <div id="add-form" className={`row d-flex justify-content-center`}>
