@@ -6,7 +6,7 @@ import { FormEvent, useState, useEffect, useContext } from 'react';
 import { User, UserRow } from '../compoents/UserRow';
 import { NewUserButton } from '../compoents/NewUserButton';
 import { NewUserForm } from '../compoents/NewUserForm';
-import { CreatingContext } from '../context/creatingContext';
+import { CreatingContext, ContextType } from '../context/creatingContext';
 
 export default function Home() {
     const {
@@ -15,7 +15,7 @@ export default function Home() {
     } = styles;
 
     const [users, setUsers] = useState<User[]>([]);
-    const { creatingPlayer, setCreatingPlayer } = useContext(CreatingContext)
+    const { creatingPlayer, setCreatingPlayer } = useContext<ContextType>(CreatingContext) ?? {}
 
     async function fetchUsers(){
       const res = await fetch('/api/users')
@@ -30,6 +30,11 @@ export default function Home() {
       console.log(users)
 
     }, []);
+    
+    useEffect(() => {
+      setUsers(users)
+
+    }, [users]);
 
   return (
     <div className={page_content}>
@@ -45,7 +50,7 @@ export default function Home() {
       <main className={`container-fluid ${main}`}>
         <div id="add-form" className={`row d-flex justify-content-center`}>
             <div className={`col-5 d-flex justify-content-center`}>
-                {creatingPlayer? <NewUserForm /> : <NewUserButton />}
+                {creatingPlayer? <NewUserForm fetchUsers={fetchUsers}/> : <NewUserButton />}
             </div>
         </div>
         <div className={`row`}>
@@ -57,7 +62,7 @@ export default function Home() {
                     </div>
                     {
                       users.map((user, index) => {
-                        return (user.rounds>0? <UserRow key={index} user={user} />: null)
+                        return (user.rounds>0? <UserRow key={index} user={user} fetchUsers={fetchUsers}/>: null)
                       })
                     }
                 </div>
@@ -67,22 +72,3 @@ export default function Home() {
     </div>
   )
 }
-
-// async function handleSubmit(event) {
-//   event.preventDefault();
-//   const newUser = {
-//     name: form.name,
-//     email: form.email,
-//     phone: form.phone
-//   };
-//   const response = await fetch('/api/users', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(newUser)
-//   });
-//   const data = await response.json();
-//   setUsers([...users, data]);
-//   setForm({ name: '', email: '', phone: '' });
-// }

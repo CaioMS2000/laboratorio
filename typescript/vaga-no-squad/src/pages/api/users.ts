@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { writeFileSync } from 'node:fs';
+
 import prisma from "../../lib/prisma";
 
 async function methodGet(res: NextApiResponse){
@@ -29,7 +31,9 @@ async function methodPatch(req: NextApiRequest, res: NextApiResponse){
 }
 
 async function methodDelete(req: NextApiRequest){
-    const { name } = req.body
+    
+    // const { name } = req.body
+    const { name } = req.query as { name: string }
 
     await prisma.user.delete({
         where: {name}

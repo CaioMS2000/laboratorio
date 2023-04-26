@@ -8,12 +8,14 @@ export const NewUserButton = () => {
         'add-button': add_button
     } = styles;    
     
-    const { creatingPlayer, setCreatingPlayer } = useContext(CreatingContext)
+    const { creatingPlayer, setCreatingPlayer } = useContext(CreatingContext) ?? {}
 
     return(
         <div className={`${add_button}`}
         onClick={() => {
-            setCreatingPlayer(prevState => !prevState)
+            if(setCreatingPlayer){
+                setCreatingPlayer(prevState => !prevState)
+            }
         }}
         >
             Adicionar novo jogador

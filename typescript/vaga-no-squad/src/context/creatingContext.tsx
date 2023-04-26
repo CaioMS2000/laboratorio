@@ -1,6 +1,6 @@
 import { createContext, useState, Dispatch, SetStateAction, ReactNode } from 'react';
 
-type ContextType = {
+export type ContextType = {
     creatingPlayer: boolean,
     setCreatingPlayer: Dispatch<SetStateAction<boolean>>
 } | null;

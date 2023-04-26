@@ -90,11 +90,12 @@ main > .row:first-child{
 .user-row{
   border-left: var(--color-twitch-purple-5) 2px solid;
   border-right: var(--color-twitch-purple-5) 2px solid;
-}
-
-.user-row:last-child{
   border-bottom: var(--color-twitch-purple-5) 2px solid;
 }
+
+/* .user-row:last-child{
+  border-bottom: var(--color-twitch-purple-5) 2px solid;
+} */
 
 /* .row > .action-icon:first-child{
   color: var(--main-green);

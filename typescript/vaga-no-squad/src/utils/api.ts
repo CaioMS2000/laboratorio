@@ -1,5 +1,6 @@
 export async function removeUser(name: string){
-    const res = await fetch('/api/users', {
+    console.log(`removing ${name}`)
+    const res = await fetch(`/api/users?name=${name}`, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'
@@ -10,6 +11,7 @@ export async function removeUser(name: string){
     })
 
     const data = await res.json()
+    console.log(data)
 }
 
 export async function changeUserRounds({name, rounds}: {name: string, rounds: number}){
@@ -26,4 +28,20 @@ export async function changeUserRounds({name, rounds}: {name: string, rounds: nu
 
     const data = await res.json()
     // console.log(data)
+}
+
+export async function createUser({name, rounds}: {name: string, rounds: number}){
+    const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        name,
+        rounds
+        })
+    })
+
+    const data = await res.json()
+    console.log(data)
 }

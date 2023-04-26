@@ -1,5 +1,6 @@
 import styles from '@/styles/Home.module.css'
 import { FaPlus, FaMinus } from 'react-icons/fa';
+
 import { changeUserRounds, removeUser } from '../utils/api';
 import { useEffect, useState } from 'react';
 
@@ -20,15 +21,16 @@ export const UserRow = ({ user, fetchUsers }: UserRowProps) => {
     } = styles;
 
     const [userRounds, setUserRounds] = useState<number>(1)
-    const [isVisible, setIsVisible] = useState<boolean>(true)
 
     async function increment(){
       const newValue = user.rounds +1;
+
       setUserRounds(newValue)
       await changeUserRounds({
         name: user.name,
         rounds: newValue
       })
+
       fetchUsers()
     }
 
@@ -36,19 +38,16 @@ export const UserRow = ({ user, fetchUsers }: UserRowProps) => {
       const newValue = user.rounds -1;
 
       if(newValue <= 0){
-        setIsVisible(false)
-        await removeUser(user.name)   
+        await removeUser(user.name)        
       }
       else{
-        setIsVisible(true)
-        
         await changeUserRounds({
           name: user.name,
           rounds: newValue
         })
-        setUserRounds(newValue)
       }
-
+      
+      setUserRounds(newValue)
       fetchUsers()
     }
 
@@ -56,13 +55,15 @@ export const UserRow = ({ user, fetchUsers }: UserRowProps) => {
       setUserRounds(user.rounds)
     }, [])
 
-    if (!isVisible) return null;
-
     return (
       <div className={`user-row row`}
+      style={{
+        display: userRounds > 0? 'flex':'none'
+      }}
       >
         <div className={`col-8 ${name} name`}>{user.name}</div>
         <div className={`col-2 ${rounds} rounds`}>{userRounds}</div>
+        {/* <div className={`col-2 ${rounds} rounds`}>{user.rounds}</div> */}
         <div className={`col-1 ${action_icon} ${plus} action-icon`} style={{cursor:"pointer"}}
         onClick={() => {
           increment()
