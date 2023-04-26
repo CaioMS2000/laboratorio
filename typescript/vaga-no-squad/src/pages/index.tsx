@@ -1,20 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
-import { FaPlus, FaMinus } from 'react-icons/fa';
-import { FormEvent, useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
+import { FormEvent, useState, useEffect, useContext } from 'react';
 
-import { changeUserRounds, removeUser } from '../utils/api';
 import { User, UserRow } from '../compoents/UserRow';
+import { NewUserButton } from '../compoents/NewUserButton';
+import { NewUserForm } from '../compoents/NewUserForm';
+import { CreatingContext } from '../context/creatingContext';
 
 export default function Home() {
     const {
         h1, 'page-content': page_content, name, rounds,
-        'action-icon': action_icon, main, 'bordered-row': bordered_row,
-        head, minus, plus, 'add-button': add_button, form, 'form-group': form_group
+        main, 'bordered-row': bordered_row, head
     } = styles;
 
     const [users, setUsers] = useState<User[]>([]);
+    const { creatingPlayer, setCreatingPlayer } = useContext(CreatingContext)
 
     async function fetchUsers(){
       const res = await fetch('/api/users')
@@ -29,30 +30,6 @@ export default function Home() {
       console.log(users)
 
     }, []);
-    
-    function NewUserForm(){
-        return (
-            <form className={`${form}`}
-            onSubmit={handleSubmit}
-            >
-                <div className={`form-group`}>
-                    {/* <label htmlFor="name" className={`form-label`}>Nome</label> */}
-                    <input id="name" type="text" className={`form-control`} placeholder='nome...'/>
-                </div>
-                <div className={`form-group`}>
-                    {/* <label htmlFor="rounds" className={`form-label`}>Vagas</label> */}
-                    <input id="rounds" type="number" className={`form-control`} placeholder='0'/>
-                </div>
-                <button type="submit" className={`btn btn-primary`}>CRIAR</button>
-            </form>
-        )
-    }
-
-    function handleSubmit(event: FormEvent){
-        event.preventDefault()
-
-        switchCreating()
-    }
 
   return (
     <div className={page_content}>
@@ -68,7 +45,7 @@ export default function Home() {
       <main className={`container-fluid ${main}`}>
         <div id="add-form" className={`row d-flex justify-content-center`}>
             <div className={`col-5 d-flex justify-content-center`}>
-                {creatingPlayer? NewUserForm() : NewUserButton()}
+                {creatingPlayer? <NewUserForm /> : <NewUserButton />}
             </div>
         </div>
         <div className={`row`}>
@@ -83,16 +60,6 @@ export default function Home() {
                         return (user.rounds>0? <UserRow key={index} user={user} />: null)
                       })
                     }
-                    {/* <div className={`row ${bordered_row}`}>
-                        <div className={`col-8 ${name} name`}>Someone</div>
-                        <div className={`col-2 ${rounds} rounds`}>10</div>
-                        <div className={`col-1 ${action_icon} ${plus} action-icon`}>
-                            <FaPlus />
-                        </div>
-                        <div className={`col-1 ${action_icon} ${minus} action-icon`}>
-                            <FaMinus />
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </div>

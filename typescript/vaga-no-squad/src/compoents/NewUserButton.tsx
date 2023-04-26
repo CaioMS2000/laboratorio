@@ -1,21 +1,20 @@
 import styles from '@/styles/Home.module.css'
-import { FormEvent, useState, useEffect, useRef } from 'react';
+import { FormEvent, useState, useEffect, useContext } from 'react';
+
+import { CreatingContext } from '../context/creatingContext';
 
 export const NewUserButton = () => {
     const {
-        h1, 'page-content': page_content, name, rounds,
-        'action-icon': action_icon, main, 'bordered-row': bordered_row,
-        head, minus, plus, 'add-button': add_button, form, 'form-group': form_group
-    } = styles;
-
-    const [creatingPlayer, setCreatingPlayer] = useState(false)
-    function switchCreating(){
-        setCreatingPlayer(prevState => !prevState)
-    }
+        'add-button': add_button
+    } = styles;    
+    
+    const { creatingPlayer, setCreatingPlayer } = useContext(CreatingContext)
 
     return(
         <div className={`${add_button}`}
-        onClick={switchCreating}
+        onClick={() => {
+            setCreatingPlayer(prevState => !prevState)
+        }}
         >
             Adicionar novo jogador
         </div>
