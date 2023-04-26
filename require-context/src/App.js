@@ -9,8 +9,12 @@ import './App.css';
 const images = {}
 
 function importAll(r) {
+  console.log(r.keys())
   r.keys().reduce((acc, key) => {
-    images[key.replace('./', '')] = r(key);
+    // images[key.replace('./', '')] = r(key);
+    console.log(acc)
+    console.log(key)
+    console.log('')
   }, {});
 }
 
@@ -18,31 +22,18 @@ function importAll(r) {
 function App() {
   console.clear()
   
-  importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/));
+  importAll(require.context('./images/projects', true, /\.(png|jpe?g|svg)$/));
 
-  Object.entries(images).map(([nome, caminho]) => {
-    console.log(nome)
-    console.log(caminho)
-    return null
-  })
+  // Object.entries(images).map(([nome, caminho]) => {
+  //   console.log(nome)
+  //   console.log(caminho)
+  //   return null
+  // })
 
   console.log(images)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Componente 1</h1>
     </div>
   );
 }
