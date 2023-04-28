@@ -18,16 +18,14 @@ export default function Home() {
     const { creatingPlayer, setCreatingPlayer } = useContext<ContextType>(CreatingContext) ?? {}
 
     async function fetchUsers(){
-      const res = await fetch('/api/users')
-      const data = await res.json()
+      const res = await fetch('/api/users');
+      const data = await res.json();
 
-      setUsers(data)
+      setUsers(data);
     }
 
     useEffect(() => {
-      console.clear()
       fetchUsers()
-      console.log(users)
 
     }, []);
     

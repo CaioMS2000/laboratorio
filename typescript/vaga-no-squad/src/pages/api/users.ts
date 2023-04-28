@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { writeFileSync } from 'node:fs';
 
 import prisma from "../../lib/prisma";
 
@@ -20,8 +19,6 @@ async function methodPost(req: NextApiRequest, res: NextApiResponse){
 async function methodPatch(req: NextApiRequest, res: NextApiResponse){
     const { name, rounds } = req.body
 
-    console.log(`${name} vai ter ${rounds} vagas`)
-
     const user = await prisma.user.update({
         where: { name },
         data: { rounds }
@@ -34,7 +31,6 @@ async function methodDelete(req: NextApiRequest){
     
     // const { name } = req.body
     const { name } = req.query as { name: string }
-
     await prisma.user.delete({
         where: {name}
     })
