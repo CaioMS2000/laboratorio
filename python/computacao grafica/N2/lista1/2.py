@@ -2,27 +2,45 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-# vértices do triângulo
-v1 = np.array([0, 0, 0], ndmin=2)
-v2 = np.array([1, 0, 0], ndmin=2)
-v3 = np.array([0, 1, 1], ndmin=2)
+# Define as coordenadas dos vértices do cubo
+vertices = np.array([[0, 0, 0, 0, 1, 1, 1, 1],
+                     [0, 0, 1, 1, 0, 0, 1, 1],
+                     [0, 1, 1, 0, 0, 1, 1, 0]])
 
-# criando os arrays de coordenadas
-X = np.array([v1[0], v2[0], v3[0]])
-Y = np.array([v1[1], v2[1], v3[1]])
-Z = np.array([v1[2], v2[2], v3[2]])
+# Define as seis faces do cubo
+faces = [(0, 1, 2, 3),  # face frontal
+         (0, 1, 5, 4),  # face lateral esquerda
+         (1, 2, 6, 5),  # face superior
+         (2, 3, 7, 6),  # face lateral direita
+         (0, 3, 7, 4),  # face inferior
+         (4, 5, 6, 7)]  # face traseira
 
-# criando a figura 3D
+# Cria uma figura 3D
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-# plotando o triângulo
-ax.plot_trisurf(X.flatten(), Y.flatten(), Z.flatten())
+# Desenha as faces do cubo
+# for face in faces:
+#     x = vertices[0, face]
+#     y = vertices[1, face]
+#     z = vertices[2, face]
+#     ax.plot(x, y, z)
 
-# configurando os limites dos eixos
-ax.set_xlim([0, 1])
-ax.set_ylim([0, 1])
-ax.set_zlim([0, 1])
+# Desenha as arestas do cubo
+for i in range(4):
+    ax.plot(vertices[0, [i, (i+1)%4]], vertices[1, [i, (i+1)%4]], vertices[2, [i, (i+1)%4]])
+    ax.plot(vertices[0, [i+4, ((i+1)%4)+4]], vertices[1, [i+4, ((i+1)%4)+4]], vertices[2, [i+4, ((i+1)%4)+4]])
+    ax.plot(vertices[0, [i, i+4]], vertices[1, [i, i+4]], vertices[2, [i, i+4]])
+ax.plot(vertices[0, [1, 5]], vertices[1, [1, 5]], vertices[2, [1, 5]])  # adiciona a aresta faltante
 
-# mostrando o gráfico
+
+# Configura o eixo 3D
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_zlim(0, 1)
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+# Exibe a figura
 plt.show()
