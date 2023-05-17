@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// generator typegraphql {
+//   provider = "typegraphql-prisma"
+// }
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  userId     String   @unique
+  role      Role      @default(STUDENT)
+  enrollments Enrollment[]
+  teaches Courses[]
+}
+
+model Course {
+  id            Int           @id @default(autoincrement())
+  name          String
+  enrollments Enrollment[]
+  taught User[]
+}
+
+model Enrollment {
+  id           Int         @id @default(autoincrement())
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  student      User @relation(fields: [studentId], references: [id])
+  course       Course @relation(fields: [courseId], references: [id])
+  studentId    Int
+  courseId     Int
+  grade        Float?
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+}
