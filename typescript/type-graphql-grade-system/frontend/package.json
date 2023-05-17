@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate": "nodemon --exec node --loader ts-node/esm src/pages/api/generateData.ts",
+    "test": "nodemon --exec node --loader ts-node/esm src/pages/api/projects.ts"
+  },
+  "dependencies": {
+    "@types/node": "20.1.7",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "next": "13.4.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.4",
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.12.11",
+    "jotai": "^2.1.0",
+    "nodemon": "^2.0.22",
+    "react-icons": "^4.8.0",
+    "react-query": "^3.39.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsnd": "^1.1.0"
+  }
+}
