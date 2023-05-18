@@ -5,9 +5,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// generator typegraphql {
-//   provider = "typegraphql-prisma"
-// }
+generator typegraphql {
+  provider = "typegraphql-prisma"
+}
 
 datasource db {
   provider = "postgresql"
@@ -21,14 +21,14 @@ model User {
   userId     String   @unique
   role      Role      @default(STUDENT)
   enrollments Enrollment[]
-  teaches Courses[]
+  minister Minister[]
 }
 
 model Course {
   id            Int           @id @default(autoincrement())
   name          String
   enrollments Enrollment[]
-  taught User[]
+  minister Minister[]
 }
 
 model Enrollment {
@@ -40,6 +40,16 @@ model Enrollment {
   studentId    Int
   courseId     Int
   grade        Float?
+}
+
+model Minister{
+  id           Int         @id @default(autoincrement())
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  teacher      User @relation(fields: [teacherId], references: [id])
+  teacherId    Int
+  course      Course @relation(fields: [courseId], references: [id])
+  courseId     Int
 }
 
 enum Role {
