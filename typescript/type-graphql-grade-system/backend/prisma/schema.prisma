@@ -7,6 +7,7 @@ generator client {
 
 generator typegraphql {
   provider = "typegraphql-prisma"
+  output   = "./generated/type-graphql"
 }
 
 datasource db {
@@ -18,7 +19,7 @@ model User {
   id        Int       @id @default(autoincrement())
   email     String    @unique
   password  String
-  userId     String   @unique
+  userId     String   @unique @default("")
   role      Role      @default(STUDENT)
   enrollments Enrollment[]
   minister Minister[]

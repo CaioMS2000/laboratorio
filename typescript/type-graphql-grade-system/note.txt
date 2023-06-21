@@ -1,0 +1,1 @@
+este projeto foi iniciado para tentar entener o typegrapql-prisma e seus resolvers auto gerados, porem desisti

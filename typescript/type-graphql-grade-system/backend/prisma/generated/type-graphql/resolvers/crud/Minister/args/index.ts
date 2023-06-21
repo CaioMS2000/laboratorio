@@ -1,0 +1,14 @@
+export { AggregateMinisterArgs } from "./AggregateMinisterArgs";
+export { CreateManyMinisterArgs } from "./CreateManyMinisterArgs";
+export { CreateOneMinisterArgs } from "./CreateOneMinisterArgs";
+export { DeleteManyMinisterArgs } from "./DeleteManyMinisterArgs";
+export { DeleteOneMinisterArgs } from "./DeleteOneMinisterArgs";
+export { FindFirstMinisterArgs } from "./FindFirstMinisterArgs";
+export { FindFirstMinisterOrThrowArgs } from "./FindFirstMinisterOrThrowArgs";
+export { FindManyMinisterArgs } from "./FindManyMinisterArgs";
+export { FindUniqueMinisterArgs } from "./FindUniqueMinisterArgs";
+export { FindUniqueMinisterOrThrowArgs } from "./FindUniqueMinisterOrThrowArgs";
+export { GroupByMinisterArgs } from "./GroupByMinisterArgs";
+export { UpdateManyMinisterArgs } from "./UpdateManyMinisterArgs";
+export { UpdateOneMinisterArgs } from "./UpdateOneMinisterArgs";
+export { UpsertOneMinisterArgs } from "./UpsertOneMinisterArgs";
