@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    # container_name: postgres_db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - caio_network
+
+  backend:
+    container_name: backend
+    env_file:
+      - .env
+    command: sh -c "rm .env;chmod +x wait.sh && ./wait.sh && tail -f /dev/null"
+    environment:
+      - BACKEND_PORT=${BACKEND_PORT}
+      - DATABASE_URL=postgres://postgres:${DATABASE_PASSWORD}@db:5432/database?schema=public
+      # - xx=${xx}
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+      - "5555:5555"
+      # - xx:xx
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    volumes:
+          - ./backend:/app
+    networks:
+      - caio_network
+
+  nextjs:
+    container_name: nextjs
+    env_file:
+      - .env
+    command: sh -c "tail -f /dev/null"
+    environment:
+      - FRONTEND_PORT=${FRONTEND_PORT}
+      - API_URL=http://backend:${BACKEND_PORT}
+      # - xx=${xx}
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+      # - xx:xx
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    volumes:
+          - ./frontend:/app
+    networks:
+      - caio_network
+
+networks:
+  caio_network:
+    name: caio_network
