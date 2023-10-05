@@ -24,10 +24,23 @@ app.use(express.json());
 app.get('/api/data', async (req: Request, res: Response) => {
   const data = req.body;
   // Faça algo com os dados, como salvá-los em um banco de dados
+  const maybeExists = await prisma.user.findFirst({
+    where: {
+      email: 'email'
+    }
+  })
+  if(maybeExists == null){
+    await prisma.user.create({
+      data: {
+        email: 'email',
+        name: 'caio'
+      }
+    })
+  }
   const requestedData = await prisma.user.findMany()
   console.log('AQUI')
   console.log(requestedData)
-  // res.json({ message: 'Dados recebidos com sucesso.' });
+  // res.json({ message: 'sucesso' });
   res.json({ data: requestedData });
 });
 
